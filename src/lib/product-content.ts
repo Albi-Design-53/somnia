@@ -1,0 +1,304 @@
+import { site, products, bedTopics, type Product, type DueGuideMode, isMissingValue } from "@/content/site";
+
+export type ProductPageContent = {
+  eyebrow: string;
+  title: string;
+  claim: string;
+  description: string;
+  bullets: string[];
+  image: string;
+  imageAlt: string;
+  imageLayout?: "photo" | "sheet";
+  photoCredit?: string;
+  gallery: { src: string; alt: string }[];
+  specs: { label: string; value: string }[];
+  priceFrom: string;
+  priceNote: string;
+  priceGuide: DueGuideMode | null;
+  trust: { title: string; text: string }[];
+  sections: { title: string; text: string }[];
+  steps: string[];
+  parent: { href: string; label: string };
+  relatedLayout?: "circle" | "rect";
+  related: {
+    href: string;
+    title: string;
+    image: string;
+    imageAlt: string;
+    category: string;
+  }[];
+  jsonLd: Record<string, unknown>;
+};
+
+type Topic = (typeof bedTopics)[number];
+
+const DEFAULT_PRICE_NOTE =
+  "Den verbindlichen Preis inkl. Lieferung und Montage nennen wir in der Beratung. Online erscheint bewusst kein Betrag.";
+
+const DEFAULT_TRUST = [
+  {
+    title: "Beratung",
+    text: "Härte, Mass und Aufbau entscheiden wir im Liegen – im Laden am Gallusplatz oder mit dem mobilen Bettenstudio.",
+  },
+  {
+    title: "Garantie",
+    text: "Für fanello-Schlafsysteme: 10 Jahre auf Matratze und Stützelement, 5 Jahre auf den Einlegerahmen. Ob das auf dieses Stück zutrifft, klären wir vor Ort.",
+  },
+  {
+    title: "Herkunft",
+    text: "Natürliche, schadstofffreie Rohstoffe. Viele Systeme werden in der Schweiz hergestellt. Die genaue Herkunft des gewählten Aufbaus sagen wir Ihnen in der Beratung.",
+  },
+] as const;
+
+const SPONDA_SLUGS = new Set(["bever", "surava", "lain", "lavin"]);
+const LAYER_SLUGS = new Set(["cloud", "origin", "lignum"]);
+
+function dueGuide(slug: string): DueGuideMode | null {
+  if (slug === "fanello-naturbett") return "system";
+  if (slug === "natur-boxspringbett") return "box";
+  if (slug === "mobiles-bettenstudio") return "visit";
+  if (slug === "lignum") return "frame";
+  return null;
+}
+
+function numericPrice(priceFrom: string) {
+  const match = priceFrom.match(/(\d[\d']*)/);
+  return match ? match[1].replace(/'/g, "") : undefined;
+}
+
+function productHref(product: Product) {
+  return product.kind === "matratze"
+    ? `/matratzen/${product.slug}`
+    : `/betten/${product.slug}`;
+}
+
+function publishedSpecs(specs: { label: string; value: string }[]) {
+  return specs.filter((spec) => !isMissingValue(spec.value));
+}
+
+const FRAME_SLUGS = new Set(["origin", "lignum"]);
+
+function garantieValue(kind: "bett" | "matratze" | "topic", slug: string) {
+  if (slug === "fanello-naturbett") {
+    return "10 Jahre auf den Rahmen, 5 Jahre auf Matratze und Auflage";
+  }
+  if (slug === "mobiles-bettenstudio") return null;
+  if (kind === "bett" || FRAME_SLUGS.has(slug) || slug === "massivholz" || slug === "natur-boxspringbett") {
+    return "10 Jahre";
+  }
+  return "5 Jahre";
+}
+
+function withGarantie(
+  specs: { label: string; value: string }[],
+  kind: "bett" | "matratze" | "topic",
+  slug: string,
+) {
+  if (specs.some((spec) => spec.label === "Garantie")) return specs;
+  const value = garantieValue(kind, slug);
+  if (!value) return specs;
+  return [...specs, { label: "Garantie", value }];
+}
+
+function absoluteUrl(path: string) {
+  return new URL(path, "https://natur-land.ch").toString();
+}
+
+function productJsonLd(
+  name: string,
+  description: string,
+  image: string,
+  urlPath: string,
+  extra: Record<string, unknown> = {},
+  price?: string,
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name,
+    description,
+    image: absoluteUrl(image),
+    url: absoluteUrl(urlPath),
+    offers: {
+      "@type": "Offer",
+      url: absoluteUrl(urlPath),
+      availability: "https://schema.org/InStoreOnly",
+      priceCurrency: "CHF",
+      ...(price ? { price } : {}),
+      seller: {
+        "@type": "FurnitureStore",
+        name: site.legalName,
+      },
+    },
+    ...extra,
+  };
+}
+
+function productThumb(item: Product) {
+  return {
+    image: item.cardImage ?? item.image,
+    imageAlt:
+      item.cardImageAlt ??
+      item.imageAlt ??
+      `${item.name} – ${item.category}`,
+  };
+}
+
+function toRelated(item: {
+  href: string;
+  title: string;
+  image: string;
+  imageAlt: string;
+  category: string;
+}) {
+  return item;
+}
+
+export function productToContent(product: Product): ProductPageContent {
+  const href = productHref(product);
+
+  const spondaSiblings = products
+    .filter((item) => SPONDA_SLUGS.has(item.slug) && item.slug !== product.slug)
+    .map((item) => {
+      const thumb = productThumb(item);
+      return toRelated({
+        href: productHref(item),
+        title: item.name,
+        image: thumb.image,
+        imageAlt: thumb.imageAlt,
+        category: item.category,
+      });
+    });
+
+  const related = SPONDA_SLUGS.has(product.slug) ? spondaSiblings : [];
+
+  const imageAlt = product.imageAlt ?? `${product.name} – ${product.category}`;
+  const sponda = SPONDA_SLUGS.has(product.slug);
+
+  return {
+    eyebrow: product.category,
+    title: product.name,
+    claim: product.excerpt,
+    description: product.description,
+    bullets: product.bullets,
+    image: product.image,
+    imageAlt,
+    imageLayout: product.imageLayout,
+    gallery: product.gallery.map((src, i) => ({
+      src,
+      alt: i === 0 ? imageAlt : `${product.name}, Detail ${i + 1}`,
+    })),
+    specs: withGarantie(publishedSpecs(product.specs), product.kind, product.slug),
+    priceFrom: isMissingValue(product.priceFrom)
+      ? "Preis in der Beratung"
+      : product.priceFrom,
+    priceNote: product.priceNote ?? DEFAULT_PRICE_NOTE,
+    priceGuide: dueGuide(product.slug),
+    trust: product.trust ?? [...DEFAULT_TRUST],
+    sections: product.sections ?? [],
+    steps: [],
+    parent:
+      product.kind === "matratze"
+        ? { href: "/matratzen", label: "Matratzen" }
+        : { href: "/produkte", label: "Produkte" },
+    relatedLayout: sponda ? "circle" : "rect",
+    related,
+    jsonLd: productJsonLd(
+      product.name,
+      product.excerpt,
+      product.image,
+      href,
+      product.kind === "matratze"
+        ? { brand: { "@type": "Brand", name: "fanello swiss" } }
+        : sponda
+          ? { brand: { "@type": "Brand", name: "Sponda" } }
+          : {},
+      numericPrice(product.priceFrom),
+    ),
+  };
+}
+
+export function topicToContent(topic: Topic): ProductPageContent {
+  const href = `/betten/${topic.slug}`;
+  const layerRelated = products
+    .filter((item) => LAYER_SLUGS.has(item.slug))
+    .map((item) => {
+      const thumb = productThumb(item);
+      return {
+        href: productHref(item),
+        title: item.name,
+        image: thumb.image,
+        imageAlt: thumb.imageAlt,
+        category: item.category,
+      };
+    });
+
+  const related =
+    topic.slug === "massivholz"
+      ? products
+          .filter((item) => SPONDA_SLUGS.has(item.slug))
+          .map((item) => {
+            const thumb = productThumb(item);
+            return {
+              href: productHref(item),
+              title: item.name,
+              image: thumb.image,
+              imageAlt: thumb.imageAlt,
+              category: item.category,
+            };
+          })
+      : topic.slug === "fanello-naturbett" || topic.slug === "natur-boxspringbett"
+        ? layerRelated
+        : [];
+
+  return {
+    eyebrow: topic.eyebrow,
+    title: topic.title,
+    claim: topic.lede,
+    description: topic.description,
+    bullets: [...topic.points],
+    image: topic.image,
+    imageAlt: topic.imageAlt,
+    gallery: topic.gallery.map((src, i) => ({
+      src,
+      alt: i === 0 ? topic.imageAlt : `${topic.title}, Ansicht ${i + 1}`,
+    })),
+    specs: withGarantie(publishedSpecs([...topic.specs]), "topic", topic.slug),
+    priceFrom: isMissingValue(topic.priceFrom)
+      ? "Preis in der Beratung"
+      : topic.priceFrom,
+    priceNote: topic.priceNote,
+    priceGuide: topic.slug === "mobiles-bettenstudio" ? null : dueGuide(topic.slug),
+    trust: [...topic.trust],
+    sections: [...topic.sections],
+    steps: [...topic.steps],
+    parent: { href: "/produkte", label: "Produkte" },
+    relatedLayout: topic.slug === "massivholz" ? "circle" : "rect",
+    related,
+    jsonLd:
+      topic.slug === "mobiles-bettenstudio"
+        ? {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: topic.title,
+            description: topic.lede,
+            url: absoluteUrl(href),
+            image: absoluteUrl(topic.image),
+            provider: {
+              "@type": "FurnitureStore",
+              name: site.legalName,
+            },
+            areaServed: "CH",
+          }
+        : productJsonLd(
+            topic.title,
+            topic.lede,
+            topic.image,
+            href,
+            topic.slug === "massivholz"
+              ? { brand: { "@type": "Brand", name: "Sponda" } }
+              : { brand: { "@type": "Brand", name: "fanello swiss" } },
+            topic.slug === "massivholz" ? undefined : numericPrice(topic.priceFrom),
+          ),
+  };
+}
