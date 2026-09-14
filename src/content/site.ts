@@ -40,7 +40,7 @@ export const site = {
     mapsEmbed:
       "https://maps.google.com/maps?q=Auf%20dem%20Damm%2017%209000%20St.%20Gallen&t=&z=15&ie=UTF8&iwloc=&output=embed",
     hours: [
-      { days: "Dienstag – Freitag", time: "14:00 – 18:00" },
+      { days: "Dienstag – Freitag", time: "10:00 – 18:00" },
       { days: "Samstag", time: "10:00 – 16:00" },
       { days: "Montag und Sonntag", time: "geschlossen" },
       { days: "Termine", time: "jederzeit nach Vereinbarung" },
