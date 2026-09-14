@@ -508,8 +508,7 @@ export const products: Product[] = [
       "fanello-Schlafsystem im Gestell abgestimmt",
     ],
     priceFrom: PRICE_TODO,
-    priceNote:
-      "Preis nach Holzart, Mass und Ausstattung. Inkl. Lieferung und Montage – genaue Zahl in der Beratung.",
+    priceNote: "",
     image: "/images/bed-bever-prospekt.jpg",
     imageAlt: "Sponda Bever – komplette Prospektseite, Kernbuche mit Schrägstellung",
     cardImage: "/images/bed-bever.jpg",
@@ -552,8 +551,7 @@ export const products: Product[] = [
       "fanello-Schlafsystem im Gestell abgestimmt",
     ],
     priceFrom: PRICE_TODO,
-    priceNote:
-      "Preis nach Holzart, Mass und Ausstattung. Inkl. Lieferung und Montage – genaue Zahl in der Beratung.",
+    priceNote: "",
     image: "/images/bed-surava-prospekt.jpg",
     imageAlt: "Sponda Surava – komplette Prospektseite, Kernbuche mit hohem Kopfteil",
     cardImage: "/images/bed-surava.jpg",
@@ -596,8 +594,7 @@ export const products: Product[] = [
       "fanello-Schlafsystem im Gestell abgestimmt",
     ],
     priceFrom: PRICE_TODO,
-    priceNote:
-      "Preis nach Holzart, Mass und Ausstattung. Inkl. Lieferung und Montage – genaue Zahl in der Beratung.",
+    priceNote: "",
     image: "/images/bed-lavin-prospekt.jpg",
     imageAlt: "Sponda Lavin – komplette Prospektseite, Ast-Eiche schwebend",
     cardImage: "/images/bed-lavin.jpg",
@@ -639,8 +636,7 @@ export const products: Product[] = [
       "fanello-Schlafsystem im Gestell abgestimmt",
     ],
     priceFrom: PRICE_TODO,
-    priceNote:
-      "Preis nach Holzart, Mass und Ausstattung. Inkl. Lieferung und Montage – genaue Zahl in der Beratung.",
+    priceNote: "",
     image: "/images/bed-lain-prospekt.jpg",
     imageAlt: "Sponda Lain – komplette Prospektseite, massiver Nussbaum mit gerundeten Ecken",
     cardImage: "/images/bed-lain.jpg",
@@ -1388,8 +1384,7 @@ export const bedTopics = [
     description:
       "Vier Bettrahmen von Sponda aus Trimmis: Bever, Lavin, Surava und Lain. Naturland führt sie in St. Gallen – Holz, Mass und Schlafsystem im Liegen. Nachttische und Schränke nach Mass.",
     priceFrom: PRICE_TODO,
-    priceNote:
-      "Preis nach Holzart, Mass und Ausstattung. Inkl. Lieferung und Montage – genaue Zahl in der Beratung.",
+    priceNote: "",
     specs: [
       { label: "Hersteller", value: "Sponda, Trimmis GR" },
       { label: "Modelle", value: "Bever, Lavin, Surava, Lain" },
