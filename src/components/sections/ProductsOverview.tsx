@@ -28,12 +28,12 @@ const beds = [
   {
     n: "02",
     eyebrow: "Sponda · hohes Kopfteil",
-    title: "Surava",
+    title: "Bondo",
     lede: "Gerundete Simse, hohes Kopfteil. Der Rahmen der den Raum trägt.",
     fact: "Preis in der Beratung – unverbindlich.",
-    href: "/betten/surava",
+    href: "/betten/bondo",
     image: "/images/bed-surava.jpg",
-    imageAlt: "Bettrahmen Surava von Sponda am Bergsee",
+    imageAlt: "Bettrahmen Bondo von Sponda am Bergsee",
   },
   {
     n: "03",
@@ -43,7 +43,7 @@ const beds = [
     fact: "Preis in der Beratung – unverbindlich.",
     href: "/betten/lain",
     image: "/images/bed-lain.jpg",
-    imageAlt: "Bettrahmen Lain von Sponda in Nussbaum",
+    imageAlt: "Bettrahmen Lain von Sponda unter der Arve, Alpen",
   },
   {
     n: "04",
@@ -53,7 +53,7 @@ const beds = [
     fact: "Preis in der Beratung – unverbindlich.",
     href: "/betten/lavin",
     image: "/images/bed-lavin.jpg",
-    imageAlt: "Bettrahmen Lavin von Sponda in Ast-Eiche",
+    imageAlt: "Bettrahmen Lavin von Sponda in der Alpenwiese",
   },
 ];
 
@@ -234,7 +234,7 @@ export function ProductsOverview() {
             </h2>
             <p className="lede mt-5 max-w-2xl text-muted">
               Sponda fertigt in Trimmis. Bei Naturland in St. Gallen sehen Sie
-              Jana, Lavin, Surava und Lain – Holz, Mass und Schlafsystem im
+              Jana, Lavin, Bondo und Lain – Holz, Mass und Schlafsystem im
               Liegen.
             </p>
           </Reveal>

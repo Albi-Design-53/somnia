@@ -8,13 +8,13 @@ import { Reveal } from "@/components/ui/Reveal";
 export const metadata: Metadata = {
   title: "Bettrahmen",
   description:
-    "Jana, Surava, Lain und Lavin von Sponda – Massivholzrahmen, gefertigt in Trimmis, bei Naturland in St. Gallen.",
+    "Jana, Bondo, Lain und Lavin von Sponda – Massivholzrahmen, gefertigt in Trimmis, bei Naturland in St. Gallen.",
   keywords: [
     "Naturland",
     "Bettrahmen",
     "Sponda",
     "Jana",
-    "Surava",
+    "Bondo",
     "Lain",
     "Lavin",
     "St. Gallen",
@@ -62,7 +62,7 @@ export default function BettenPage() {
                           quality={100}
                           className={
                             cover
-                              ? "object-cover object-center"
+                              ? `object-cover ${product.cardImagePosition ?? "object-center"}`
                               : "object-contain object-center"
                           }
                           sizes="100vw"

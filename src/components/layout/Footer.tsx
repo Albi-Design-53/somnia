@@ -16,7 +16,7 @@ const columns = [
     links: [
       { label: "Produkte", href: "/produkte" },
       { label: "Jana", href: "/betten/jana" },
-      { label: "Surava", href: "/betten/surava" },
+      { label: "Bondo", href: "/betten/bondo" },
       { label: "Lain", href: "/betten/lain" },
       { label: "Lavin", href: "/betten/lavin" },
       { label: "Matratzen", href: "/matratzen" },

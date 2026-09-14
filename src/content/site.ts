@@ -207,7 +207,7 @@ export const categories = [
   {
     slug: "massivholzbetten",
     title: "Massivholzrahmen",
-    text: "Jana, Lavin, Surava, Lain – Massivholz von Sponda in Trimmis. Beratung und Verkauf in St. Gallen.",
+    text: "Jana, Lavin, Bondo, Lain – Massivholz von Sponda in Trimmis. Beratung und Verkauf in St. Gallen.",
     href: "/betten/massivholz",
     image: "/images/bed-bever.jpg",
     worldImage: "/images/bed-bever.jpg",
@@ -482,6 +482,7 @@ export type Product = {
   cardImage?: string;
   cardImageAlt?: string;
   cardImageFit?: "contain" | "cover";
+  cardImagePosition?: string;
   imageLayout?: "photo" | "sheet";
   imageWidth?: number;
   imageHeight?: number;
@@ -542,14 +543,14 @@ export const products: Product[] = [
     ],
   },
   {
-    slug: "surava",
-    name: "Surava",
+    slug: "bondo",
+    name: "Bondo",
     category: "Bettrahmen Sponda",
     kind: "bett",
     excerpt:
       "Hohes Kopfteil, gerundete Simse, Kernbuche. Der Rahmen der den Raum trägt – nach Mass aus Graubünden.",
     description:
-      "Surava hat das hohe Kopfteil und die gerundeten Simse an den Seiten – Ein- und Ausstieg ohne Kante. Sponda fertigt in Kernbuche, auf Wunsch metallfrei. Bei Naturland wählen Sie Holz und Mass im Laden, das fanello-System liegt darin.",
+      "Bondo hat das hohe Kopfteil und die gerundeten Simse an den Seiten – Ein- und Ausstieg ohne Kante. Sponda fertigt in Kernbuche, auf Wunsch metallfrei. Bei Naturland wählen Sie Holz und Mass im Laden, das fanello-System liegt darin.",
     bullets: [
       "Sponda, gefertigt in Trimmis GR",
       "Abbildung in Kernbuche – andere Hölzer möglich",
@@ -561,9 +562,9 @@ export const products: Product[] = [
     priceFrom: PRICE_TODO,
     priceNote: "",
     image: "/images/bed-surava-arve.jpg",
-    imageAlt: "Bettrahmen Surava von Sponda in hellem Holz, Schlafzimmer mit rundem Kopfteil",
+    imageAlt: "Bettrahmen Bondo von Sponda in hellem Holz, Schlafzimmer mit rundem Kopfteil",
     cardImage: "/images/bed-surava.jpg",
-    cardImageAlt: "Bettrahmen Surava von Sponda am Bergsee",
+    cardImageAlt: "Bettrahmen Bondo von Sponda am Bergsee",
     cardImageFit: "cover",
     imageLayout: "sheet",
     gallery: [
@@ -611,7 +612,8 @@ export const products: Product[] = [
     image: "/images/bed-lavin-prospekt.jpg",
     imageAlt: "Sponda Lavin – komplette Prospektseite, Ast-Eiche schwebend",
     cardImage: "/images/bed-lavin.jpg",
-    cardImageAlt: "Bettrahmen Lavin von Sponda in Ast-Eiche",
+    cardImageAlt: "Bettrahmen Lavin von Sponda in der Alpenwiese",
+    cardImageFit: "cover",
     imageLayout: "sheet",
     gallery: ["/images/bed-lavin-prospekt.jpg"],
     specs: [
@@ -653,7 +655,9 @@ export const products: Product[] = [
     image: "/images/bed-lain-prospekt.jpg",
     imageAlt: "Sponda Lain – komplette Prospektseite, massiver Nussbaum mit gerundeten Ecken",
     cardImage: "/images/bed-lain.jpg",
-    cardImageAlt: "Bettrahmen Lain von Sponda in Nussbaum",
+    cardImageAlt: "Bettrahmen Lain von Sponda unter der Arve, Alpen",
+    cardImageFit: "cover",
+    cardImagePosition: "object-[center_72%]",
     imageLayout: "sheet",
     gallery: ["/images/bed-lain-prospekt.jpg"],
     specs: [
@@ -916,7 +920,7 @@ export const products: Product[] = [
   },
 ];
 
-export const featuredSlugs = ["jana", "surava", "lain", "lavin"] as const;
+export const featuredSlugs = ["jana", "bondo", "lain", "lavin"] as const;
 
 export const brands = [
   {
@@ -1037,7 +1041,7 @@ export const about = {
     },
     {
       title: "Sponda Massivholz",
-      text: "Jana, Lavin, Surava und Lain – gefertigt in Trimmis, beraten in St. Gallen.",
+      text: "Jana, Lavin, Bondo und Lain – gefertigt in Trimmis, beraten in St. Gallen.",
       href: "/betten/massivholz",
     },
     {
@@ -1377,17 +1381,17 @@ export const bedTopics = [
     label: "Bettrahmen aus Massivholz",
     eyebrow: "Sponda · Trimmis GR",
     title: "Bettrahmen aus Massivholz",
-    lede: "Sponda fertigt in Trimmis. Bei Naturland in St. Gallen: Jana, Lavin, Surava und Lain – plus Möbel nach Mass.",
+    lede: "Sponda fertigt in Trimmis. Bei Naturland in St. Gallen: Jana, Lavin, Bondo und Lain – plus Möbel nach Mass.",
     image: "/images/bed-bever.jpg",
     imageAlt: "Bettrahmen Jana von Sponda in Kernbuche",
-    body: "Vier Bettrahmen von Sponda: Jana, Lavin, Surava und Lain. Fertigung in Trimmis, Beratung und Verkauf in St. Gallen – geölt, oft metallfrei, nach Mass.",
+    body: "Vier Bettrahmen von Sponda: Jana, Lavin, Bondo und Lain. Fertigung in Trimmis, Beratung und Verkauf in St. Gallen – geölt, oft metallfrei, nach Mass.",
     paragraphs: [
-      "Die Massivholzrahmen bei Naturland kommen von Sponda in Trimmis. Wir führen vier Gestelle: Jana, Lavin, Surava und Lain. Sponda fertigt nach Mass. Wir stimmen Holz, Grösse und das fanello-Schlafsystem im Liegen ab – im Laden am Gallusplatz.",
-      "Jana ist das klare Gestell mit metallfreien Zinken. Lavin schwebt in Ast-Eiche, mit steckbarer Rückwand. Surava hat das hohe Kopfteil und die gerundeten Simse. Lain ist Nussbaum, mit gerundeten Ecken. Andere heimische Hölzer sind möglich.",
+      "Die Massivholzrahmen bei Naturland kommen von Sponda in Trimmis. Wir führen vier Gestelle: Jana, Lavin, Bondo und Lain. Sponda fertigt nach Mass. Wir stimmen Holz, Grösse und das fanello-Schlafsystem im Liegen ab – im Laden am Gallusplatz.",
+      "Jana ist das klare Gestell mit metallfreien Zinken. Lavin schwebt in Ast-Eiche, mit steckbarer Rückwand. Bondo hat das hohe Kopfteil und die gerundeten Simse. Lain ist Nussbaum, mit gerundeten Ecken. Andere heimische Hölzer sind möglich.",
       "Dazu Nachttische, Kommoden und Schränke nach Mass. Im Laden greifen Sie das Holz, bevor Sie bestellen.",
     ],
     points: [
-      "Jana, Lavin, Surava, Lain – Sponda, Trimmis GR",
+      "Jana, Lavin, Bondo, Lain – Sponda, Trimmis GR",
       "Kernbuche, Ast-Eiche, Nussbaum und andere heimische Hölzer",
       "Metallfreie Verbindungen möglich",
       "Biologisch geölte Oberfläche",
@@ -1395,12 +1399,12 @@ export const bedTopics = [
       "Abgestimmt auf Ihr fanello-Schlafsystem",
     ],
     description:
-      "Vier Bettrahmen von Sponda aus Trimmis: Jana, Lavin, Surava und Lain. Naturland führt sie in St. Gallen – Holz, Mass und Schlafsystem im Liegen. Nachttische und Schränke nach Mass.",
+      "Vier Bettrahmen von Sponda aus Trimmis: Jana, Lavin, Bondo und Lain. Naturland führt sie in St. Gallen – Holz, Mass und Schlafsystem im Liegen. Nachttische und Schränke nach Mass.",
     priceFrom: PRICE_TODO,
     priceNote: "",
     specs: [
       { label: "Hersteller", value: "Sponda, Trimmis GR" },
-      { label: "Modelle", value: "Jana, Lavin, Surava, Lain" },
+      { label: "Modelle", value: "Jana, Lavin, Bondo, Lain" },
       { label: "Hölzer", value: "Kernbuche, Ast-Eiche, Nussbaum; weitere heimische Hölzer auf Wunsch" },
       { label: "Verbindungen", value: "Metallfrei möglich, klassische Beschläge auf Wunsch" },
       { label: "Oberfläche", value: "Biologisch geölt" },
@@ -1414,7 +1418,7 @@ export const bedTopics = [
     sections: [
       {
         title: "Vier Gestelle",
-        text: "Jana: klares Gestell, metallfreie Zinken, Höhe 46 cm. Lavin: Ast-Eiche, schwebend, steckbare Rückwand. Surava: hohes Kopfteil, gerundete Simse. Lain: Nussbaum, gerundete Ecken, Kopfteil 70 cm. Masse und Holz stimmen wir im Laden ab.",
+        text: "Jana: klares Gestell, metallfreie Zinken, Höhe 46 cm. Lavin: Ast-Eiche, schwebend, steckbare Rückwand. Bondo: hohes Kopfteil, gerundete Simse. Lain: Nussbaum, gerundete Ecken, Kopfteil 70 cm. Masse und Holz stimmen wir im Laden ab.",
       },
       {
         title: "Holz das man greift",
@@ -1426,7 +1430,7 @@ export const bedTopics = [
       },
       {
         title: "Nach Mass",
-        text: "Überlängen, Sonderbreiten, integrierte Ablagen: der Rahmen wird nach Mass auf den Raum angefertigt. Im Laden am Gallusplatz sehen Sie Jana, Lavin, Surava und Lain. Preise inklusive Lieferung und Montage – andere Grössen sind möglich.",
+        text: "Überlängen, Sonderbreiten, integrierte Ablagen: der Rahmen wird nach Mass auf den Raum angefertigt. Im Laden am Gallusplatz sehen Sie Jana, Lavin, Bondo und Lain. Preise inklusive Lieferung und Montage – andere Grössen sind möglich.",
       },
     ],
     steps: [
