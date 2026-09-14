@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useReducedMotion } from "motion/react";
 import { motion } from "motion/react";
 import { images, site } from "@/content/site";
 import { Button } from "@/components/ui/Button";
@@ -10,8 +9,6 @@ import { shellPad } from "@/components/ui/Container";
 import { cn } from "@/lib/cn";
 
 export function Hero() {
-  const reduce = useReducedMotion();
-
   return (
     <section className="relative h-[100svh] min-h-[640px] overflow-hidden">
       <Image
@@ -36,7 +33,7 @@ export function Hero() {
       >
         <motion.p
           className="label text-bronze"
-          initial={reduce ? false : { opacity: 0, y: 12 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: easeOut }}
         >
@@ -46,7 +43,7 @@ export function Hero() {
         <h1 className="display mt-5 max-w-[9.5em] text-[clamp(2.05rem,5.4vw,6.4rem)] text-ink [text-shadow:0_2px_28px_rgb(239_224_200_/_0.95)]">
           <motion.span
             className="block"
-            initial={reduce ? false : { opacity: 0, y: 18 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.08, duration: 0.8, ease: easeOut }}
           >
@@ -54,7 +51,7 @@ export function Hero() {
           </motion.span>
           <motion.span
             className="block"
-            initial={reduce ? false : { opacity: 0, y: 18 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.18, duration: 0.8, ease: easeOut }}
           >
@@ -64,7 +61,7 @@ export function Hero() {
 
         <motion.p
           className="lede mt-7 max-w-xl text-charcoal"
-          initial={reduce ? false : { opacity: 0 }}
+          initial={false}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.35, duration: 0.8, ease: easeOut }}
         >
@@ -74,7 +71,7 @@ export function Hero() {
 
         <motion.div
           className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
-          initial={reduce ? false : { opacity: 0, y: 12 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.48, duration: 0.7, ease: easeOut }}
         >
