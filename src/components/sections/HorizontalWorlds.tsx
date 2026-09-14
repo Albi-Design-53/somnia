@@ -17,8 +17,8 @@ const worlds = [
   },
   {
     n: "02",
-    title: "Bettrahmen",
-    text: "Bever, Lavin, Surava, Lain – Massivholz von Sponda.",
+    title: "Bettrahmen, Schlafzimmermöbel",
+    text: "Schweizerische Handwerkskunst",
     href: "/produkte#betten",
     image: "/images/welt-bettrahmen.jpg",
     fit: "cover" as const,
@@ -28,11 +28,12 @@ const worlds = [
   {
     n: "03",
     title: "Wohnen",
-    text: "Decken, Kissen, Bettwäsche – natürliche Textilien.",
+    text: "Decken, Kissen, Auflagen, Bettwäsche",
     href: "/produkte#wohnen",
-    image: "/images/welt-wohnen-kissen.png",
-    fit: "contain" as const,
-    frame: "aspect-[3/2]",
+    image: "/images/welt-wohnen.jpg",
+    fit: "cover" as const,
+    frame: "aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]",
+    position: "object-center",
   },
 ];
 
