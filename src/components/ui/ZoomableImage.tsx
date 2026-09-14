@@ -25,6 +25,7 @@ type ZoomableImageProps = {
   width?: number;
   height?: number;
   decoding?: "async" | "auto" | "sync";
+  unoptimized?: boolean;
 };
 
 export function ZoomableImage({
@@ -38,6 +39,7 @@ export function ZoomableImage({
   width,
   height,
   decoding,
+  unoptimized,
 }: ZoomableImageProps) {
   const labelId = useId();
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -198,6 +200,7 @@ export function ZoomableImage({
             fill
             priority={priority}
             quality={quality}
+            unoptimized={unoptimized}
             sizes={sizes}
             className={className}
           />

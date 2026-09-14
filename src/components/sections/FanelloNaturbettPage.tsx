@@ -38,6 +38,7 @@ export function FanelloNaturbettPage() {
                   alt={page.heroAlt}
                   fill
                   priority
+                  unoptimized
                   quality={100}
                   className="object-contain object-center p-4 sm:p-6"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -94,6 +95,7 @@ export function FanelloNaturbettPage() {
                       src={layer.image}
                       alt={layer.imageAlt}
                       fill
+                      unoptimized
                       quality={100}
                       className={
                         "imageTone" in layer && layer.imageTone === "dark"
