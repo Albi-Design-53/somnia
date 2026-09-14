@@ -9,6 +9,16 @@ export const metadata: Metadata = {
   title: "Bettrahmen",
   description:
     "Bever, Surava, Lain und Lavin von Sponda – Massivholzrahmen, gefertigt in Trimmis, bei Naturland in St. Gallen.",
+  keywords: [
+    "Naturland",
+    "Bettrahmen",
+    "Sponda",
+    "Bever",
+    "Surava",
+    "Lain",
+    "Lavin",
+    "St. Gallen",
+  ],
 };
 
 export default function BettenPage() {
