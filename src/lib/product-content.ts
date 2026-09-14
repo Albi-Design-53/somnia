@@ -190,7 +190,7 @@ export function productToContent(product: Product): ProductPageContent {
     })),
     specs: withGarantie(publishedSpecs(product.specs), product.kind, product.slug),
     priceFrom: isMissingValue(product.priceFrom)
-      ? "Preis in der Beratung"
+      ? "Preise auf Anfrage"
       : product.priceFrom,
     priceNote: product.priceNote ?? DEFAULT_PRICE_NOTE,
     priceGuide: dueGuide(product.slug),
@@ -265,7 +265,7 @@ export function topicToContent(topic: Topic): ProductPageContent {
     })),
     specs: withGarantie(publishedSpecs([...topic.specs]), "topic", topic.slug),
     priceFrom: isMissingValue(topic.priceFrom)
-      ? "Preis in der Beratung"
+      ? "Preise auf Anfrage"
       : topic.priceFrom,
     priceNote: topic.priceNote,
     priceGuide: topic.slug === "mobiles-bettenstudio" ? null : dueGuide(topic.slug),
