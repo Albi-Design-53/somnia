@@ -82,6 +82,92 @@ export const images = {
   lattenrost: "/images/lattenrost.png",
 } as const;
 
+/** Dedicated fanello page — copy and photos from natur-land.ch/fanello-Naturbett/ */
+export const fanelloPage = {
+  eyebrow: "fanello swiss",
+  title: "Das Schweizer Naturschlafsystem für jede Frau, jeden Mann und jedes Kind.",
+  lede: "Vier Schichten aus schadstofffreien, 100 % natürlichen Rohstoffen – hergestellt in der Schweiz. Härte und Höhe stellen wir im Liegen ein, nicht am Bildschirm.",
+  heroImage: "/images/fanello-system.jpg",
+  heroAlt:
+    "fanello Schlafsystem in vier Schichten: Einlegerahmen, Stützelement, Naturlatex-Matratze und Schurwollauflage",
+  reasonsEyebrow: "15 Gründe",
+  reasonsTitle: "Warum auf einem fanello Schlafsystem schlafen.",
+  reasons: [
+    "Schadstofffreie Materialien",
+    "100 % beste natürliche Rohstoffe",
+    "Hergestellt in der Schweiz",
+    "Schlafkomfort einstellbar",
+    "Perfekt abgestützte Wirbelsäule",
+    "Körpergerechte Matratzenstärke",
+    "Schulter- und Beckenabsenkung",
+    "Angenehm trockenes Bettklima",
+    "Geeignet für Allergiker",
+    "FSC-zertifizierte Hölzer",
+    "Baumwolle aus k.b.A.",
+    "Passt in jedes Bettgestell",
+    "Optimale Beratung",
+    "Bestes Preis-Leistungs-Verhältnis",
+    "3 × 1001 Nacht Garantie auf Stützelement und Matratze",
+  ],
+  layersEyebrow: "Vier Schichten",
+  layersTitle: "Ein System, das man öffnen und verstehen kann.",
+  layersLede:
+    "Einlegerahmen, Stützelement, Matratze, Auflage. Jede Lage hat eine Aufgabe. Zusammen tragen sie Schulter und Becken – metallfrei, erklärbar, hergestellt in der Schweiz.",
+  layers: [
+    {
+      n: "01",
+      title: "Einlegerahmen",
+      text: "Für den Einbau in jedes Bettgestell – mit oder ohne Sitzhochstellung. Auch motorisch betriebene Bein- und Kopf-/Sitzhochstellung ist möglich.",
+      image: "/images/fanello-einlegerahmen.jpg",
+      imageAlt: "fanello Einlegerahmen aus Fichtenholz",
+      extraImage: "/images/fanello-einlegerahmen-hochstellung.jpg",
+      extraAlt: "fanello Einlegerahmen mit Sitz- und Fusshochstellung",
+    },
+    {
+      n: "02",
+      title: "Stützelement",
+      kicker: "Das Herzstück des Systems",
+      text: "Je 40 Eschenholzlatten oben und unten passen sich den Körperkonturen an. Mit den verschiebbaren Naturlatex-Stützkörpern stellen wir das Stützelement punktgenau auf den Schläfer ein.",
+      image: "/images/fanello-stuetzelement.jpg",
+      imageAlt: "fanello Due Stützelement aus Eschenholzlatten",
+    },
+    {
+      n: "03",
+      title: "Matratze",
+      text: "Aus 100 % Naturlatex: hohe Punktelastizität und Formstabilität. In 7,5 cm und 10 cm Höhe. Der Baumwollbezug ist mit Reissverschluss abnehmbar und waschbar.",
+      image: "/images/fanello-matratze.jpg",
+      imageAlt: "fanello Classic Naturlatexmatratze",
+    },
+    {
+      n: "04",
+      title: "Auflage",
+      text: "Sie reguliert das Klima im Bett. Schurwolle für ein angenehm warmes, trockenes Bettklima. Lycorn aus Holz- und Maisfaser – speziell für Allergiker, waschbar.",
+      image: "/images/fanello-auflage.jpg",
+      imageAlt: "fanello Schurwollauflage mit hexagonaler Steppung",
+    },
+  ],
+  spineEyebrow: "Wirbelsäule",
+  spineTitle: "Ein perfekt gestützter Rücken mit dem fanello Schlafsystem.",
+  spineText:
+    "Schulter und Becken werden abgesenkt, die Wirbelsäule geführt – nicht weichgesackt. Härte und Höhe entstehen im Liegen, im Laden am Gallusplatz oder mit dem mobilen Bettenstudio.",
+  spineImage: "/images/fanello-ruecken.jpg",
+  spineAlt: "Seitenansicht: Wirbelsäule auf dem fanello Schlafsystem abgestützt",
+  origin: [
+    {
+      title: "Hergestellt in der Schweiz",
+      text: "fanello swiss fertigt in Fahrwangen. Naturland berät, verkauft und montiert in St. Gallen.",
+    },
+    {
+      title: "FSC-zertifizierte Hölzer",
+      text: "Esche fürs Stützelement, Fichte für den Einlegerahmen – sichtbar, nicht verkleidet.",
+    },
+    {
+      title: "Baumwolle aus k.b.A.",
+      text: "Bezüge aus kontrolliert biologischem Anbau, mit Reissverschluss, waschbar.",
+    },
+  ],
+} as const;
+
 export const benefits = [
   {
     id: "natur",

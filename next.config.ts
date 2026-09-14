@@ -3,6 +3,20 @@ import path from "path";
 
 const nextConfig: NextConfig = {
   allowedDevOrigins: ["127.0.0.1", "*.trycloudflare.com"],
+  async redirects() {
+    return [
+      {
+        source: "/fanello-naturbett",
+        destination: "/betten/fanello-naturbett",
+        permanent: false,
+      },
+      {
+        source: "/fanello-Naturbett",
+        destination: "/betten/fanello-naturbett",
+        permanent: false,
+      },
+    ];
+  },
   turbopack: {
     root: path.join(__dirname),
   },

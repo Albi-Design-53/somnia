@@ -3,7 +3,7 @@ export const productWorlds = [
     n: "01",
     title: "fanello Schlafsystem",
     text: "Das Schweizer Naturbett",
-    href: "/produkte#schichten",
+    href: "/betten/fanello-naturbett",
     image: "/images/welt-schlafsystem.jpg",
     fit: "cover" as const,
     frame: "aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]",
