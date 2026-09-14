@@ -25,14 +25,10 @@ export function ProductWorldsGrid({ className }: { className?: string }) {
                 fill
                 unoptimized
                 quality={100}
-                className={
-                  world.fit === "contain"
-                    ? "object-contain object-bottom px-5 pt-5 pb-0 transition-transform duration-700 ease-out group-hover:scale-[1.03] sm:px-6 sm:pt-6"
-                    : cn(
-                        "object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]",
-                        world.position ?? "object-[center_42%]",
-                      )
-                }
+                className={cn(
+                  "object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]",
+                  world.position ?? "object-[center_42%]",
+                )}
                 sizes="(max-width: 640px) 100vw, 33vw"
               />
             </span>
