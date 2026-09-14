@@ -54,8 +54,8 @@ export function ProductPage({ content }: { content: ProductPageContent }) {
                   <ZoomableImage
                     src={content.image}
                     alt={content.imageAlt}
-                    width={3368}
-                    height={1191}
+                    width={content.imageWidth ?? 3368}
+                    height={content.imageHeight ?? 1191}
                     decoding="async"
                     className="h-auto w-full"
                   />

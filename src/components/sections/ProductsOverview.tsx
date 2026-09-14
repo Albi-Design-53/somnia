@@ -37,7 +37,7 @@ const beds = [
     fact: "Preis in der Beratung – unverbindlich.",
     href: "/betten/surava",
     image: "/images/bed-surava.jpg",
-    imageAlt: "Bettrahmen Surava von Sponda mit seitlicher Ablage",
+    imageAlt: "Bettrahmen Surava von Sponda mit rundem Kopfteil vor Bergkulisse",
   },
   {
     n: "03",

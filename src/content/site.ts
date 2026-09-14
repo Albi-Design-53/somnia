@@ -388,6 +388,8 @@ export type Product = {
   cardImage?: string;
   cardImageAlt?: string;
   imageLayout?: "photo" | "sheet";
+  imageWidth?: number;
+  imageHeight?: number;
   gallery: string[];
   specs: { label: string; value: string }[];
   sections?: { title: string; text: string }[];
@@ -459,10 +461,12 @@ export const products: Product[] = [
     priceNote:
       "Preis nach Holzart, Mass und Ausstattung. Inkl. Lieferung und Montage – genaue Zahl in der Beratung.",
     image: "/images/bed-surava-prospekt.jpg",
-    imageAlt: "Sponda Surava – komplette Prospektseite, Kernbuche mit hohem Kopfteil",
+    imageAlt: "Bettrahmen Surava von Sponda in hellen Schlafzimmern mit Bergblick",
     cardImage: "/images/bed-surava.jpg",
-    cardImageAlt: "Bettrahmen Surava von Sponda mit hohem Kopfteil",
+    cardImageAlt: "Bettrahmen Surava von Sponda mit rundem Kopfteil vor Bergkulisse",
     imageLayout: "sheet",
+    imageWidth: 1422,
+    imageHeight: 503,
     gallery: ["/images/bed-surava-prospekt.jpg"],
     specs: [
       { label: "Hersteller", value: "Sponda, Trimmis GR" },
