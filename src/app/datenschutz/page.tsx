@@ -33,8 +33,8 @@ export default function DatenschutzPage() {
               Datenschutzgesetz.
             </p>
             <p>
-              Externe Inhalte können Karten von Google Maps umfassen. Beim Aufruf
-              können Daten an Dritte übermittelt werden.
+              Externe Inhalte können Karten von Google Maps und Filme von YouTube
+              umfassen. Beim Aufruf können Daten an Dritte übermittelt werden.
             </p>
           </div>
         </Container>

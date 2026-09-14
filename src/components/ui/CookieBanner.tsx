@@ -43,7 +43,7 @@ export function CookieBanner() {
           <div className="mx-auto flex max-w-3xl flex-col gap-5 border border-sand/80 bg-ivory/97 p-6 shadow-[0_18px_50px_-20px_rgba(61,46,34,0.35)] backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between sm:p-7">
             <p className="text-[14px] leading-relaxed text-muted">
               Wir verwenden Cookies für den Betrieb dieser Website und für
-              eingebundene Inhalte wie Google Maps. Mehr dazu in unserer{" "}
+              eingebundene Inhalte wie Google Maps und YouTube. Mehr dazu in unserer{" "}
               <Link href="/datenschutz" className="text-ink underline underline-offset-2 hover:text-bronze">
                 Datenschutzerklärung
               </Link>

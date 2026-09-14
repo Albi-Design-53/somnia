@@ -146,6 +146,14 @@ export const fanelloPage = {
       imageAlt: "fanello Schurwollauflage mit hexagonaler Steppung",
     },
   ],
+  manufacture: {
+    eyebrow: "Film",
+    title: "So wird ein fanello Stützelement hergestellt",
+    text: "Die Eschenholzlatten und die verschiebbaren Naturlatex-Stützkörper – so entsteht das Herzstück des Systems.",
+    cta: "Film ansehen",
+    watchUrl: "https://www.youtube.com/watch?v=a4QP2pQiu6I&t=2s",
+    embedUrl: "https://www.youtube-nocookie.com/embed/a4QP2pQiu6I?start=2",
+  },
   spineEyebrow: "Wirbelsäule",
   spineTitle: "Ein gestützter Rücken.",
   spineText:
