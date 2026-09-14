@@ -132,7 +132,10 @@ export function FanelloNaturbettPage() {
           </div>
 
           <Reveal delay={0.08} className="mt-16 lg:mt-20">
-            <div className="grid items-center gap-8 border-t border-sand/70 pt-12 sm:pt-14 lg:grid-cols-12 lg:gap-12 lg:pt-16">
+            <div
+              id="herstellung"
+              className="grid items-center gap-8 border-t border-sand/70 pt-12 sm:pt-14 lg:grid-cols-12 lg:gap-12 lg:pt-16"
+            >
               <div className="lg:col-span-5">
                 <Eyebrow>{page.manufacture.eyebrow}</Eyebrow>
                 <h2 className="mt-4 max-w-md font-serif text-[1.75rem] leading-[1.15] tracking-[-0.03em] sm:text-[2.05rem]">
