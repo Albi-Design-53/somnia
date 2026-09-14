@@ -971,7 +971,7 @@ export const testimonials = [
 
 export const faqs = [
   {
-    q: "Kann ich die Bettrahmen vor Ort ausprobieren?",
+    q: "Kann ich die Betten vor Ort ausprobieren?",
     a: "Ja. Unser Showroom ist dafür da. Sie können Massivholzrahmen, Natur-Boxspring, Matratzen, Topper und Lattenroste in Ruhe probeliegen – ohne Termindruck und ohne Kaufverpflichtung.",
   },
   {
