@@ -18,9 +18,16 @@ export function AboutPage() {
                 natürlichen Schlaf.
               </h1>
               <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-muted">
-                Naturland Zwiker G. u. R. ist ein Familienunternehmen. Wir
-                verkaufen und beraten persönlich: natürlichen Schlaf, im Laden
-                am Gallusplatz.
+                Unser Familienunternehmen ist seit bald 50 Jahren im
+                Einrichtungsbereich tätig und hat sich auf gesunden Schlaf
+                spezialisiert. Graziella Zwiker, die Gründerin und ausgebildete
+                Feng-Shui-Beraterin, steht nach wie vor an vorderster Front. Auf
+                Wunsch berät sie ihre Kunden gerne persönlich. Roger Zwiker
+                betreut die Kunden seit 1989 von der ersten Beratung über die
+                Lieferung bis hin zur Montage. Mit Jana Zwiker steht bereits die
+                Tochter von Roger in den Startlöchern. Als dritte Generation
+                wird sie in die Fussstapfen ihrer Grossmutter und ihres Vaters
+                treten.
               </p>
               <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
                 {about.shopInvite}
