@@ -13,11 +13,6 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import { cn } from "@/lib/cn";
 import { easeOut } from "@/lib/motion";
 
-const chapters = [
-  { n: "01", id: "betten", title: "Bettrahmen", text: "Bever, Surava, Lain, Lavin – Sponda." },
-  { n: "02", id: "schichten", title: "fanello Schlafsystem", text: "Matratze, Auflage, Lattenrost." },
-];
-
 const beds = [
   {
     n: "01",
@@ -219,62 +214,16 @@ export function ProductsOverview() {
 
   return (
     <>
-      <nav
-        aria-label="Produktkapitel"
-        className="bg-ivory pt-28 sm:pt-32 lg:pt-40"
-      >
-        <Container>
-          <ul className="grid border-t border-sand/60 sm:grid-cols-2">
-            {chapters.map((chapter, i) => (
-              <li
-                key={chapter.id}
-                className={cn(
-                  "border-b border-sand/60 sm:border-b-0",
-                  i > 0 && "sm:border-l sm:border-sand/60",
-                )}
-              >
-                <Reveal delay={i * 0.08} variant="fade">
-                  <a
-                    href={`#${chapter.id}`}
-                    className="group relative block py-9 sm:px-8 sm:py-11 lg:px-10 lg:py-14"
-                  >
-                    <span className="label text-bronze">{chapter.n}</span>
-                    <span className="mt-3 flex items-center gap-2.5">
-                      <span className="font-serif text-[1.65rem] tracking-[-0.02em] text-ink transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-1 sm:text-[1.85rem]">
-                        {chapter.title}
-                      </span>
-                      <span
-                        aria-hidden
-                        className="-translate-x-2 text-bronze opacity-0 transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:opacity-100"
-                      >
-                        →
-                      </span>
-                    </span>
-                    <span className="mt-2 block text-[14px] leading-relaxed text-muted">
-                      {chapter.text}
-                    </span>
-                    <span
-                      aria-hidden
-                      className="absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-bronze transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-x-100"
-                    />
-                  </a>
-                </Reveal>
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </nav>
-
       <section
         id="betten"
-        className="scroll-mt-24 bg-ivory py-20 sm:py-24 lg:scroll-mt-28 lg:py-32"
+        className="scroll-mt-24 bg-ivory pt-28 pb-20 sm:pt-32 sm:pb-24 lg:scroll-mt-28 lg:pt-40 lg:pb-32"
       >
         <Container>
           <Reveal>
             <Eyebrow>Bettrahmen</Eyebrow>
-            <h2 className="display-md mt-4 max-w-3xl">
+            <h1 className="display-md mt-4 max-w-3xl">
               Bettrahmen aus Graubünden.
-            </h2>
+            </h1>
             <p className="lede mt-5 max-w-2xl text-muted">
               Sponda fertigt in Trimmis. Bei Naturland in St. Gallen sehen Sie
               Bever, Lavin, Surava und Lain – Holz, Mass und Schlafsystem im
