@@ -119,6 +119,44 @@ export function FanelloNaturbettPage() {
               </Reveal>
             ))}
           </div>
+
+          <Reveal delay={0.08} className="mt-14 lg:mt-16">
+            <div
+              id="herstellung"
+              className="grid items-center gap-8 border-t border-sand/70 pt-12 sm:pt-14 lg:grid-cols-12 lg:gap-12 lg:pt-16"
+            >
+              <div className="lg:col-span-5">
+                <Eyebrow>{page.manufacture.eyebrow}</Eyebrow>
+                <h2 className="mt-4 max-w-md font-serif text-[1.75rem] leading-[1.15] tracking-[-0.03em] sm:text-[2.05rem]">
+                  {page.manufacture.title}
+                </h2>
+                <p className="mt-4 max-w-md text-[16px] leading-relaxed text-muted sm:text-[17px]">
+                  {page.manufacture.text}
+                </p>
+                <a
+                  href={page.manufacture.watchUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="label mt-6 inline-flex items-center gap-2 text-bronze transition-colors hover:text-ink"
+                >
+                  {page.manufacture.cta}
+                  <span aria-hidden>→</span>
+                  <span className="sr-only"> (YouTube, neues Tab)</span>
+                </a>
+              </div>
+              <div className="relative aspect-video overflow-hidden bg-ivory lg:col-span-7">
+                <iframe
+                  title={page.manufacture.title}
+                  src={page.manufacture.embedUrl}
+                  className="absolute inset-0 h-full w-full"
+                  loading="lazy"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </Reveal>
         </Container>
       </section>
 
