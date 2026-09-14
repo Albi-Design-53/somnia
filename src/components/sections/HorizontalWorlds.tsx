@@ -65,7 +65,7 @@ export function HorizontalWorlds() {
                     quality={100}
                     className={
                       world.fit === "contain"
-                        ? "object-contain p-6 pb-3 transition-transform duration-700 ease-out group-hover:scale-[1.03] sm:p-8 sm:pb-4"
+                        ? "object-contain object-bottom p-6 pb-0 transition-transform duration-700 ease-out group-hover:scale-[1.03] sm:p-8 sm:pb-0"
                         : "object-cover object-[center_42%] transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                     }
                     sizes="(max-width: 640px) 100vw, 33vw"
