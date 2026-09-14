@@ -7,30 +7,33 @@ import { cn } from "@/lib/cn";
 const worlds = [
   {
     n: "01",
-    title: "Fanello Schlafsystem",
-    text: "Die vier Lagen, die für jeden Menschen geeignet sind und individuell angepasst werden.",
+    title: "fanello Schlafsystem",
+    text: "Das Schweizer Naturbett",
     href: "/produkte#schichten",
-    image: "/images/welt-schlafsystem-exploded.png",
-    fit: "contain" as const,
-    frame: "aspect-[15/14]",
+    image: "/images/welt-schlafsystem.jpg",
+    fit: "cover" as const,
+    frame: "aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]",
+    position: "object-center",
   },
   {
     n: "02",
-    title: "Bettrahmen",
-    text: "Bever, Lavin, Surava, Lain – Massivholz von Sponda.",
+    title: "Bettrahmen, Schlafzimmermöbel",
+    text: "Schweizerische Handwerkskunst",
     href: "/produkte#betten",
-    image: "/images/welt-bettrahmen.png",
+    image: "/images/welt-bettrahmen.jpg",
     fit: "cover" as const,
     frame: "aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]",
+    position: "object-[38%_center]",
   },
   {
     n: "03",
-    title: "Wohnen",
-    text: "Decken, Kissen, Bettwäsche – natürliche Textilien.",
+    title: "Schlaftextilien",
+    text: "Decken, Kissen, Auflagen, Bettwäsche",
     href: "/produkte#wohnen",
-    image: "/images/welt-wohnen-kissen.png",
-    fit: "contain" as const,
-    frame: "aspect-[3/2]",
+    image: "/images/welt-wohnen.jpg",
+    fit: "cover" as const,
+    frame: "aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]",
+    position: "object-center",
   },
 ];
 
@@ -42,7 +45,7 @@ export function HorizontalWorlds() {
           <Eyebrow>Produktwelt</Eyebrow>
           <div className="mt-4 flex flex-wrap items-end justify-between gap-5">
             <h2 className="display-md max-w-3xl">
-              Alles, was Sie für guten Schlaf brauchen.
+              Alles, was Sie für einen guten Schlaf brauchen.
             </h2>
             <Link
               href="/produkte"
@@ -70,7 +73,10 @@ export function HorizontalWorlds() {
                     className={
                       world.fit === "contain"
                         ? "object-contain object-bottom px-5 pt-5 pb-0 transition-transform duration-700 ease-out group-hover:scale-[1.03] sm:px-6 sm:pt-6"
-                        : "object-cover object-[center_42%] transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                        : cn(
+                            "object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]",
+                            world.position ?? "object-[center_42%]",
+                          )
                     }
                     sizes="(max-width: 640px) 100vw, 33vw"
                   />

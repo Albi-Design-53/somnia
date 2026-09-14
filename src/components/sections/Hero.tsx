@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useReducedMotion } from "motion/react";
 import { motion } from "motion/react";
 import { images, site } from "@/content/site";
-import { Button } from "@/components/ui/Button";
 import { easeOut } from "@/lib/motion";
 import { shellPad } from "@/components/ui/Container";
 import { cn } from "@/lib/cn";
@@ -16,11 +15,11 @@ export function Hero() {
     <section className="relative h-[100svh] min-h-[640px] overflow-hidden">
       <Image
         src={images.hero}
-        alt="Helles Schlafzimmer mit Massivholz-Plattformbett, weisser Bettwäsche und warmer Holzmöbel"
+        alt="Massivholzbett vor Alpenpanorama, Fluss und natürlichem Schlafzimmer aus Holz"
         fill
         priority
-        quality={85}
-        className="object-cover object-center"
+        quality={100}
+        className="object-cover object-[center_58%]"
         sizes="100vw"
       />
       <div
@@ -71,20 +70,6 @@ export function Hero() {
           Natürliche Schlafsysteme, individuell angepasst auf Ihre
           Bedürfnisse.
         </motion.p>
-
-        <motion.div
-          className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
-          initial={reduce ? false : { opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.48, duration: 0.7, ease: easeOut }}
-        >
-          <Button href="/betten/fanello-naturbett" variant="primary">
-            Schlafsystem entdecken
-          </Button>
-          <Button href="/kontakt" variant="ghost" className="bg-ivory/70 backdrop-blur-[2px]">
-            Beratungstermin vereinbaren
-          </Button>
-        </motion.div>
       </div>
     </section>
   );

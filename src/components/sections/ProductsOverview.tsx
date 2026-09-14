@@ -15,7 +15,7 @@ import { easeOut } from "@/lib/motion";
 
 const chapters = [
   { n: "01", id: "betten", title: "Bettrahmen", text: "Bever, Surava, Lain, Lavin – Sponda." },
-  { n: "02", id: "schichten", title: "Fanello Schlafsystem", text: "Matratze, Auflage, Lattenrost." },
+  { n: "02", id: "schichten", title: "fanello Schlafsystem", text: "Matratze, Auflage, Lattenrost." },
 ];
 
 const beds = [
@@ -337,7 +337,7 @@ export function ProductsOverview() {
       >
         <Container>
           <Reveal>
-            <Eyebrow>Fanello Schlafsystem</Eyebrow>
+            <Eyebrow>fanello Schlafsystem</Eyebrow>
             <h2 className="display-md mt-4 max-w-3xl">
               Nur Matratze, Auflage oder Rost.
             </h2>

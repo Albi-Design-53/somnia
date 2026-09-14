@@ -63,7 +63,7 @@ export const site = {
   ],
 
   cta: {
-    primary: "Beratung vereinbaren",
+    primary: "Beratungstermin vereinbaren",
     href: "/kontakt",
   },
 } as const;
@@ -92,7 +92,7 @@ export const benefits = [
   {
     id: "schweiz",
     title: "Hergestellt in der Schweiz",
-    text: "Ehrliches Handwerk aus einem Schweizer Familienbetrieb.",
+    text: "Ehrliches Handwerk aus Schweizer Familienbetrieben.",
     icon: "BedDouble",
   },
   {
