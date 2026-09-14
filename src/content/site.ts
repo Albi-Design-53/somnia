@@ -207,7 +207,7 @@ export const categories = [
   {
     slug: "massivholzbetten",
     title: "Massivholzrahmen",
-    text: "Jana, Marco, Bondo, Viktoria – Massivholz von Sponda in Trimmis. Beratung und Verkauf in St. Gallen.",
+    text: "Jana, Marco, Bondo, Viktoria – Massivholz aus Trimmis. Beratung und Verkauf in St. Gallen.",
     href: "/betten/massivholz",
     image: "/images/bed-bever.jpg",
     worldImage: "/images/bed-bever.jpg",
@@ -496,14 +496,14 @@ export const products: Product[] = [
   {
     slug: "jana",
     name: "Jana",
-    category: "Bettrahmen Sponda",
+    category: "Bettrahmen",
     kind: "bett",
     excerpt:
-      "Klares Gestell aus Kernbuche, metallfreie Ecken, sichtbares Handwerk. Sponda fertigt in Graubünden – bei uns in St. Gallen.",
+      "Klares Gestell aus Kernbuche, metallfreie Ecken, sichtbares Handwerk. Gefertigt in Graubünden – bei uns in St. Gallen.",
     description:
-      "Jana ist der klare Bettrahmen: Kernbuche, Zinken an den Ecken, ohne Metall. Sponda fertigt jedes Stück in Trimmis nach Mass. Bei Naturland stimmen wir Holz, Grösse und das Schlafsystem im Liegen ab – im Laden am Gallusplatz.",
+      "Jana ist der klare Bettrahmen: Kernbuche, Zinken an den Ecken, ohne Metall. Jedes Stück wird in Trimmis nach Mass gefertigt. Bei Naturland stimmen wir Holz, Grösse und das Schlafsystem im Liegen ab – im Laden am Gallusplatz.",
     bullets: [
-      "Sponda, gefertigt in Trimmis GR",
+      "Gefertigt in Trimmis GR",
       "Abbildung in Kernbuche – andere heimische Hölzer möglich",
       "Ecken metallfrei, Zinkenverbindung",
       "Höhe 46 cm, Nachttisch passend",
@@ -513,9 +513,9 @@ export const products: Product[] = [
     priceFrom: PRICE_TODO,
     priceNote: "",
     image: "/images/bed-bever-zimmer.jpg",
-    imageAlt: "Bettrahmen Jana von Sponda in hellem Holz, Schlafzimmer mit Alpenblick",
+    imageAlt: "Bettrahmen Jana in hellem Holz, Schlafzimmer mit Alpenblick",
     cardImage: "/images/bed-bever.jpg",
-    cardImageAlt: "Bettrahmen Jana von Sponda in Kernbuche",
+    cardImageAlt: "Bettrahmen Jana in Kernbuche",
     cardImageFit: "cover",
     imageLayout: "sheet",
     imageWidth: 1024,
@@ -526,7 +526,7 @@ export const products: Product[] = [
       "/images/bed-jana-nussbaum.jpg",
     ],
     specs: [
-      { label: "Hersteller", value: "Sponda, Trimmis GR" },
+      { label: "Fertigung", value: "Trimmis GR" },
       { label: "Holz", value: "Kernbuche, geölt (Abbildung)" },
       { label: "Länge aussen", value: "Innenmass + 6,0 cm" },
       { label: "Breite aussen", value: "Innenmass + 6,5 cm" },
@@ -537,7 +537,7 @@ export const products: Product[] = [
       { label: "Absenkung", value: "16,5 cm" },
     ],
     trust: [
-      { title: "Sponda", text: "Einzelanfertigung in Trimmis. Naturland führt den Rahmen und stimmt das Schlafsystem darauf ab." },
+      { title: "Massivholz", text: "Einzelanfertigung in Trimmis. Naturland führt den Rahmen und stimmt das Schlafsystem darauf ab." },
       { title: "Metallfrei", text: "Die Ecken sind gezinkt, ohne Metall. Andere Holzarten auf Wunsch." },
       { title: "Beratung", text: "Mass, Holz und Härte entscheiden wir im Liegen – im Laden oder mit dem mobilen Studio." },
     ],
@@ -545,14 +545,14 @@ export const products: Product[] = [
   {
     slug: "bondo",
     name: "Bondo",
-    category: "Bettrahmen Sponda",
+    category: "Bettrahmen",
     kind: "bett",
     excerpt:
       "Hohes Kopfteil, gerundete Simse, Kernbuche. Der Rahmen der den Raum trägt – nach Mass aus Graubünden.",
     description:
-      "Bondo hat das hohe Kopfteil und die gerundeten Simse an den Seiten – Ein- und Ausstieg ohne Kante. Sponda fertigt in Kernbuche, auf Wunsch metallfrei. Bei Naturland wählen Sie Holz und Mass im Laden, das fanello-System liegt darin.",
+      "Bondo hat das hohe Kopfteil und die gerundeten Simse an den Seiten – Ein- und Ausstieg ohne Kante. Gefertigt in Kernbuche, auf Wunsch metallfrei. Bei Naturland wählen Sie Holz und Mass im Laden, das fanello-System liegt darin.",
     bullets: [
-      "Sponda, gefertigt in Trimmis GR",
+      "Gefertigt in Trimmis GR",
       "Abbildung in Kernbuche – andere Hölzer möglich",
       "Kopfteil 85 cm, variabel 80–90 cm",
       "Gerundete Simse, integrierte Ablage möglich",
@@ -562,9 +562,9 @@ export const products: Product[] = [
     priceFrom: PRICE_TODO,
     priceNote: "",
     image: "/images/bed-surava-arve.jpg",
-    imageAlt: "Bettrahmen Bondo von Sponda in hellem Holz, Schlafzimmer mit rundem Kopfteil",
+    imageAlt: "Bettrahmen Bondo in hellem Holz, Schlafzimmer mit rundem Kopfteil",
     cardImage: "/images/bed-surava.jpg",
-    cardImageAlt: "Bettrahmen Bondo von Sponda am Bergsee",
+    cardImageAlt: "Bettrahmen Bondo am Bergsee",
     cardImageFit: "cover",
     imageLayout: "sheet",
     gallery: [
@@ -573,7 +573,7 @@ export const products: Product[] = [
       "/images/bed-surava-nuss.jpg",
     ],
     specs: [
-      { label: "Hersteller", value: "Sponda, Trimmis GR" },
+      { label: "Fertigung", value: "Trimmis GR" },
       { label: "Holz", value: "Kernbuche, geölt (Abbildung)" },
       { label: "Länge aussen", value: "Innenmass + 6,0 cm" },
       { label: "Breite aussen", value: "Innenmass + 18,5 cm" },
@@ -585,7 +585,7 @@ export const products: Product[] = [
       { label: "Absenkung", value: "15 cm, möglich 19 cm" },
     ],
     trust: [
-      { title: "Sponda", text: "Hohes Kopfteil, Simse zum Sitzen. Fertigung in Trimmis, Verkauf und Beratung in St. Gallen." },
+      { title: "Massivholz", text: "Hohes Kopfteil, Simse zum Sitzen. Fertigung in Trimmis, Verkauf und Beratung in St. Gallen." },
       { title: "Nach Mass", text: "Höhe und Holz stimmen wir auf den Raum ab. Andere Grössen sind möglich." },
       { title: "Schlafsystem", text: "Rost, Matratze und Auflage von fanello liegen im Rahmen – abgestimmt im Liegen." },
     ],
@@ -593,14 +593,14 @@ export const products: Product[] = [
   {
     slug: "marco",
     name: "Marco",
-    category: "Bettrahmen Sponda",
+    category: "Bettrahmen",
     kind: "bett",
     excerpt:
       "Im kleinen, nahe am Inn im Unterengadin gelegenen Dorf geht man alles ein wenig gemütlicher an. Ruhe und Gemütlichkeit verspricht auch unser Modell «Marco».",
     description:
-      "Das aus Ast-Eiche gefertigte, schwebend wirkende Bett besticht durch seine klare, schlichte und zeitlose Formensprache. Die steckbaren Rückwand- und Nachttisch-Varianten ermöglichen maximale Flexibilität. Sponda fertigt in Trimmis nach Mass. Bei Naturland in St. Gallen stimmen wir Holz, Grösse und das Schlafsystem im Liegen ab.",
+      "Das aus Ast-Eiche gefertigte, schwebend wirkende Bett besticht durch seine klare, schlichte und zeitlose Formensprache. Die steckbaren Rückwand- und Nachttisch-Varianten ermöglichen maximale Flexibilität. Gefertigt in Trimmis nach Mass. Bei Naturland in St. Gallen stimmen wir Holz, Grösse und das Schlafsystem im Liegen ab.",
     bullets: [
-      "Sponda, gefertigt in Trimmis GR",
+      "Gefertigt in Trimmis GR",
       "Abbildung in Ast-Eiche – andere heimische Hölzer möglich",
       "Schwebend wirkendes Gestell",
       "Steckbare Rückwand und Nachttische",
@@ -610,9 +610,9 @@ export const products: Product[] = [
     priceFrom: PRICE_TODO,
     priceNote: "",
     image: "/images/bed-lavin-fenster.jpg",
-    imageAlt: "Bettrahmen Marco von Sponda in Eiche, Schlafzimmer mit Bergblick",
+    imageAlt: "Bettrahmen Marco in Eiche, Schlafzimmer mit Bergblick",
     cardImage: "/images/bed-lavin.jpg",
-    cardImageAlt: "Bettrahmen Marco von Sponda in der Alpenwiese",
+    cardImageAlt: "Bettrahmen Marco in der Alpenwiese",
     cardImageFit: "cover",
     imageLayout: "sheet",
     gallery: [
@@ -620,7 +620,7 @@ export const products: Product[] = [
       "/images/bed-lavin-panorama.jpg",
     ],
     specs: [
-      { label: "Hersteller", value: "Sponda, Trimmis GR" },
+      { label: "Fertigung", value: "Trimmis GR" },
       { label: "Holz", value: "Ast-Eiche, geölt (Abbildung)" },
       { label: "Länge aussen", value: "Innenmass + 6,0 cm" },
       { label: "Breite aussen", value: "Innenmass + 6,5 cm" },
@@ -631,7 +631,7 @@ export const products: Product[] = [
       { label: "Absenkung", value: "16,5 cm, möglich 20,5 cm" },
     ],
     trust: [
-      { title: "Ast-Eiche", text: "Schwebend, klar, zeitlos. Sponda fertigt in Trimmis, Naturland führt und berät in St. Gallen." },
+      { title: "Ast-Eiche", text: "Schwebend, klar, zeitlos. Gefertigt in Trimmis. Naturland führt und berät in St. Gallen." },
       { title: "Flexibel", text: "Rückwand und Nachttische steckbar – geteilt, ohne, oder als schmale Ablage am Gestell." },
       { title: "Beratung", text: "Holz, Mass und Schlafsystem stimmen wir im Liegen ab – im Laden am Gallusplatz." },
     ],
@@ -639,14 +639,14 @@ export const products: Product[] = [
   {
     slug: "viktoria",
     name: "Viktoria",
-    category: "Bettrahmen Sponda",
+    category: "Bettrahmen",
     kind: "bett",
     excerpt:
       "Idyllisch gelegen auf einer grünen Terrasse verspricht das Dorf Ruhe und Harmonie. Harmonisch und edel ist auch die Formensprache unseres Modells «Viktoria» gewählt.",
     description:
-      "Kunstvoll gefertigt aus massivem Nussbaum verspricht dieses Bett Erholung pur. Gerundete Ecken, ruhige Linie. Sponda fertigt in Trimmis nach Mass. Bei Naturland in St. Gallen stimmen wir Holz, Grösse und das Schlafsystem im Liegen ab.",
+      "Kunstvoll gefertigt aus massivem Nussbaum verspricht dieses Bett Erholung pur. Gerundete Ecken, ruhige Linie. Gefertigt in Trimmis nach Mass. Bei Naturland in St. Gallen stimmen wir Holz, Grösse und das Schlafsystem im Liegen ab.",
     bullets: [
-      "Sponda, gefertigt in Trimmis GR",
+      "Gefertigt in Trimmis GR",
       "Abbildung in Nussbaum – andere heimische Hölzer möglich",
       "Alle vier Ecken gerundet",
       "Kopfteil 70 cm, variabel 65–75 cm",
@@ -656,9 +656,9 @@ export const products: Product[] = [
     priceFrom: PRICE_TODO,
     priceNote: "",
     image: "/images/bed-lain-himmel.jpg",
-    imageAlt: "Bettrahmen Viktoria von Sponda, Schlafzimmer mit Himmelbett und Alpenblick",
+    imageAlt: "Bettrahmen Viktoria, Schlafzimmer mit Himmelbett und Alpenblick",
     cardImage: "/images/bed-lain.jpg",
-    cardImageAlt: "Bettrahmen Viktoria von Sponda unter der Arve, Alpen",
+    cardImageAlt: "Bettrahmen Viktoria unter der Arve, Alpen",
     cardImageFit: "cover",
     cardImagePosition: "object-[center_72%]",
     imageLayout: "sheet",
@@ -667,7 +667,7 @@ export const products: Product[] = [
       "/images/bed-lain-arve.jpg",
     ],
     specs: [
-      { label: "Hersteller", value: "Sponda, Trimmis GR" },
+      { label: "Fertigung", value: "Trimmis GR" },
       { label: "Holz", value: "Nussbaum, geölt (Abbildung)" },
       { label: "Länge aussen", value: "Innenmass + 9,0 cm" },
       { label: "Breite aussen", value: "Innenmass + 6,5 cm" },
@@ -679,7 +679,7 @@ export const products: Product[] = [
       { label: "Absenkung", value: "16,5 cm, möglich 20,5 cm" },
     ],
     trust: [
-      { title: "Nussbaum", text: "Massiv, geölt, gerundete Ecken. Sponda fertigt in Trimmis, Naturland führt und berät in St. Gallen." },
+      { title: "Nussbaum", text: "Massiv, geölt, gerundete Ecken. Gefertigt in Trimmis. Naturland führt und berät in St. Gallen." },
       { title: "Form", text: "Harmonisch und edel – alle vier Ecken gerundet, Höhe nach dem Raum." },
       { title: "Beratung", text: "Im Laden am Gallusplatz greifen Sie das Holz. Härte und Rost stimmen wir im Liegen ab." },
     ],
@@ -934,11 +934,6 @@ export const brands = [
     note: "Natürliche Schlafsysteme. Metallfrei. Hergestellt in der Schweiz.",
     origin: "Schweizer Manufaktur",
   },
-  {
-    name: "Sponda",
-    note: "Bettrahmen aus Massivholz. Fertigung in Trimmis GR. Bei Naturland wählen Sie Holz, Mass und Schlafsystem.",
-    origin: "Trimmis, Graubünden",
-  },
 ] as const;
 
 export const consultationPoints = [
@@ -1046,7 +1041,7 @@ export const about = {
       href: "/betten/natur-boxspringbett",
     },
     {
-      title: "Sponda Massivholz",
+      title: "Massivholzrahmen",
       text: "Jana, Marco, Bondo und Viktoria – gefertigt in Trimmis, beraten in St. Gallen.",
       href: "/betten/massivholz",
     },
@@ -1125,7 +1120,7 @@ export const contactTopics = [
   "Schlafberatung im Laden",
   "Natur-Boxspringbett",
   "Fanello Naturbett",
-  "Sponda Massivholz",
+  "Massivholzrahmen",
   "Decken und Kissen",
   "Sonstiges",
 ] as const;
@@ -1385,19 +1380,19 @@ export const bedTopics = [
   {
     slug: "massivholz",
     label: "Bettrahmen aus Massivholz",
-    eyebrow: "Sponda · Trimmis GR",
+    eyebrow: "Massivholz · Trimmis GR",
     title: "Bettrahmen aus Massivholz",
-    lede: "Sponda fertigt in Trimmis. Bei Naturland in St. Gallen: Jana, Marco, Bondo und Viktoria – plus Möbel nach Mass.",
+    lede: "Fertigung in Trimmis. Bei Naturland in St. Gallen: Jana, Marco, Bondo und Viktoria – plus Möbel nach Mass.",
     image: "/images/bed-bever.jpg",
-    imageAlt: "Bettrahmen Jana von Sponda in Kernbuche",
-    body: "Vier Bettrahmen von Sponda: Jana, Marco, Bondo und Viktoria. Fertigung in Trimmis, Beratung und Verkauf in St. Gallen – geölt, oft metallfrei, nach Mass.",
+    imageAlt: "Bettrahmen Jana in Kernbuche",
+    body: "Vier Bettrahmen: Jana, Marco, Bondo und Viktoria. Fertigung in Trimmis, Beratung und Verkauf in St. Gallen – geölt, oft metallfrei, nach Mass.",
     paragraphs: [
-      "Die Massivholzrahmen bei Naturland kommen von Sponda in Trimmis. Wir führen vier Gestelle: Jana, Marco, Bondo und Viktoria. Sponda fertigt nach Mass. Wir stimmen Holz, Grösse und das fanello-Schlafsystem im Liegen ab – im Laden am Gallusplatz.",
+      "Die Massivholzrahmen bei Naturland kommen aus Trimmis. Wir führen vier Gestelle: Jana, Marco, Bondo und Viktoria. Jedes Gestell wird nach Mass gefertigt. Wir stimmen Holz, Grösse und das fanello-Schlafsystem im Liegen ab – im Laden am Gallusplatz.",
       "Jana ist das klare Gestell mit metallfreien Zinken. Marco schwebt in Ast-Eiche, mit steckbarer Rückwand. Bondo hat das hohe Kopfteil und die gerundeten Simse. Viktoria ist Nussbaum, mit gerundeten Ecken. Andere heimische Hölzer sind möglich.",
       "Dazu Nachttische, Kommoden und Schränke nach Mass. Im Laden greifen Sie das Holz, bevor Sie bestellen.",
     ],
     points: [
-      "Jana, Marco, Bondo, Viktoria – Sponda, Trimmis GR",
+      "Jana, Marco, Bondo, Viktoria – Trimmis GR",
       "Kernbuche, Ast-Eiche, Nussbaum und andere heimische Hölzer",
       "Metallfreie Verbindungen möglich",
       "Biologisch geölte Oberfläche",
@@ -1405,11 +1400,11 @@ export const bedTopics = [
       "Abgestimmt auf Ihr fanello-Schlafsystem",
     ],
     description:
-      "Vier Bettrahmen von Sponda aus Trimmis: Jana, Marco, Bondo und Viktoria. Naturland führt sie in St. Gallen – Holz, Mass und Schlafsystem im Liegen. Nachttische und Schränke nach Mass.",
+      "Vier Bettrahmen aus Trimmis: Jana, Marco, Bondo und Viktoria. Naturland führt sie in St. Gallen – Holz, Mass und Schlafsystem im Liegen. Nachttische und Schränke nach Mass.",
     priceFrom: PRICE_TODO,
     priceNote: "",
     specs: [
-      { label: "Hersteller", value: "Sponda, Trimmis GR" },
+      { label: "Fertigung", value: "Trimmis GR" },
       { label: "Modelle", value: "Jana, Marco, Bondo, Viktoria" },
       { label: "Hölzer", value: "Kernbuche, Ast-Eiche, Nussbaum; weitere heimische Hölzer auf Wunsch" },
       { label: "Verbindungen", value: "Metallfrei möglich, klassische Beschläge auf Wunsch" },
@@ -1417,7 +1412,7 @@ export const bedTopics = [
       { label: "Anfertigung", value: "Nach Mass, inkl. Nachttisch, Kommode, Schrank" },
     ],
     trust: [
-      { title: "Sponda", text: "Massive einheimische Hölzer, in Trimmis angefertigt. Naturland verkauft und berät in St. Gallen." },
+      { title: "Massivholz", text: "Massive einheimische Hölzer, in Trimmis angefertigt. Naturland verkauft und berät in St. Gallen." },
       { title: "Bett ohne Metall", text: "Wer metallfreie Verbindungen will, bekommt sie. Wer Beschläge wünscht, auch." },
       { title: "Schlafsystem", text: "Das Gestell nimmt fanello-Rost, Matratze und Auflage auf – abgestimmt, nicht irgendwo daneben." },
     ],
@@ -1442,7 +1437,7 @@ export const bedTopics = [
     steps: [
       "Modell, Holz und Mass im Laden wählen – greifen, nicht raten.",
       "Schlafsystem dazu: Rost, Matratze, Auflage.",
-      "Nach Mass bei Sponda in Trimmis angefertigt.",
+      "Nach Mass in Trimmis angefertigt.",
       "Lieferung und Montage. Das Gestell bleibt Jahrzehnte.",
     ],
     gallery: [

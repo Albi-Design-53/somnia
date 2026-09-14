@@ -52,7 +52,7 @@ const DEFAULT_TRUST = [
   },
 ] as const;
 
-const SPONDA_SLUGS = new Set(["jana", "bondo", "viktoria", "marco"]);
+const MASSIVHOLZ_SLUGS = new Set(["jana", "bondo", "viktoria", "marco"]);
 const LAYER_SLUGS = new Set(["cloud", "origin", "lignum"]);
 
 function dueGuide(slug: string): DueGuideMode | null {
@@ -159,8 +159,8 @@ function toRelated(item: {
 export function productToContent(product: Product): ProductPageContent {
   const href = productHref(product);
 
-  const spondaSiblings = products
-    .filter((item) => SPONDA_SLUGS.has(item.slug) && item.slug !== product.slug)
+  const frameSiblings = products
+    .filter((item) => MASSIVHOLZ_SLUGS.has(item.slug) && item.slug !== product.slug)
     .map((item) => {
       const thumb = productThumb(item);
       return toRelated({
@@ -172,10 +172,10 @@ export function productToContent(product: Product): ProductPageContent {
       });
     });
 
-  const related = SPONDA_SLUGS.has(product.slug) ? spondaSiblings : [];
+  const related = MASSIVHOLZ_SLUGS.has(product.slug) ? frameSiblings : [];
 
   const imageAlt = product.imageAlt ?? `${product.name} – ${product.category}`;
-  const sponda = SPONDA_SLUGS.has(product.slug);
+  const isMassivholz = MASSIVHOLZ_SLUGS.has(product.slug);
 
   return {
     eyebrow: product.category,
@@ -205,7 +205,7 @@ export function productToContent(product: Product): ProductPageContent {
       product.kind === "matratze"
         ? { href: "/matratzen", label: "Matratzen" }
         : { href: "/produkte", label: "Produkte" },
-    relatedLayout: sponda ? "circle" : "rect",
+    relatedLayout: isMassivholz ? "circle" : "rect",
     related,
     jsonLd: productJsonLd(
       product.name,
@@ -214,9 +214,7 @@ export function productToContent(product: Product): ProductPageContent {
       href,
       product.kind === "matratze"
         ? { brand: { "@type": "Brand", name: "fanello swiss" } }
-        : sponda
-          ? { brand: { "@type": "Brand", name: "Sponda" } }
-          : {},
+        : {},
       numericPrice(product.priceFrom),
     ),
   };
@@ -240,7 +238,7 @@ export function topicToContent(topic: Topic): ProductPageContent {
   const related =
     topic.slug === "massivholz"
       ? products
-          .filter((item) => SPONDA_SLUGS.has(item.slug))
+          .filter((item) => MASSIVHOLZ_SLUGS.has(item.slug))
           .map((item) => {
             const thumb = productThumb(item);
             return {
@@ -300,7 +298,7 @@ export function topicToContent(topic: Topic): ProductPageContent {
             topic.image,
             href,
             topic.slug === "massivholz"
-              ? { brand: { "@type": "Brand", name: "Sponda" } }
+              ? {}
               : { brand: { "@type": "Brand", name: "fanello swiss" } },
             topic.slug === "massivholz" ? undefined : numericPrice(topic.priceFrom),
           ),

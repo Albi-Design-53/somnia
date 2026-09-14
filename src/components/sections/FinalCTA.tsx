@@ -12,7 +12,7 @@ export function FinalCTA() {
       <div className="hero-kenburns absolute inset-0">
         <Image
           src={images.finalCta}
-          alt="Bettrahmen Jana von Sponda – Einladung zur persönlichen Beratung"
+          alt="Bettrahmen Jana – Einladung zur persönlichen Beratung"
           fill
           className="object-cover object-center"
           sizes="100vw"

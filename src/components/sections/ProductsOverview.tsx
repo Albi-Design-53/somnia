@@ -17,43 +17,43 @@ import { easeOut } from "@/lib/motion";
 const beds = [
   {
     n: "01",
-    eyebrow: "Sponda · Kernbuche",
+    eyebrow: "Kernbuche",
     title: "Jana",
     lede: "Klares Gestell, metallfreie Zinken. Fertigung in Trimmis, Beratung in St. Gallen.",
     fact: "Preis in der Beratung – unverbindlich.",
     href: "/betten/jana",
     image: "/images/bed-bever.jpg",
-    imageAlt: "Bettrahmen Jana von Sponda in Kernbuche",
+    imageAlt: "Bettrahmen Jana in Kernbuche",
   },
   {
     n: "02",
-    eyebrow: "Sponda · hohes Kopfteil",
+    eyebrow: "Hohes Kopfteil",
     title: "Bondo",
     lede: "Gerundete Simse, hohes Kopfteil. Der Rahmen der den Raum trägt.",
     fact: "Preis in der Beratung – unverbindlich.",
     href: "/betten/bondo",
     image: "/images/bed-surava.jpg",
-    imageAlt: "Bettrahmen Bondo von Sponda am Bergsee",
+    imageAlt: "Bettrahmen Bondo am Bergsee",
   },
   {
     n: "03",
-    eyebrow: "Sponda · Nussbaum",
+    eyebrow: "Nussbaum",
     title: "Viktoria",
     lede: "Gerundete Ecken, massiver Nussbaum. Harmonisch und edel – Fertigung in Trimmis, Beratung in St. Gallen.",
     fact: "Preis in der Beratung – unverbindlich.",
     href: "/betten/viktoria",
     image: "/images/bed-lain.jpg",
-    imageAlt: "Bettrahmen Viktoria von Sponda unter der Arve, Alpen",
+    imageAlt: "Bettrahmen Viktoria unter der Arve, Alpen",
   },
   {
     n: "04",
-    eyebrow: "Sponda · Ast-Eiche",
+    eyebrow: "Ast-Eiche",
     title: "Marco",
     lede: "Schwebend, klar, zeitlos. Steckbare Rückwand und Nachttische – Fertigung in Trimmis, Beratung in St. Gallen.",
     fact: "Preis in der Beratung – unverbindlich.",
     href: "/betten/marco",
     image: "/images/bed-lavin.jpg",
-    imageAlt: "Bettrahmen Marco von Sponda in der Alpenwiese",
+    imageAlt: "Bettrahmen Marco in der Alpenwiese",
   },
 ];
 
@@ -233,7 +233,7 @@ export function ProductsOverview() {
               Bettrahmen aus Graubünden.
             </h2>
             <p className="lede mt-5 max-w-2xl text-muted">
-              Sponda fertigt in Trimmis. Bei Naturland in St. Gallen sehen Sie
+              Fertigung in Trimmis. Bei Naturland in St. Gallen sehen Sie
               Jana, Marco, Bondo und Viktoria – Holz, Mass und Schlafsystem im
               Liegen.
             </p>

@@ -8,11 +8,11 @@ import { Reveal } from "@/components/ui/Reveal";
 export const metadata: Metadata = {
   title: "Bettrahmen",
   description:
-    "Jana, Bondo, Viktoria und Marco von Sponda – Massivholzrahmen, gefertigt in Trimmis, bei Naturland in St. Gallen.",
+    "Jana, Bondo, Viktoria und Marco – Massivholzrahmen, gefertigt in Trimmis, bei Naturland in St. Gallen.",
   keywords: [
     "Naturland",
     "Bettrahmen",
-    "Sponda",
+    "Massivholz",
     "Jana",
     "Bondo",
     "Viktoria",
@@ -29,7 +29,7 @@ export default function BettenPage() {
       <Container>
         <Reveal>
           <Eyebrow>Bettrahmen</Eyebrow>
-          <h1 className="display-md mt-5 max-w-3xl">Vier Bettrahmen von Sponda.</h1>
+          <h1 className="display-md mt-5 max-w-3xl">Vier Bettrahmen aus Massivholz.</h1>
           <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-muted">
             Fertigung in Trimmis. Beratung und Verkauf in St. Gallen.
           </p>
@@ -69,7 +69,7 @@ export default function BettenPage() {
                     </div>
                     <div className="flex flex-col justify-center border-t border-sand/70 px-6 py-6 sm:px-8 sm:py-7 md:col-span-6 md:border-t-0 md:border-l">
                       <p className="label text-bronze">
-                        {String(i + 1).padStart(2, "0")} · Sponda
+                        {String(i + 1).padStart(2, "0")} · Massivholz
                       </p>
                       <h2 className="mt-2 font-serif text-[1.75rem] tracking-[-0.03em] sm:text-[1.9rem]">
                         {product.name}
