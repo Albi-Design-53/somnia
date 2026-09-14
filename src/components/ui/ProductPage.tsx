@@ -56,7 +56,7 @@ export function ProductPage({ content }: { content: ProductPageContent }) {
                   </p>
                 </Reveal>
                 {compactSheet ? (
-                  <div className="mt-8 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-2">
+                  <div className="mt-8 grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2">
                     {sheetPhotos.map((item) => (
                       <div
                         key={item.src}
@@ -69,7 +69,7 @@ export function ProductPage({ content }: { content: ProductPageContent }) {
                           unoptimized
                           quality={100}
                           className="object-cover object-center"
-                          sizes="(max-width: 640px) 100vw, 28rem"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 32rem"
                         />
                       </div>
                     ))}
