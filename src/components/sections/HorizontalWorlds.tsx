@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container, Eyebrow } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
+import { cn } from "@/lib/cn";
 
 const worlds = [
   {
@@ -11,6 +12,7 @@ const worlds = [
     href: "/produkte#schichten",
     image: "/images/welt-schlafsystem-exploded.png",
     fit: "contain" as const,
+    frame: "aspect-[15/14]",
   },
   {
     n: "02",
@@ -19,6 +21,7 @@ const worlds = [
     href: "/produkte#betten",
     image: "/images/welt-bettrahmen.png",
     fit: "cover" as const,
+    frame: "aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]",
   },
   {
     n: "03",
@@ -27,6 +30,7 @@ const worlds = [
     href: "/produkte#wohnen",
     image: "/images/welt-wohnen-kissen.png",
     fit: "contain" as const,
+    frame: "aspect-[3/2]",
   },
 ];
 
@@ -49,14 +53,14 @@ export function HorizontalWorlds() {
           </div>
         </Reveal>
 
-        <div className="mt-12 grid gap-5 sm:mt-14 sm:grid-cols-3 lg:mt-16 lg:gap-6">
+        <div className="mt-12 grid items-start gap-5 sm:mt-14 sm:grid-cols-3 lg:mt-16 lg:gap-6">
           {worlds.map((world, i) => (
             <Reveal key={world.href} delay={i * 0.06}>
               <Link
                 href={world.href}
                 className="group relative block overflow-hidden bg-cream"
               >
-                <span className="relative block aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]">
+                <span className={cn("relative block", world.frame)}>
                   <Image
                     src={world.image}
                     alt={world.title}
@@ -65,7 +69,7 @@ export function HorizontalWorlds() {
                     quality={100}
                     className={
                       world.fit === "contain"
-                        ? "object-contain object-bottom p-0 transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                        ? "object-contain object-bottom px-5 pt-5 pb-0 transition-transform duration-700 ease-out group-hover:scale-[1.03] sm:px-6 sm:pt-6"
                         : "object-cover object-[center_42%] transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                     }
                     sizes="(max-width: 640px) 100vw, 33vw"
