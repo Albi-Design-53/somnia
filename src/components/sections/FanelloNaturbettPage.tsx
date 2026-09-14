@@ -32,18 +32,20 @@ export function FanelloNaturbettPage() {
               </div>
             </Reveal>
             <Reveal delay={0.08}>
-              <div className="relative aspect-[5/4] overflow-hidden bg-ivory">
-                <ZoomableImage
-                  src={page.heroImage}
-                  alt={page.heroAlt}
-                  fill
-                  priority
-                  unoptimized
-                  quality={100}
-                  quiet
-                  className="object-contain object-center p-6 sm:p-8 lg:p-10"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
+              <div className="relative aspect-[5/4] overflow-hidden bg-ivory p-6 sm:p-8 lg:p-10">
+                <div className="relative h-full w-full">
+                  <ZoomableImage
+                    src={page.heroImage}
+                    alt={page.heroAlt}
+                    fill
+                    priority
+                    unoptimized
+                    quality={100}
+                    quiet
+                    className="object-contain object-center"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
               </div>
             </Reveal>
           </div>
@@ -85,21 +87,23 @@ export function FanelloNaturbettPage() {
               {page.layersLede}
             </p>
           </Reveal>
-          <div className="mt-12 grid items-stretch gap-6 sm:grid-cols-2 lg:mt-14 lg:gap-7">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 sm:items-stretch lg:mt-14 lg:gap-7">
             {page.layers.map((layer, i) => (
-              <Reveal key={layer.n} delay={i * 0.05} className="h-full">
-                <article className="flex h-full flex-col overflow-hidden bg-ivory">
-                  <div className="relative aspect-[16/10] bg-cream">
-                    <ZoomableImage
-                      src={layer.image}
-                      alt={layer.imageAlt}
-                      fill
-                      unoptimized
-                      quality={100}
-                      quiet
-                      className="object-contain object-center p-5 sm:p-6 lg:p-7"
-                      sizes="(max-width: 640px) 100vw, 50vw"
-                    />
+              <Reveal key={layer.n} delay={i * 0.05} className="flex min-h-full">
+                <article className="flex min-h-full w-full flex-1 flex-col overflow-hidden bg-ivory">
+                  <div className="relative aspect-[3/2] shrink-0 bg-cream p-6 sm:p-7 lg:p-8">
+                    <div className="relative h-full w-full">
+                      <ZoomableImage
+                        src={layer.image}
+                        alt={layer.imageAlt}
+                        fill
+                        unoptimized
+                        quality={100}
+                        quiet
+                        className="object-contain object-center"
+                        sizes="(max-width: 640px) 100vw, 50vw"
+                      />
+                    </div>
                   </div>
                   <div className="flex flex-1 flex-col border-t border-sand/70 px-6 py-6 sm:px-7 sm:py-7">
                     <p className="label text-bronze">{layer.n}</p>
@@ -110,7 +114,14 @@ export function FanelloNaturbettPage() {
                       <p className="mt-2 text-[13px] font-medium tracking-[0.04em] text-bronze uppercase">
                         {layer.kicker}
                       </p>
-                    ) : null}
+                    ) : (
+                      <p
+                        className="mt-2 text-[13px] font-medium tracking-[0.04em] uppercase opacity-0"
+                        aria-hidden
+                      >
+                        &nbsp;
+                      </p>
+                    )}
                     <p className="mt-3 text-[15px] leading-relaxed text-muted">
                       {layer.text}
                     </p>
@@ -120,11 +131,8 @@ export function FanelloNaturbettPage() {
             ))}
           </div>
 
-          <Reveal delay={0.08} className="mt-14 lg:mt-16">
-            <div
-              id="herstellung"
-              className="grid items-center gap-8 border-t border-sand/70 pt-12 sm:pt-14 lg:grid-cols-12 lg:gap-12 lg:pt-16"
-            >
+          <Reveal delay={0.08} className="mt-16 lg:mt-20">
+            <div className="grid items-center gap-8 border-t border-sand/70 pt-12 sm:pt-14 lg:grid-cols-12 lg:gap-12 lg:pt-16">
               <div className="lg:col-span-5">
                 <Eyebrow>{page.manufacture.eyebrow}</Eyebrow>
                 <h2 className="mt-4 max-w-md font-serif text-[1.75rem] leading-[1.15] tracking-[-0.03em] sm:text-[2.05rem]">
@@ -144,16 +152,18 @@ export function FanelloNaturbettPage() {
                   <span className="sr-only"> (YouTube, neues Tab)</span>
                 </a>
               </div>
-              <div className="relative aspect-video overflow-hidden bg-ivory lg:col-span-7">
-                <iframe
-                  title={page.manufacture.title}
-                  src={page.manufacture.embedUrl}
-                  className="absolute inset-0 h-full w-full"
-                  loading="lazy"
-                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                />
+              <div className="bg-ivory p-3 sm:p-4 lg:col-span-7">
+                <div className="relative aspect-video overflow-hidden">
+                  <iframe
+                    title={page.manufacture.title}
+                    src={page.manufacture.embedUrl}
+                    className="absolute inset-0 h-full w-full"
+                    loading="lazy"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
               </div>
             </div>
           </Reveal>
