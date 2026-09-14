@@ -9,14 +9,14 @@ import { easeLux, easeOut } from "@/lib/motion";
 const INTRO_KEY = "nl-intro-seen";
 
 export function Intro() {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
   const reduce = useReducedMotion();
 
   useEffect(() => {
     if (reduce || sessionStorage.getItem(INTRO_KEY) === "1") {
-      setVisible(false);
       return;
     }
+    setVisible(true);
     sessionStorage.setItem(INTRO_KEY, "1");
     const t = window.setTimeout(() => setVisible(false), 620);
     return () => window.clearTimeout(t);
