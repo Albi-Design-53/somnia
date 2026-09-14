@@ -35,7 +35,7 @@ export default function BettenPage() {
           </p>
         </Reveal>
 
-        <div className="mt-12 flex flex-col gap-10 lg:mt-16 lg:gap-16">
+        <div className="mt-12 flex flex-col gap-6 lg:mt-16 lg:gap-8">
           {featured.map((product, i) => {
             const image = product.cardImage ?? product.image;
             const imageAlt = product.cardImageAlt ?? product.imageAlt ?? product.name;
@@ -44,32 +44,30 @@ export default function BettenPage() {
             return (
               <Reveal key={product.slug} delay={i * 0.04}>
                 <Link href={`/betten/${product.slug}`} className="group block">
-                  <article className="overflow-hidden bg-ivory">
+                  <article className="overflow-hidden bg-ivory md:grid md:grid-cols-12 md:items-stretch">
                     <div
                       className={
                         cover
-                          ? "relative aspect-[16/10] overflow-hidden bg-cream"
-                          : "relative aspect-[16/10] bg-cream p-6 sm:p-8 lg:p-10"
+                          ? "relative aspect-[16/10] overflow-hidden bg-cream md:col-span-5 md:h-full md:min-h-[220px] md:aspect-auto"
+                          : "relative aspect-[16/10] bg-cream p-4 md:col-span-5 md:h-full md:min-h-[220px] md:aspect-auto md:p-6"
                       }
                     >
-                      <div className="relative h-full w-full">
-                        <Image
-                          src={image}
-                          alt={imageAlt}
-                          fill
-                          priority={i === 0}
-                          unoptimized
-                          quality={100}
-                          className={
-                            cover
-                              ? `object-cover ${product.cardImagePosition ?? "object-center"}`
-                              : "object-contain object-center"
-                          }
-                          sizes="100vw"
-                        />
-                      </div>
+                      <Image
+                        src={image}
+                        alt={imageAlt}
+                        fill
+                        priority={i === 0}
+                        unoptimized
+                        quality={100}
+                        className={
+                          cover
+                            ? `object-cover ${product.cardImagePosition ?? "object-center"}`
+                            : "object-contain object-center"
+                        }
+                        sizes="(max-width: 768px) 100vw, 42vw"
+                      />
                     </div>
-                    <div className="border-t border-sand/70 px-6 py-6 sm:px-8 sm:py-7">
+                    <div className="flex flex-col justify-center border-t border-sand/70 px-6 py-6 sm:px-8 sm:py-7 md:col-span-7 md:border-t-0 md:border-l">
                       <p className="label text-bronze">
                         {String(i + 1).padStart(2, "0")} · Sponda
                       </p>
