@@ -14,7 +14,8 @@ export function AboutPage() {
             <Reveal>
               <Eyebrow>Das Unternehmen</Eyebrow>
               <h1 className="display-md mt-5 max-w-xl">
-                Mutter und Sohn – seit über 40 Jahren.
+                Ein Familienunternehmen spezialisiert auf gesunden und
+                natürlichen Schlaf.
               </h1>
               <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-muted">
                 Naturland Zwiker G. u. R. ist ein Familienunternehmen. Wir
