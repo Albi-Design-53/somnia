@@ -16,11 +16,11 @@ export function Hero() {
     <section className="relative h-[100svh] min-h-[640px] overflow-hidden">
       <Image
         src={images.hero}
-        alt="Helles Schlafzimmer mit Massivholz-Plattformbett, weisser Bettwäsche und warmer Holzmöbel"
+        alt="Massivholzbett vor Alpenpanorama, Fluss und natürlichem Schlafzimmer aus Holz"
         fill
         priority
-        quality={85}
-        className="object-cover object-center"
+        quality={100}
+        className="object-cover object-[center_58%]"
         sizes="100vw"
       />
       <div
