@@ -10,9 +10,9 @@ const worlds = [
     title: "Fanello Schlafsystem",
     text: "Die vier Lagen, die für jeden Menschen geeignet sind und individuell angepasst werden.",
     href: "/produkte#schichten",
-    image: "/images/welt-schlafsystem-exploded.png",
-    fit: "contain" as const,
-    frame: "aspect-[15/14]",
+    image: "/images/welt-schlafsystem.jpg",
+    fit: "cover" as const,
+    frame: "aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]",
   },
   {
     n: "02",
