@@ -8,7 +8,7 @@ const worlds = [
   {
     n: "01",
     title: "Fanello Schlafsystem",
-    text: "Die vier Lagen, die für jeden Menschen geeignet sind und individuell angepasst werden.",
+    text: "Das Schweizer Naturbett",
     href: "/produkte#schichten",
     image: "/images/welt-schlafsystem.jpg",
     fit: "cover" as const,
