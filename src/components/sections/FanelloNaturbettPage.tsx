@@ -3,7 +3,6 @@ import { fanelloPage, site } from "@/content/site";
 import { Button } from "@/components/ui/Button";
 import { Container, Eyebrow } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
-import { FinalCTA } from "@/components/sections/FinalCTA";
 import { ZoomableImage } from "@/components/ui/ZoomableImage";
 
 export function FanelloNaturbettPage() {
@@ -150,8 +149,6 @@ export function FanelloNaturbettPage() {
           </Reveal>
         </Container>
       </section>
-
-      <FinalCTA />
     </article>
   );
 }
