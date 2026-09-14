@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { fanelloPage, site } from "@/content/site";
 import { Button } from "@/components/ui/Button";
@@ -128,27 +127,13 @@ export function FanelloNaturbettPage() {
 
       <section id="wirbelsaeule" className="scroll-mt-28 bg-ivory py-16 sm:py-20 lg:py-24">
         <Container>
-          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-            <Reveal>
-              <div className="relative aspect-[16/10] overflow-hidden bg-cream">
-                <ZoomableImage
-                  src="/images/fanello-einlegerahmen-hochstellung.jpg"
-                  alt="fanello Einlegerahmen mit Sitzhochstellung"
-                  fill
-                  quality={100}
-                  className="object-contain p-6"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-            </Reveal>
-            <Reveal delay={0.06}>
-              <Eyebrow>{page.spineEyebrow}</Eyebrow>
-              <h2 className="display-md mt-4">{page.spineTitle}</h2>
-              <p className="mt-5 text-[17px] leading-relaxed text-muted">
-                {page.spineText}
-              </p>
-            </Reveal>
-          </div>
+          <Reveal>
+            <Eyebrow>{page.spineEyebrow}</Eyebrow>
+            <h2 className="display-md mt-4 max-w-3xl">{page.spineTitle}</h2>
+            <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-muted">
+              {page.spineText}
+            </p>
+          </Reveal>
           <Reveal delay={0.08} className="mt-12 lg:mt-16">
             <div className="overflow-hidden bg-cream">
               <div className="relative aspect-[4/1] min-h-[132px] sm:min-h-[168px]">
@@ -163,37 +148,6 @@ export function FanelloNaturbettPage() {
               </div>
             </div>
           </Reveal>
-        </Container>
-      </section>
-
-      <section className="bg-cream py-16 sm:py-20 lg:py-24">
-        <Container>
-          <Reveal>
-            <Eyebrow>Herkunft</Eyebrow>
-            <h2 className="display-md mt-4 max-w-3xl">
-              Natürliche Rohstoffe, kurze Wege.
-            </h2>
-          </Reveal>
-          <div className="mt-12 grid gap-10 sm:grid-cols-3 lg:gap-14">
-            {page.origin.map((item, i) => (
-              <Reveal key={item.title} delay={i * 0.06}>
-                <article className="border-t border-sand pt-6">
-                  <h3 className="font-serif text-[1.65rem] tracking-[-0.03em]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-4 text-[16px] leading-relaxed text-muted">
-                    {item.text}
-                  </p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-          <div className="mt-14 flex flex-col gap-3 sm:flex-row">
-            <Button href={site.cta.href}>{site.cta.primary}</Button>
-            <Button href={site.contact.phone2Href} variant="ghost">
-              {site.contact.phone2Label} {site.contact.phone2}
-            </Button>
-          </div>
         </Container>
       </section>
 
