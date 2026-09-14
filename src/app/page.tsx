@@ -3,7 +3,6 @@ import { Hero } from "@/components/sections/Hero";
 import { SleepFinder } from "@/components/sections/SleepFinder";
 import { Benefits } from "@/components/sections/Benefits";
 import { HorizontalWorlds } from "@/components/sections/HorizontalWorlds";
-import { SleepExperience } from "@/components/sections/SleepExperience";
 import { Showroom } from "@/components/sections/Showroom";
 import { FAQ } from "@/components/sections/FAQ";
 
@@ -15,7 +14,6 @@ export default function Home() {
       <Benefits />
       <SleepFinder />
       <HorizontalWorlds />
-      <SleepExperience />
       <Showroom />
       <FAQ />
     </>
