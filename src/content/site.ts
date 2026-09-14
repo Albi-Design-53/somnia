@@ -519,7 +519,11 @@ export const products: Product[] = [
     imageLayout: "sheet",
     imageWidth: 1024,
     imageHeight: 719,
-    gallery: ["/images/bed-bever-zimmer.jpg"],
+    gallery: [
+      "/images/bed-bever-zimmer.jpg",
+      "/images/bed-jana-wald.jpg",
+      "/images/bed-jana-nussbaum.jpg",
+    ],
     specs: [
       { label: "Hersteller", value: "Sponda, Trimmis GR" },
       { label: "Holz", value: "Kernbuche, geölt (Abbildung)" },

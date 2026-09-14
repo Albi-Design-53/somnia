@@ -21,6 +21,11 @@ function ProductCtas() {
 export function ProductPage({ content }: { content: ProductPageContent }) {
   const extras = content.gallery.filter((item) => item.src !== content.image);
   const shots = extras.slice(0, 3);
+  const sheetPhotos = [
+    { src: content.image, alt: content.imageAlt },
+    ...extras,
+  ].slice(0, 4);
+  const compactSheet = content.imageLayout === "sheet" && sheetPhotos.length > 1;
 
   return (
     <>
@@ -50,16 +55,37 @@ export function ProductPage({ content }: { content: ProductPageContent }) {
                     {content.claim}
                   </p>
                 </Reveal>
-                <div className="relative mt-10 overflow-hidden bg-cream">
-                  <ZoomableImage
-                    src={content.image}
-                    alt={content.imageAlt}
-                    width={content.imageWidth ?? 3368}
-                    height={content.imageHeight ?? 1191}
-                    decoding="async"
-                    className="h-auto w-full"
-                  />
-                </div>
+                {compactSheet ? (
+                  <div className="mt-8 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-2">
+                    {sheetPhotos.map((item) => (
+                      <div
+                        key={item.src}
+                        className="relative aspect-[3/2] overflow-hidden bg-cream"
+                      >
+                        <ZoomableImage
+                          src={item.src}
+                          alt={item.alt}
+                          fill
+                          unoptimized
+                          quality={100}
+                          className="object-cover object-center"
+                          sizes="(max-width: 640px) 100vw, 28rem"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="relative mt-10 overflow-hidden bg-cream">
+                    <ZoomableImage
+                      src={content.image}
+                      alt={content.imageAlt}
+                      width={content.imageWidth ?? 3368}
+                      height={content.imageHeight ?? 1191}
+                      decoding="async"
+                      className="h-auto w-full"
+                    />
+                  </div>
+                )}
                 <div className="mt-10">
                   {content.priceFrom ? (
                   <div>
