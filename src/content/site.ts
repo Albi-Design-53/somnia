@@ -63,7 +63,7 @@ export const site = {
   ],
 
   cta: {
-    primary: "Beratung vereinbaren",
+    primary: "Beratungstermin vereinbaren",
     href: "/kontakt",
   },
 } as const;

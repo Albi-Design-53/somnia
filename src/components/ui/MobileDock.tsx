@@ -9,7 +9,7 @@ export function MobileDock() {
           href={site.cta.href}
           className="flex min-h-12 flex-1 items-center justify-center bg-bronze px-4 text-[12px] font-medium tracking-[0.14em] uppercase text-ivory"
         >
-          Beratung vereinbaren
+          {site.cta.primary}
         </a>
         <a
           href={site.contact.phone2Href}
