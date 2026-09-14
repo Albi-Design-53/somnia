@@ -27,7 +27,7 @@ const worlds = [
   },
   {
     n: "03",
-    title: "Wohnen",
+    title: "Schlaftextilien",
     text: "Decken, Kissen, Auflagen, Bettwäsche",
     href: "/produkte#wohnen",
     image: "/images/welt-wohnen.jpg",
