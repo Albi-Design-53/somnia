@@ -56,7 +56,7 @@ export function HorizontalWorlds() {
                 href={world.href}
                 className="group relative block overflow-hidden bg-cream"
               >
-                <span className="relative block aspect-[1/1]">
+                <span className="relative block aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]">
                   <Image
                     src={world.image}
                     alt={world.title}
@@ -65,7 +65,7 @@ export function HorizontalWorlds() {
                     quality={100}
                     className={
                       world.fit === "contain"
-                        ? "object-contain object-bottom p-6 pb-0 transition-transform duration-700 ease-out group-hover:scale-[1.03] sm:p-8 sm:pb-0"
+                        ? "object-contain object-bottom p-0 transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                         : "object-cover object-[center_42%] transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                     }
                     sizes="(max-width: 640px) 100vw, 33vw"
