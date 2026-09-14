@@ -25,6 +25,11 @@ const nextConfig: NextConfig = {
         destination: "/betten/bondo",
         permanent: true,
       },
+      {
+        source: "/betten/lain",
+        destination: "/betten/viktoria",
+        permanent: true,
+      },
     ];
   },
   turbopack: {

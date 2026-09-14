@@ -8,14 +8,14 @@ import { Reveal } from "@/components/ui/Reveal";
 export const metadata: Metadata = {
   title: "Bettrahmen",
   description:
-    "Jana, Bondo, Lain und Lavin von Sponda – Massivholzrahmen, gefertigt in Trimmis, bei Naturland in St. Gallen.",
+    "Jana, Bondo, Viktoria und Lavin von Sponda – Massivholzrahmen, gefertigt in Trimmis, bei Naturland in St. Gallen.",
   keywords: [
     "Naturland",
     "Bettrahmen",
     "Sponda",
     "Jana",
     "Bondo",
-    "Lain",
+    "Viktoria",
     "Lavin",
     "St. Gallen",
   ],

@@ -38,12 +38,12 @@ const beds = [
   {
     n: "03",
     eyebrow: "Sponda · Nussbaum",
-    title: "Lain",
+    title: "Viktoria",
     lede: "Gerundete Ecken, massiver Nussbaum. Harmonisch und edel – Fertigung in Trimmis, Beratung in St. Gallen.",
     fact: "Preis in der Beratung – unverbindlich.",
-    href: "/betten/lain",
+    href: "/betten/viktoria",
     image: "/images/bed-lain.jpg",
-    imageAlt: "Bettrahmen Lain von Sponda unter der Arve, Alpen",
+    imageAlt: "Bettrahmen Viktoria von Sponda unter der Arve, Alpen",
   },
   {
     n: "04",
@@ -234,7 +234,7 @@ export function ProductsOverview() {
             </h2>
             <p className="lede mt-5 max-w-2xl text-muted">
               Sponda fertigt in Trimmis. Bei Naturland in St. Gallen sehen Sie
-              Jana, Lavin, Bondo und Lain – Holz, Mass und Schlafsystem im
+              Jana, Lavin, Bondo und Viktoria – Holz, Mass und Schlafsystem im
               Liegen.
             </p>
           </Reveal>
