@@ -2,6 +2,12 @@ import type { NextConfig } from "next";
 import path from "path";
 
 const nextConfig: NextConfig = {
+  // Cursor Simple Browser / Cloudflare tunnels proxy the app off localhost.
+  // Without this, Next blocks HMR and JS chunks so the preview stays stale.
+  allowedDevOrigins: [
+    "127.0.0.1",
+    "*.trycloudflare.com",
+  ],
   turbopack: {
     root: path.join(__dirname),
   },
