@@ -25,6 +25,7 @@ const columns = [
   {
     title: "Service",
     links: [
+      { label: "FAQ", href: "/#faq" },
       { label: "Termin vereinbaren", href: "/kontakt" },
     ],
   },

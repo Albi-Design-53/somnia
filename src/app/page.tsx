@@ -3,6 +3,7 @@ import { Hero } from "@/components/sections/Hero";
 import { Benefits } from "@/components/sections/Benefits";
 import { HorizontalWorlds } from "@/components/sections/HorizontalWorlds";
 import { Showroom } from "@/components/sections/Showroom";
+import { FAQ } from "@/components/sections/FAQ";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Benefits />
       <HorizontalWorlds />
       <Showroom />
+      <FAQ />
     </>
   );
 }
