@@ -12,7 +12,7 @@ const worlds = [
     href: "/produkte#schichten",
     image: "/images/welt-schlafsystem-exploded.png",
     fit: "contain" as const,
-    frame: "aspect-square",
+    frame: "aspect-[15/14]",
   },
   {
     n: "02",
