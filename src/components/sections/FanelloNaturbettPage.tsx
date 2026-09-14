@@ -85,13 +85,23 @@ export function FanelloNaturbettPage() {
             {page.layers.map((layer, i) => (
               <Reveal key={layer.n} delay={i * 0.05}>
                 <article className="h-full overflow-hidden bg-ivory">
-                  <div className="relative aspect-[16/10] bg-cream">
+                  <div
+                    className={
+                      "imageTone" in layer && layer.imageTone === "dark"
+                        ? "relative aspect-[16/10] bg-[#393330]"
+                        : "relative aspect-[16/10] bg-cream"
+                    }
+                  >
                     <ZoomableImage
                       src={layer.image}
                       alt={layer.imageAlt}
                       fill
                       quality={100}
-                      className="object-contain p-6 sm:p-8"
+                      className={
+                        "imageTone" in layer && layer.imageTone === "dark"
+                          ? "object-contain p-3 sm:p-4"
+                          : "object-contain p-6 sm:p-8"
+                      }
                       sizes="(max-width: 640px) 100vw, 50vw"
                     />
                   </div>
