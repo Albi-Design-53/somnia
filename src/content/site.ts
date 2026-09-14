@@ -120,7 +120,6 @@ export const fanelloPage = {
       text: "Für den Einbau in jedes Bettgestell – mit oder ohne Sitzhochstellung. Auch motorisch betriebene Bein- und Kopf-/Sitzhochstellung ist möglich.",
       image: "/images/fanello-einlegerahmen.jpg",
       imageAlt: "fanello Einlegerahmen aus Fichtenholz mit Sitzhochstellung",
-      imageTone: "dark" as const,
       extraImage: "/images/fanello-einlegerahmen-hochstellung.jpg",
       extraAlt: "fanello Einlegerahmen mit Sitz- und Fusshochstellung",
     },
