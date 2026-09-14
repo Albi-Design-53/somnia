@@ -48,8 +48,8 @@ export default function BettenPage() {
                     <div
                       className={
                         cover
-                          ? "relative aspect-[16/10] overflow-hidden bg-cream md:col-span-5 md:h-full md:min-h-[220px] md:aspect-auto"
-                          : "relative aspect-[16/10] bg-cream p-4 md:col-span-5 md:h-full md:min-h-[220px] md:aspect-auto md:p-6"
+                          ? "relative aspect-[16/10] overflow-hidden bg-cream md:col-span-6"
+                          : "relative aspect-[16/10] bg-cream p-4 md:col-span-6 md:p-6"
                       }
                     >
                       <Image
@@ -64,10 +64,10 @@ export default function BettenPage() {
                             ? `object-cover ${product.cardImagePosition ?? "object-center"}`
                             : "object-contain object-center"
                         }
-                        sizes="(max-width: 768px) 100vw, 42vw"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
                     </div>
-                    <div className="flex flex-col justify-center border-t border-sand/70 px-6 py-6 sm:px-8 sm:py-7 md:col-span-7 md:border-t-0 md:border-l">
+                    <div className="flex flex-col justify-center border-t border-sand/70 px-6 py-6 sm:px-8 sm:py-7 md:col-span-6 md:border-t-0 md:border-l">
                       <p className="label text-bronze">
                         {String(i + 1).padStart(2, "0")} · Sponda
                       </p>
