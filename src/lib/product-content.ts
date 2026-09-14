@@ -9,6 +9,8 @@ export type ProductPageContent = {
   image: string;
   imageAlt: string;
   imageLayout?: "photo" | "sheet";
+  imageWidth?: number;
+  imageHeight?: number;
   photoCredit?: string;
   gallery: { src: string; alt: string }[];
   specs: { label: string; value: string }[];
@@ -184,6 +186,8 @@ export function productToContent(product: Product): ProductPageContent {
     image: product.image,
     imageAlt,
     imageLayout: product.imageLayout,
+    imageWidth: product.imageWidth,
+    imageHeight: product.imageHeight,
     gallery: product.gallery.map((src, i) => ({
       src,
       alt: i === 0 ? imageAlt : `${product.name}, Detail ${i + 1}`,

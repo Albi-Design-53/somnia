@@ -483,6 +483,8 @@ export type Product = {
   cardImageAlt?: string;
   cardImageFit?: "contain" | "cover";
   imageLayout?: "photo" | "sheet";
+  imageWidth?: number;
+  imageHeight?: number;
   gallery: string[];
   specs: { label: string; value: string }[];
   sections?: { title: string; text: string }[];
@@ -509,13 +511,15 @@ export const products: Product[] = [
     ],
     priceFrom: PRICE_TODO,
     priceNote: "",
-    image: "/images/bed-bever-prospekt.jpg",
-    imageAlt: "Sponda Bever – komplette Prospektseite, Kernbuche mit Schrägstellung",
+    image: "/images/bed-bever-zimmer.jpg",
+    imageAlt: "Bettrahmen Bever von Sponda in hellem Holz, Schlafzimmer mit Alpenblick",
     cardImage: "/images/bed-bever.jpg",
     cardImageAlt: "Bettrahmen Bever von Sponda in Kernbuche",
     cardImageFit: "cover",
     imageLayout: "sheet",
-    gallery: ["/images/bed-bever-prospekt.jpg"],
+    imageWidth: 1024,
+    imageHeight: 719,
+    gallery: ["/images/bed-bever-zimmer.jpg"],
     specs: [
       { label: "Hersteller", value: "Sponda, Trimmis GR" },
       { label: "Holz", value: "Kernbuche, geölt (Abbildung)" },
