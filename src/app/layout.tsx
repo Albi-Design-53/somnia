@@ -59,7 +59,7 @@ const jsonLd = {
     postalCode: "9000",
     addressCountry: "CH",
   },
-  openingHours: "Tu-Fr 14:00-18:00, Sa 10:00-16:00",
+  openingHours: "Tu-Fr 10:00-18:00, Sa 10:00-16:00",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

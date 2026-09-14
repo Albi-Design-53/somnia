@@ -1,0 +1,32 @@
+export const productWorlds = [
+  {
+    n: "01",
+    title: "fanello Schlafsystem",
+    text: "Das Schweizer Naturbett",
+    href: "/produkte#schichten",
+    image: "/images/welt-schlafsystem.jpg",
+    fit: "cover" as const,
+    frame: "aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]",
+    position: "object-center",
+  },
+  {
+    n: "02",
+    title: "Bettrahmen, Schlafzimmermöbel",
+    text: "Schweizerische Handwerkskunst",
+    href: "/produkte#betten",
+    image: "/images/welt-bettrahmen.jpg",
+    fit: "cover" as const,
+    frame: "aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]",
+    position: "object-[38%_center]",
+  },
+  {
+    n: "03",
+    title: "Schlaftextilien",
+    text: "Decken, Kissen, Auflagen, Bettwäsche",
+    href: "/produkte#wohnen",
+    image: "/images/welt-wohnen.jpg",
+    fit: "cover" as const,
+    frame: "aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]",
+    position: "object-center",
+  },
+] as const;

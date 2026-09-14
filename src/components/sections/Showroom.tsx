@@ -16,9 +16,7 @@ export function Showroom() {
                 Am Gallusplatz in St. Gallen.
               </h2>
               <p className="lede mt-6 text-muted">
-                Naturland, das Fachgeschäft für gesunden Schlaf: Massivholz,
-                Natur-Boxspring, Rost, Matratze, Auflage. Zum Liegen. Zum Greifen.
-                Zum Verstehen.
+                Naturland, das Fachgeschäft für gesunden Schlaf.
               </p>
 
               <div className="mt-12 space-y-7 text-[15px]">

@@ -15,7 +15,7 @@ import { easeOut } from "@/lib/motion";
 
 const chapters = [
   { n: "01", id: "betten", title: "Bettrahmen", text: "Bever, Surava, Lain, Lavin – Sponda." },
-  { n: "02", id: "schichten", title: "Fanello Schlafsystem", text: "Matratze, Auflage, Lattenrost." },
+  { n: "02", id: "schichten", title: "fanello Schlafsystem", text: "Matratze, Auflage, Lattenrost." },
 ];
 
 const beds = [
@@ -219,37 +219,10 @@ export function ProductsOverview() {
 
   return (
     <>
-      <section className="bg-cream pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-24">
-        <Container>
-          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            <Reveal>
-              <Eyebrow>Produkte</Eyebrow>
-              <h1 className="display-md mt-4 text-ink">Ihr Weg zum guten Schlaf.</h1>
-              <p className="lede mt-5 max-w-xl text-muted">
-                Bettrahmen aus Massivholz, ein individuell abgestimmtes
-                Schlafsystem oder nur einzelne Schichten – wählen Sie unten
-                Ihren Weg.
-              </p>
-            </Reveal>
-            <RevealImage
-              direction="right"
-              className="aspect-[5/4] w-full sm:aspect-[16/10] lg:aspect-[5/4]"
-            >
-              <Image
-                src="/images/produkte-hero-bett.jpg"
-                alt="Massivholzbett mit Meerblick, warmes Schlafzimmer mit Kommode und Textilien in Bordeaux und Salbei"
-                fill
-                unoptimized
-                quality={100}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="hero-kenburns object-cover"
-              />
-            </RevealImage>
-          </div>
-        </Container>
-      </section>
-
-      <nav aria-label="Produktkapitel" className="bg-ivory">
+      <nav
+        aria-label="Produktkapitel"
+        className="bg-ivory pt-28 sm:pt-32 lg:pt-40"
+      >
         <Container>
           <ul className="grid border-t border-sand/60 sm:grid-cols-2">
             {chapters.map((chapter, i) => (
@@ -337,7 +310,7 @@ export function ProductsOverview() {
       >
         <Container>
           <Reveal>
-            <Eyebrow>Fanello Schlafsystem</Eyebrow>
+            <Eyebrow>fanello Schlafsystem</Eyebrow>
             <h2 className="display-md mt-4 max-w-3xl">
               Nur Matratze, Auflage oder Rost.
             </h2>
