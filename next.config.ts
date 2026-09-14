@@ -8,12 +8,12 @@ const nextConfig: NextConfig = {
       {
         source: "/fanello-naturbett",
         destination: "/betten/fanello-naturbett",
-        permanent: false,
+        permanent: true,
       },
       {
         source: "/fanello-Naturbett",
         destination: "/betten/fanello-naturbett",
-        permanent: false,
+        permanent: true,
       },
     ];
   },

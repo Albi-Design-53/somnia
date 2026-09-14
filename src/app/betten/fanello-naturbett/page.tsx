@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { fanelloPage } from "@/content/site";
-import { FanelloSystemPage } from "@/components/sections/FanelloSystemPage";
+import { FanelloNaturbettPage } from "@/components/sections/FanelloNaturbettPage";
 
 export const metadata: Metadata = {
   title: "fanello Naturbett – Schweizer Schlafsystem",
@@ -13,6 +13,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function FanelloNaturbettPage() {
-  return <FanelloSystemPage />;
+export default function Page() {
+  return <FanelloNaturbettPage />;
 }
