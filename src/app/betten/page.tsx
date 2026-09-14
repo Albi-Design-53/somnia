@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { bedTopics, getFeaturedProducts, site } from "@/content/site";
-import { PageHero } from "@/components/ui/PageHero";
-import { Container } from "@/components/ui/Container";
+import { Container, Eyebrow } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { Reveal } from "@/components/ui/Reveal";
 
 export const metadata: Metadata = {
   title: "Bettrahmen",
@@ -17,14 +17,61 @@ export default function BettenPage() {
 
   return (
     <>
-      <PageHero
-        compact
-        eyebrow="Bettrahmen"
-        title="Natürliche Bettrahmen, erklärt und angepasst."
-        text="Sponda-Massivholz, fanello Naturbett, Natur-Boxspring und Heimberatung. Kein Katalogverkauf – Mutter und Sohn Graziella und Roger Zwiker nehmen sich Zeit, seit über 40 Jahren."
-        image="/images/bed-bever.jpg"
-        imageAlt="Bettrahmen Bever von Sponda in Kernbuche"
-      />
+      <section className="bg-cream pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-28">
+        <Container>
+          <Reveal>
+            <Eyebrow>Bettrahmen</Eyebrow>
+            <h1 className="display-md mt-5 max-w-3xl">Vier Bettrahmen von Sponda.</h1>
+            <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-muted">
+              Fertigung in Trimmis. Beratung und Verkauf in St. Gallen.
+            </p>
+          </Reveal>
+
+          <div className="mt-12 flex flex-col gap-10 lg:mt-16 lg:gap-16">
+            {featured.map((product, i) => {
+              const image = product.cardImage ?? product.image;
+              const imageAlt = product.cardImageAlt ?? product.imageAlt ?? product.name;
+
+              return (
+                <Reveal key={product.slug} delay={i * 0.04}>
+                  <Link href={`/betten/${product.slug}`} className="group block">
+                    <article className="overflow-hidden bg-ivory">
+                      <div className="relative aspect-[16/10] bg-cream p-6 sm:p-8 lg:p-10">
+                        <div className="relative h-full w-full">
+                          <Image
+                            src={image}
+                            alt={imageAlt}
+                            fill
+                            priority={i === 0}
+                            unoptimized
+                            quality={100}
+                            className="object-contain object-center"
+                            sizes="100vw"
+                          />
+                        </div>
+                      </div>
+                      <div className="border-t border-sand/70 px-6 py-6 sm:px-8 sm:py-7">
+                        <p className="label text-bronze">
+                          {String(i + 1).padStart(2, "0")} · Sponda
+                        </p>
+                        <h2 className="mt-2 font-serif text-[1.75rem] tracking-[-0.03em] sm:text-[1.9rem]">
+                          {product.name}
+                        </h2>
+                        <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-muted">
+                          {product.excerpt}
+                        </p>
+                        <span className="label mt-4 inline-flex text-ink transition-transform duration-300 group-hover:translate-x-1">
+                          Ansehen →
+                        </span>
+                      </div>
+                    </article>
+                  </Link>
+                </Reveal>
+              );
+            })}
+          </div>
+        </Container>
+      </section>
 
       <section className="bg-ivory py-16 sm:py-20 lg:py-24">
         <Container className="max-w-3xl">
@@ -41,40 +88,6 @@ export default function BettenPage() {
             vor Ort oder am Telefon: {site.contact.phone} und{" "}
             {site.contact.phone2}.
           </p>
-        </Container>
-
-        <Container className="mt-16 lg:mt-24">
-          <h2 className="display-md max-w-3xl">Vier Bettrahmen von Sponda.</h2>
-          <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-muted">
-            Fertigung in Trimmis. Beratung und Verkauf in St. Gallen.
-          </p>
-          <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {featured.map((product) => (
-              <Link key={product.slug} href={`/betten/${product.slug}`} className="group block">
-                <div className="relative aspect-[16/7] overflow-hidden bg-cream">
-                  <Image
-                    src={product.image}
-                    alt={product.imageAlt ?? product.name}
-                    fill
-                    unoptimized
-                    quality={100}
-                    className="object-contain"
-                    sizes="(max-width: 640px) 100vw, 33vw"
-                  />
-                </div>
-                <p className="label mt-5 text-bronze">{product.category}</p>
-                <h3 className="mt-2 font-serif text-[1.85rem] tracking-[-0.03em]">
-                  {product.name}
-                </h3>
-                <p className="mt-3 text-[15px] leading-relaxed text-muted">
-                  {product.excerpt}
-                </p>
-                <span className="label mt-4 inline-flex text-ink transition-transform duration-300 group-hover:translate-x-1">
-                  Ansehen →
-                </span>
-              </Link>
-            ))}
-          </div>
         </Container>
 
         <Container className="mt-16 space-y-24 lg:mt-24 lg:space-y-32">
