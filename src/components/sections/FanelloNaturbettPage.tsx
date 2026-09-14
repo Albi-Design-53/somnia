@@ -10,9 +10,9 @@ export function FanelloNaturbettPage() {
 
   return (
     <article>
-      <section className="bg-cream pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-36 lg:pb-24">
+      <section className="bg-cream pt-28 pb-20 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-28">
         <Container>
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-24">
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-24">
             <Reveal>
               <nav className="text-[13px] text-muted" aria-label="Pfad">
                 <Link href="/produkte" className="transition-colors hover:text-ink">
@@ -21,10 +21,10 @@ export function FanelloNaturbettPage() {
                 <span className="mx-2 text-sand">/</span>
                 <span className="text-ink">fanello Naturbett</span>
               </nav>
-              <Eyebrow className="mt-8">{page.eyebrow}</Eyebrow>
+              <Eyebrow className="mt-10">{page.eyebrow}</Eyebrow>
               <h1 className="display-md mt-5 max-w-xl">{page.title}</h1>
-              <p className="lede mt-5 max-w-xl text-muted">{page.lede}</p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <p className="lede mt-6 max-w-xl text-muted">{page.lede}</p>
+              <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Button href={site.cta.href}>{site.cta.primary}</Button>
                 <Button href="#schichten" variant="ghost">
                   Die vier Lagen
@@ -40,7 +40,8 @@ export function FanelloNaturbettPage() {
                   priority
                   unoptimized
                   quality={100}
-                  className="object-contain object-center p-4 sm:p-6"
+                  quiet
+                  className="object-contain object-center p-6 sm:p-8 lg:p-10"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
@@ -49,19 +50,21 @@ export function FanelloNaturbettPage() {
         </Container>
       </section>
 
-      <section id="gruende" className="scroll-mt-28 bg-ivory py-16 sm:py-20 lg:py-24">
+      <section id="gruende" className="scroll-mt-28 bg-ivory py-14 sm:py-16 lg:py-20">
         <Container>
           <Reveal>
             <Eyebrow>{page.reasonsEyebrow}</Eyebrow>
-            <h2 className="display-md mt-4 max-w-3xl">{page.reasonsTitle}</h2>
+            <h2 className="mt-4 max-w-2xl font-serif text-[1.75rem] leading-[1.15] tracking-[-0.03em] sm:text-[2.05rem]">
+              {page.reasonsTitle}
+            </h2>
           </Reveal>
-          <ol className="mt-12 grid gap-x-10 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
+          <ol className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3">
             {page.reasons.map((reason, i) => (
-              <li key={reason} className="flex gap-4 border-t border-sand/80 pt-4">
-                <span className="label shrink-0 text-bronze">
+              <li key={reason} className="flex gap-3.5 border-t border-sand/70 py-3 pr-6">
+                <span className="label w-6 shrink-0 text-bronze">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className="text-[15px] leading-snug text-ink">{reason}</span>
+                <span className="text-[14px] leading-snug text-ink">{reason}</span>
               </li>
             ))}
           </ol>
@@ -75,39 +78,32 @@ export function FanelloNaturbettPage() {
         <Container>
           <Reveal>
             <Eyebrow>{page.layersEyebrow}</Eyebrow>
-            <h2 className="display-md mt-4 max-w-3xl">{page.layersTitle}</h2>
-            <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-muted">
+            <h2 className="mt-4 max-w-3xl font-serif text-[1.75rem] leading-[1.15] tracking-[-0.03em] sm:text-[2.05rem] lg:text-[2.35rem]">
+              {page.layersTitle}
+            </h2>
+            <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-muted sm:text-[17px]">
               {page.layersLede}
             </p>
           </Reveal>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:gap-6">
+          <div className="mt-12 grid items-stretch gap-6 sm:grid-cols-2 lg:mt-14 lg:gap-7">
             {page.layers.map((layer, i) => (
-              <Reveal key={layer.n} delay={i * 0.05}>
-                <article className="h-full overflow-hidden bg-ivory">
-                  <div
-                    className={
-                      "imageTone" in layer && layer.imageTone === "dark"
-                        ? "relative aspect-[16/10] bg-[#393330]"
-                        : "relative aspect-[16/10] bg-cream"
-                    }
-                  >
+              <Reveal key={layer.n} delay={i * 0.05} className="h-full">
+                <article className="flex h-full flex-col overflow-hidden bg-ivory">
+                  <div className="relative aspect-[16/10] bg-cream">
                     <ZoomableImage
                       src={layer.image}
                       alt={layer.imageAlt}
                       fill
                       unoptimized
                       quality={100}
-                      className={
-                        "imageTone" in layer && layer.imageTone === "dark"
-                          ? "object-contain p-3 sm:p-4"
-                          : "object-contain p-6 sm:p-8"
-                      }
+                      quiet
+                      className="object-contain object-center p-5 sm:p-6 lg:p-7"
                       sizes="(max-width: 640px) 100vw, 50vw"
                     />
                   </div>
-                  <div className="border-t border-sand/70 px-6 py-6 sm:px-7 sm:py-7">
+                  <div className="flex flex-1 flex-col border-t border-sand/70 px-6 py-6 sm:px-7 sm:py-7">
                     <p className="label text-bronze">{layer.n}</p>
-                    <h3 className="mt-2 font-serif text-[1.85rem] tracking-[-0.03em]">
+                    <h3 className="mt-2 font-serif text-[1.75rem] tracking-[-0.03em] sm:text-[1.9rem]">
                       {layer.title}
                     </h3>
                     {"kicker" in layer && layer.kicker ? (
@@ -130,25 +126,28 @@ export function FanelloNaturbettPage() {
         <Container>
           <Reveal>
             <Eyebrow>{page.spineEyebrow}</Eyebrow>
-            <h2 className="display-md mt-4 max-w-3xl">{page.spineTitle}</h2>
-            <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-muted">
+            <h2 className="mt-4 max-w-2xl font-serif text-[1.75rem] leading-[1.15] tracking-[-0.03em] sm:text-[2.05rem]">
+              {page.spineTitle}
+            </h2>
+            <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-muted sm:text-[17px]">
               {page.spineText}
             </p>
           </Reveal>
-          <Reveal delay={0.08} className="mt-12 lg:mt-16">
-            <div className="overflow-hidden bg-cream">
-              <div className="relative aspect-[803/199]">
+          <Reveal delay={0.08} className="mt-10 lg:mt-12">
+            <figure className="bg-cream px-6 py-8 sm:px-12 sm:py-12 lg:px-16 lg:py-14">
+              <div className="relative mx-auto aspect-[803/199] max-w-4xl">
                 <ZoomableImage
                   src={page.spineImage}
                   alt={page.spineAlt}
                   fill
                   unoptimized
                   quality={100}
-                  sizes="100vw"
+                  quiet
+                  sizes="(max-width: 1024px) 100vw, 70vw"
                   className="object-contain object-center"
                 />
               </div>
-            </div>
+            </figure>
           </Reveal>
         </Container>
       </section>

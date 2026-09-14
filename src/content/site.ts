@@ -85,8 +85,8 @@ export const images = {
 /** Dedicated fanello page — copy and photos from natur-land.ch/fanello-Naturbett/ */
 export const fanelloPage = {
   eyebrow: "fanello swiss",
-  title: "Das Schweizer Naturschlafsystem für jede Frau, jeden Mann und jedes Kind.",
-  lede: "Vier Schichten aus schadstofffreien, 100 % natürlichen Rohstoffen – hergestellt in der Schweiz. Härte und Höhe stellen wir im Liegen ein, nicht am Bildschirm.",
+  title: "Das Schweizer Naturschlafsystem.",
+  lede: "Für jede Frau, jeden Mann und jedes Kind. Vier Schichten aus schadstofffreien, 100 % natürlichen Rohstoffen – hergestellt in der Schweiz. Härte und Höhe stellen wir im Liegen ein, nicht am Bildschirm.",
   heroImage: "/images/fanello-system.jpg",
   heroAlt:
     "fanello Schlafsystem in vier Schichten: Einlegerahmen, Stützelement, Naturlatex-Matratze und Schurwollauflage",
@@ -147,7 +147,7 @@ export const fanelloPage = {
     },
   ],
   spineEyebrow: "Wirbelsäule",
-  spineTitle: "Ein perfekt gestützter Rücken mit dem fanello Schlafsystem.",
+  spineTitle: "Ein gestützter Rücken.",
   spineText:
     "Schulter und Becken werden abgesenkt, die Wirbelsäule geführt – nicht weichgesackt. Härte und Höhe entstehen im Liegen, im Laden am Gallusplatz oder mit dem mobilen Bettenstudio.",
   spineImage: "/images/fanello-ruecken.jpg",
