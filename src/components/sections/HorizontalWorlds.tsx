@@ -7,7 +7,7 @@ import { cn } from "@/lib/cn";
 const worlds = [
   {
     n: "01",
-    title: "Fanello Schlafsystem",
+    title: "fanello Schlafsystem",
     text: "Das Schweizer Naturbett",
     href: "/produkte#schichten",
     image: "/images/welt-schlafsystem.jpg",
@@ -45,7 +45,7 @@ export function HorizontalWorlds() {
           <Eyebrow>Produktwelt</Eyebrow>
           <div className="mt-4 flex flex-wrap items-end justify-between gap-5">
             <h2 className="display-md max-w-3xl">
-              Alles, was Sie für guten Schlaf brauchen.
+              Alles, was Sie für einen guten Schlaf brauchen.
             </h2>
             <Link
               href="/produkte"
