@@ -13,15 +13,17 @@ const worlds = [
     image: "/images/welt-schlafsystem.jpg",
     fit: "cover" as const,
     frame: "aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]",
+    position: "object-center",
   },
   {
     n: "02",
     title: "Bettrahmen",
     text: "Bever, Lavin, Surava, Lain – Massivholz von Sponda.",
     href: "/produkte#betten",
-    image: "/images/welt-bettrahmen.png",
+    image: "/images/welt-bettrahmen.jpg",
     fit: "cover" as const,
     frame: "aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]",
+    position: "object-[38%_center]",
   },
   {
     n: "03",
@@ -70,7 +72,10 @@ export function HorizontalWorlds() {
                     className={
                       world.fit === "contain"
                         ? "object-contain object-bottom px-5 pt-5 pb-0 transition-transform duration-700 ease-out group-hover:scale-[1.03] sm:px-6 sm:pt-6"
-                        : "object-cover object-[center_42%] transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                        : cn(
+                            "object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]",
+                            world.position ?? "object-[center_42%]",
+                          )
                     }
                     sizes="(max-width: 640px) 100vw, 33vw"
                   />
