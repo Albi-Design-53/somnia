@@ -207,7 +207,7 @@ export const categories = [
   {
     slug: "massivholzbetten",
     title: "Massivholzrahmen",
-    text: "Bever, Lavin, Surava, Lain – Massivholz von Sponda in Trimmis. Beratung und Verkauf in St. Gallen.",
+    text: "Jana, Lavin, Surava, Lain – Massivholz von Sponda in Trimmis. Beratung und Verkauf in St. Gallen.",
     href: "/betten/massivholz",
     image: "/images/bed-bever.jpg",
     worldImage: "/images/bed-bever.jpg",
@@ -493,14 +493,14 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    slug: "bever",
-    name: "Bever",
+    slug: "jana",
+    name: "Jana",
     category: "Bettrahmen Sponda",
     kind: "bett",
     excerpt:
       "Klares Gestell aus Kernbuche, metallfreie Ecken, sichtbares Handwerk. Sponda fertigt in Graubünden – bei uns in St. Gallen.",
     description:
-      "Bever ist der klare Bettrahmen: Kernbuche, Zinken an den Ecken, ohne Metall. Sponda fertigt jedes Stück in Trimmis nach Mass. Bei Naturland stimmen wir Holz, Grösse und das Schlafsystem im Liegen ab – im Laden am Gallusplatz.",
+      "Jana ist der klare Bettrahmen: Kernbuche, Zinken an den Ecken, ohne Metall. Sponda fertigt jedes Stück in Trimmis nach Mass. Bei Naturland stimmen wir Holz, Grösse und das Schlafsystem im Liegen ab – im Laden am Gallusplatz.",
     bullets: [
       "Sponda, gefertigt in Trimmis GR",
       "Abbildung in Kernbuche – andere heimische Hölzer möglich",
@@ -512,9 +512,9 @@ export const products: Product[] = [
     priceFrom: PRICE_TODO,
     priceNote: "",
     image: "/images/bed-bever-zimmer.jpg",
-    imageAlt: "Bettrahmen Bever von Sponda in hellem Holz, Schlafzimmer mit Alpenblick",
+    imageAlt: "Bettrahmen Jana von Sponda in hellem Holz, Schlafzimmer mit Alpenblick",
     cardImage: "/images/bed-bever.jpg",
-    cardImageAlt: "Bettrahmen Bever von Sponda in Kernbuche",
+    cardImageAlt: "Bettrahmen Jana von Sponda in Kernbuche",
     cardImageFit: "cover",
     imageLayout: "sheet",
     imageWidth: 1024,
@@ -907,7 +907,7 @@ export const products: Product[] = [
   },
 ];
 
-export const featuredSlugs = ["bever", "surava", "lain", "lavin"] as const;
+export const featuredSlugs = ["jana", "surava", "lain", "lavin"] as const;
 
 export const brands = [
   {
@@ -1028,7 +1028,7 @@ export const about = {
     },
     {
       title: "Sponda Massivholz",
-      text: "Bever, Lavin, Surava und Lain – gefertigt in Trimmis, beraten in St. Gallen.",
+      text: "Jana, Lavin, Surava und Lain – gefertigt in Trimmis, beraten in St. Gallen.",
       href: "/betten/massivholz",
     },
     {
@@ -1368,17 +1368,17 @@ export const bedTopics = [
     label: "Bettrahmen aus Massivholz",
     eyebrow: "Sponda · Trimmis GR",
     title: "Bettrahmen aus Massivholz",
-    lede: "Sponda fertigt in Trimmis. Bei Naturland in St. Gallen: Bever, Lavin, Surava und Lain – plus Möbel nach Mass.",
+    lede: "Sponda fertigt in Trimmis. Bei Naturland in St. Gallen: Jana, Lavin, Surava und Lain – plus Möbel nach Mass.",
     image: "/images/bed-bever.jpg",
-    imageAlt: "Bettrahmen Bever von Sponda in Kernbuche",
-    body: "Vier Bettrahmen von Sponda: Bever, Lavin, Surava und Lain. Fertigung in Trimmis, Beratung und Verkauf in St. Gallen – geölt, oft metallfrei, nach Mass.",
+    imageAlt: "Bettrahmen Jana von Sponda in Kernbuche",
+    body: "Vier Bettrahmen von Sponda: Jana, Lavin, Surava und Lain. Fertigung in Trimmis, Beratung und Verkauf in St. Gallen – geölt, oft metallfrei, nach Mass.",
     paragraphs: [
-      "Die Massivholzrahmen bei Naturland kommen von Sponda in Trimmis. Wir führen vier Gestelle: Bever, Lavin, Surava und Lain. Sponda fertigt nach Mass. Wir stimmen Holz, Grösse und das fanello-Schlafsystem im Liegen ab – im Laden am Gallusplatz.",
-      "Bever ist das klare Gestell mit metallfreien Zinken. Lavin schwebt in Ast-Eiche, mit steckbarer Rückwand. Surava hat das hohe Kopfteil und die gerundeten Simse. Lain ist Nussbaum, mit gerundeten Ecken. Andere heimische Hölzer sind möglich.",
+      "Die Massivholzrahmen bei Naturland kommen von Sponda in Trimmis. Wir führen vier Gestelle: Jana, Lavin, Surava und Lain. Sponda fertigt nach Mass. Wir stimmen Holz, Grösse und das fanello-Schlafsystem im Liegen ab – im Laden am Gallusplatz.",
+      "Jana ist das klare Gestell mit metallfreien Zinken. Lavin schwebt in Ast-Eiche, mit steckbarer Rückwand. Surava hat das hohe Kopfteil und die gerundeten Simse. Lain ist Nussbaum, mit gerundeten Ecken. Andere heimische Hölzer sind möglich.",
       "Dazu Nachttische, Kommoden und Schränke nach Mass. Im Laden greifen Sie das Holz, bevor Sie bestellen.",
     ],
     points: [
-      "Bever, Lavin, Surava, Lain – Sponda, Trimmis GR",
+      "Jana, Lavin, Surava, Lain – Sponda, Trimmis GR",
       "Kernbuche, Ast-Eiche, Nussbaum und andere heimische Hölzer",
       "Metallfreie Verbindungen möglich",
       "Biologisch geölte Oberfläche",
@@ -1386,12 +1386,12 @@ export const bedTopics = [
       "Abgestimmt auf Ihr fanello-Schlafsystem",
     ],
     description:
-      "Vier Bettrahmen von Sponda aus Trimmis: Bever, Lavin, Surava und Lain. Naturland führt sie in St. Gallen – Holz, Mass und Schlafsystem im Liegen. Nachttische und Schränke nach Mass.",
+      "Vier Bettrahmen von Sponda aus Trimmis: Jana, Lavin, Surava und Lain. Naturland führt sie in St. Gallen – Holz, Mass und Schlafsystem im Liegen. Nachttische und Schränke nach Mass.",
     priceFrom: PRICE_TODO,
     priceNote: "",
     specs: [
       { label: "Hersteller", value: "Sponda, Trimmis GR" },
-      { label: "Modelle", value: "Bever, Lavin, Surava, Lain" },
+      { label: "Modelle", value: "Jana, Lavin, Surava, Lain" },
       { label: "Hölzer", value: "Kernbuche, Ast-Eiche, Nussbaum; weitere heimische Hölzer auf Wunsch" },
       { label: "Verbindungen", value: "Metallfrei möglich, klassische Beschläge auf Wunsch" },
       { label: "Oberfläche", value: "Biologisch geölt" },
@@ -1405,7 +1405,7 @@ export const bedTopics = [
     sections: [
       {
         title: "Vier Gestelle",
-        text: "Bever: klares Gestell, metallfreie Zinken, Höhe 46 cm. Lavin: Ast-Eiche, schwebend, steckbare Rückwand. Surava: hohes Kopfteil, gerundete Simse. Lain: Nussbaum, gerundete Ecken, Kopfteil 70 cm. Masse und Holz stimmen wir im Laden ab.",
+        text: "Jana: klares Gestell, metallfreie Zinken, Höhe 46 cm. Lavin: Ast-Eiche, schwebend, steckbare Rückwand. Surava: hohes Kopfteil, gerundete Simse. Lain: Nussbaum, gerundete Ecken, Kopfteil 70 cm. Masse und Holz stimmen wir im Laden ab.",
       },
       {
         title: "Holz das man greift",
@@ -1417,7 +1417,7 @@ export const bedTopics = [
       },
       {
         title: "Nach Mass",
-        text: "Überlängen, Sonderbreiten, integrierte Ablagen: der Rahmen wird nach Mass auf den Raum angefertigt. Im Laden am Gallusplatz sehen Sie Bever, Lavin, Surava und Lain. Preise inklusive Lieferung und Montage – andere Grössen sind möglich.",
+        text: "Überlängen, Sonderbreiten, integrierte Ablagen: der Rahmen wird nach Mass auf den Raum angefertigt. Im Laden am Gallusplatz sehen Sie Jana, Lavin, Surava und Lain. Preise inklusive Lieferung und Montage – andere Grössen sind möglich.",
       },
     ],
     steps: [

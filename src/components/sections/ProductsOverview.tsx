@@ -18,12 +18,12 @@ const beds = [
   {
     n: "01",
     eyebrow: "Sponda · Kernbuche",
-    title: "Bever",
+    title: "Jana",
     lede: "Klares Gestell, metallfreie Zinken. Fertigung in Trimmis, Beratung in St. Gallen.",
     fact: "Preis in der Beratung – unverbindlich.",
-    href: "/betten/bever",
+    href: "/betten/jana",
     image: "/images/bed-bever.jpg",
-    imageAlt: "Bettrahmen Bever von Sponda in Kernbuche",
+    imageAlt: "Bettrahmen Jana von Sponda in Kernbuche",
   },
   {
     n: "02",
@@ -234,7 +234,7 @@ export function ProductsOverview() {
             </h2>
             <p className="lede mt-5 max-w-2xl text-muted">
               Sponda fertigt in Trimmis. Bei Naturland in St. Gallen sehen Sie
-              Bever, Lavin, Surava und Lain – Holz, Mass und Schlafsystem im
+              Jana, Lavin, Surava und Lain – Holz, Mass und Schlafsystem im
               Liegen.
             </p>
           </Reveal>

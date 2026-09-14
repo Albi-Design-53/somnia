@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
         destination: "/betten/fanello-naturbett",
         permanent: true,
       },
+      {
+        source: "/betten/bever",
+        destination: "/betten/jana",
+        permanent: true,
+      },
     ];
   },
   turbopack: {

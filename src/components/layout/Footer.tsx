@@ -15,7 +15,7 @@ const columns = [
     title: "Sortiment",
     links: [
       { label: "Produkte", href: "/produkte" },
-      { label: "Bever", href: "/betten/bever" },
+      { label: "Jana", href: "/betten/jana" },
       { label: "Surava", href: "/betten/surava" },
       { label: "Lain", href: "/betten/lain" },
       { label: "Lavin", href: "/betten/lavin" },
