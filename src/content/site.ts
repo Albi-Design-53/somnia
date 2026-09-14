@@ -559,7 +559,8 @@ export const products: Product[] = [
     image: "/images/bed-surava-prospekt.jpg",
     imageAlt: "Sponda Surava – komplette Prospektseite, Kernbuche mit hohem Kopfteil",
     cardImage: "/images/bed-surava.jpg",
-    cardImageAlt: "Bettrahmen Surava von Sponda mit hohem Kopfteil",
+    cardImageAlt: "Bettrahmen Surava von Sponda am Bergsee",
+    cardImageFit: "cover",
     imageLayout: "sheet",
     gallery: ["/images/bed-surava-prospekt.jpg"],
     specs: [
