@@ -481,6 +481,7 @@ export type Product = {
   imageAlt?: string;
   cardImage?: string;
   cardImageAlt?: string;
+  cardImageFit?: "contain" | "cover";
   imageLayout?: "photo" | "sheet";
   gallery: string[];
   specs: { label: string; value: string }[];
@@ -513,6 +514,7 @@ export const products: Product[] = [
     imageAlt: "Sponda Bever – komplette Prospektseite, Kernbuche mit Schrägstellung",
     cardImage: "/images/bed-bever.jpg",
     cardImageAlt: "Bettrahmen Bever von Sponda in Kernbuche",
+    cardImageFit: "cover",
     imageLayout: "sheet",
     gallery: ["/images/bed-bever-prospekt.jpg"],
     specs: [

@@ -39,12 +39,19 @@ export default function BettenPage() {
           {featured.map((product, i) => {
             const image = product.cardImage ?? product.image;
             const imageAlt = product.cardImageAlt ?? product.imageAlt ?? product.name;
+            const cover = product.cardImageFit === "cover";
 
             return (
               <Reveal key={product.slug} delay={i * 0.04}>
                 <Link href={`/betten/${product.slug}`} className="group block">
                   <article className="overflow-hidden bg-ivory">
-                    <div className="relative aspect-[16/10] bg-cream p-6 sm:p-8 lg:p-10">
+                    <div
+                      className={
+                        cover
+                          ? "relative aspect-[16/10] overflow-hidden bg-cream"
+                          : "relative aspect-[16/10] bg-cream p-6 sm:p-8 lg:p-10"
+                      }
+                    >
                       <div className="relative h-full w-full">
                         <Image
                           src={image}
@@ -53,7 +60,11 @@ export default function BettenPage() {
                           priority={i === 0}
                           unoptimized
                           quality={100}
-                          className="object-contain object-center"
+                          className={
+                            cover
+                              ? "object-cover object-center"
+                              : "object-contain object-center"
+                          }
                           sizes="100vw"
                         />
                       </div>
