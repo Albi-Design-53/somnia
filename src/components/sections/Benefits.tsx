@@ -1,5 +1,5 @@
 import { benefits } from "@/content/site";
-import { Container, Eyebrow } from "@/components/ui/Container";
+import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
 const pillars = benefits.slice(0, 3);
@@ -9,8 +9,7 @@ export function Benefits() {
     <section className="bg-ivory py-24 lg:py-32">
       <Container>
         <Reveal>
-          <Eyebrow>Wieso Naturland</Eyebrow>
-          <h2 className="display-md mt-5 max-w-3xl">
+          <h2 className="display-md max-w-3xl">
             Guter und gesunder Schlaf aus natürlichen Materialien.
           </h2>
         </Reveal>
