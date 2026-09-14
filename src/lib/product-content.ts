@@ -52,7 +52,7 @@ const DEFAULT_TRUST = [
   },
 ] as const;
 
-const SPONDA_SLUGS = new Set(["jana", "bondo", "viktoria", "lavin"]);
+const SPONDA_SLUGS = new Set(["jana", "bondo", "viktoria", "marco"]);
 const LAYER_SLUGS = new Set(["cloud", "origin", "lignum"]);
 
 function dueGuide(slug: string): DueGuideMode | null {

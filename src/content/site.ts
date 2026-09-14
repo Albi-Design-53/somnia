@@ -207,7 +207,7 @@ export const categories = [
   {
     slug: "massivholzbetten",
     title: "Massivholzrahmen",
-    text: "Jana, Lavin, Bondo, Viktoria – Massivholz von Sponda in Trimmis. Beratung und Verkauf in St. Gallen.",
+    text: "Jana, Marco, Bondo, Viktoria – Massivholz von Sponda in Trimmis. Beratung und Verkauf in St. Gallen.",
     href: "/betten/massivholz",
     image: "/images/bed-bever.jpg",
     worldImage: "/images/bed-bever.jpg",
@@ -591,12 +591,12 @@ export const products: Product[] = [
     ],
   },
   {
-    slug: "lavin",
-    name: "Lavin",
+    slug: "marco",
+    name: "Marco",
     category: "Bettrahmen Sponda",
     kind: "bett",
     excerpt:
-      "Im kleinen, nahe am Inn im Unterengadin gelegenen Dorf geht man alles ein wenig gemütlicher an. Ruhe und Gemütlichkeit verspricht auch unser Modell «Lavin».",
+      "Im kleinen, nahe am Inn im Unterengadin gelegenen Dorf geht man alles ein wenig gemütlicher an. Ruhe und Gemütlichkeit verspricht auch unser Modell «Marco».",
     description:
       "Das aus Ast-Eiche gefertigte, schwebend wirkende Bett besticht durch seine klare, schlichte und zeitlose Formensprache. Die steckbaren Rückwand- und Nachttisch-Varianten ermöglichen maximale Flexibilität. Sponda fertigt in Trimmis nach Mass. Bei Naturland in St. Gallen stimmen wir Holz, Grösse und das Schlafsystem im Liegen ab.",
     bullets: [
@@ -610,9 +610,9 @@ export const products: Product[] = [
     priceFrom: PRICE_TODO,
     priceNote: "",
     image: "/images/bed-lavin-fenster.jpg",
-    imageAlt: "Bettrahmen Lavin von Sponda in Eiche, Schlafzimmer mit Bergblick",
+    imageAlt: "Bettrahmen Marco von Sponda in Eiche, Schlafzimmer mit Bergblick",
     cardImage: "/images/bed-lavin.jpg",
-    cardImageAlt: "Bettrahmen Lavin von Sponda in der Alpenwiese",
+    cardImageAlt: "Bettrahmen Marco von Sponda in der Alpenwiese",
     cardImageFit: "cover",
     imageLayout: "sheet",
     gallery: [
@@ -926,7 +926,7 @@ export const products: Product[] = [
   },
 ];
 
-export const featuredSlugs = ["jana", "bondo", "viktoria", "lavin"] as const;
+export const featuredSlugs = ["jana", "bondo", "viktoria", "marco"] as const;
 
 export const brands = [
   {
@@ -1047,7 +1047,7 @@ export const about = {
     },
     {
       title: "Sponda Massivholz",
-      text: "Jana, Lavin, Bondo und Viktoria – gefertigt in Trimmis, beraten in St. Gallen.",
+      text: "Jana, Marco, Bondo und Viktoria – gefertigt in Trimmis, beraten in St. Gallen.",
       href: "/betten/massivholz",
     },
     {
@@ -1387,17 +1387,17 @@ export const bedTopics = [
     label: "Bettrahmen aus Massivholz",
     eyebrow: "Sponda · Trimmis GR",
     title: "Bettrahmen aus Massivholz",
-    lede: "Sponda fertigt in Trimmis. Bei Naturland in St. Gallen: Jana, Lavin, Bondo und Viktoria – plus Möbel nach Mass.",
+    lede: "Sponda fertigt in Trimmis. Bei Naturland in St. Gallen: Jana, Marco, Bondo und Viktoria – plus Möbel nach Mass.",
     image: "/images/bed-bever.jpg",
     imageAlt: "Bettrahmen Jana von Sponda in Kernbuche",
-    body: "Vier Bettrahmen von Sponda: Jana, Lavin, Bondo und Viktoria. Fertigung in Trimmis, Beratung und Verkauf in St. Gallen – geölt, oft metallfrei, nach Mass.",
+    body: "Vier Bettrahmen von Sponda: Jana, Marco, Bondo und Viktoria. Fertigung in Trimmis, Beratung und Verkauf in St. Gallen – geölt, oft metallfrei, nach Mass.",
     paragraphs: [
-      "Die Massivholzrahmen bei Naturland kommen von Sponda in Trimmis. Wir führen vier Gestelle: Jana, Lavin, Bondo und Viktoria. Sponda fertigt nach Mass. Wir stimmen Holz, Grösse und das fanello-Schlafsystem im Liegen ab – im Laden am Gallusplatz.",
-      "Jana ist das klare Gestell mit metallfreien Zinken. Lavin schwebt in Ast-Eiche, mit steckbarer Rückwand. Bondo hat das hohe Kopfteil und die gerundeten Simse. Viktoria ist Nussbaum, mit gerundeten Ecken. Andere heimische Hölzer sind möglich.",
+      "Die Massivholzrahmen bei Naturland kommen von Sponda in Trimmis. Wir führen vier Gestelle: Jana, Marco, Bondo und Viktoria. Sponda fertigt nach Mass. Wir stimmen Holz, Grösse und das fanello-Schlafsystem im Liegen ab – im Laden am Gallusplatz.",
+      "Jana ist das klare Gestell mit metallfreien Zinken. Marco schwebt in Ast-Eiche, mit steckbarer Rückwand. Bondo hat das hohe Kopfteil und die gerundeten Simse. Viktoria ist Nussbaum, mit gerundeten Ecken. Andere heimische Hölzer sind möglich.",
       "Dazu Nachttische, Kommoden und Schränke nach Mass. Im Laden greifen Sie das Holz, bevor Sie bestellen.",
     ],
     points: [
-      "Jana, Lavin, Bondo, Viktoria – Sponda, Trimmis GR",
+      "Jana, Marco, Bondo, Viktoria – Sponda, Trimmis GR",
       "Kernbuche, Ast-Eiche, Nussbaum und andere heimische Hölzer",
       "Metallfreie Verbindungen möglich",
       "Biologisch geölte Oberfläche",
@@ -1405,12 +1405,12 @@ export const bedTopics = [
       "Abgestimmt auf Ihr fanello-Schlafsystem",
     ],
     description:
-      "Vier Bettrahmen von Sponda aus Trimmis: Jana, Lavin, Bondo und Viktoria. Naturland führt sie in St. Gallen – Holz, Mass und Schlafsystem im Liegen. Nachttische und Schränke nach Mass.",
+      "Vier Bettrahmen von Sponda aus Trimmis: Jana, Marco, Bondo und Viktoria. Naturland führt sie in St. Gallen – Holz, Mass und Schlafsystem im Liegen. Nachttische und Schränke nach Mass.",
     priceFrom: PRICE_TODO,
     priceNote: "",
     specs: [
       { label: "Hersteller", value: "Sponda, Trimmis GR" },
-      { label: "Modelle", value: "Jana, Lavin, Bondo, Viktoria" },
+      { label: "Modelle", value: "Jana, Marco, Bondo, Viktoria" },
       { label: "Hölzer", value: "Kernbuche, Ast-Eiche, Nussbaum; weitere heimische Hölzer auf Wunsch" },
       { label: "Verbindungen", value: "Metallfrei möglich, klassische Beschläge auf Wunsch" },
       { label: "Oberfläche", value: "Biologisch geölt" },
@@ -1424,7 +1424,7 @@ export const bedTopics = [
     sections: [
       {
         title: "Vier Gestelle",
-        text: "Jana: klares Gestell, metallfreie Zinken, Höhe 46 cm. Lavin: Ast-Eiche, schwebend, steckbare Rückwand. Bondo: hohes Kopfteil, gerundete Simse. Viktoria: Nussbaum, gerundete Ecken, Kopfteil 70 cm. Masse und Holz stimmen wir im Laden ab.",
+        text: "Jana: klares Gestell, metallfreie Zinken, Höhe 46 cm. Marco: Ast-Eiche, schwebend, steckbare Rückwand. Bondo: hohes Kopfteil, gerundete Simse. Viktoria: Nussbaum, gerundete Ecken, Kopfteil 70 cm. Masse und Holz stimmen wir im Laden ab.",
       },
       {
         title: "Holz das man greift",
@@ -1436,7 +1436,7 @@ export const bedTopics = [
       },
       {
         title: "Nach Mass",
-        text: "Überlängen, Sonderbreiten, integrierte Ablagen: der Rahmen wird nach Mass auf den Raum angefertigt. Im Laden am Gallusplatz sehen Sie Jana, Lavin, Bondo und Viktoria. Preise inklusive Lieferung und Montage – andere Grössen sind möglich.",
+        text: "Überlängen, Sonderbreiten, integrierte Ablagen: der Rahmen wird nach Mass auf den Raum angefertigt. Im Laden am Gallusplatz sehen Sie Jana, Marco, Bondo und Viktoria. Preise inklusive Lieferung und Montage – andere Grössen sind möglich.",
       },
     ],
     steps: [

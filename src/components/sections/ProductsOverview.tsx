@@ -48,12 +48,12 @@ const beds = [
   {
     n: "04",
     eyebrow: "Sponda · Ast-Eiche",
-    title: "Lavin",
+    title: "Marco",
     lede: "Schwebend, klar, zeitlos. Steckbare Rückwand und Nachttische – Fertigung in Trimmis, Beratung in St. Gallen.",
     fact: "Preis in der Beratung – unverbindlich.",
-    href: "/betten/lavin",
+    href: "/betten/marco",
     image: "/images/bed-lavin.jpg",
-    imageAlt: "Bettrahmen Lavin von Sponda in der Alpenwiese",
+    imageAlt: "Bettrahmen Marco von Sponda in der Alpenwiese",
   },
 ];
 
@@ -234,7 +234,7 @@ export function ProductsOverview() {
             </h2>
             <p className="lede mt-5 max-w-2xl text-muted">
               Sponda fertigt in Trimmis. Bei Naturland in St. Gallen sehen Sie
-              Jana, Lavin, Bondo und Viktoria – Holz, Mass und Schlafsystem im
+              Jana, Marco, Bondo und Viktoria – Holz, Mass und Schlafsystem im
               Liegen.
             </p>
           </Reveal>

@@ -18,7 +18,7 @@ const columns = [
       { label: "Jana", href: "/betten/jana" },
       { label: "Bondo", href: "/betten/bondo" },
       { label: "Viktoria", href: "/betten/viktoria" },
-      { label: "Lavin", href: "/betten/lavin" },
+      { label: "Marco", href: "/betten/marco" },
       { label: "Matratzen", href: "/matratzen" },
     ],
   },
