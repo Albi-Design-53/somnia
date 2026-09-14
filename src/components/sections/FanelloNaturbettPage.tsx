@@ -137,12 +137,13 @@ export function FanelloNaturbettPage() {
           </Reveal>
           <Reveal delay={0.08} className="mt-12 lg:mt-16">
             <div className="overflow-hidden bg-cream">
-              <div className="relative aspect-[4/1] min-h-[132px] sm:min-h-[168px]">
+              <div className="relative aspect-[803/199]">
                 <ZoomableImage
                   src={page.spineImage}
                   alt={page.spineAlt}
                   fill
-                  quality={85}
+                  unoptimized
+                  quality={100}
                   sizes="100vw"
                   className="object-contain object-center"
                 />
