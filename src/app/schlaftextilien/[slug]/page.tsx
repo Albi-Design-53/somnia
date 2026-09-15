@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getSleepTextile, sleepTextiles } from "@/content/sleep-textiles";
 import { Container, Eyebrow } from "@/components/ui/Container";
@@ -43,10 +44,19 @@ export default async function SleepTextilePage({ params }: Props) {
               {item.name}
             </h1>
           </Reveal>
-          <div
-            className="mt-8 aspect-[16/10] bg-cream sm:mt-10"
-            aria-hidden
-          />
+          <div className="relative mt-8 aspect-[16/10] bg-cream sm:mt-10">
+            {"image" in item && item.image ? (
+              <Image
+                src={item.image}
+                alt={"imageAlt" in item ? item.imageAlt : item.name}
+                fill
+                unoptimized
+                quality={100}
+                className="object-contain object-center"
+                sizes="(max-width: 1280px) 100vw, 72vw"
+              />
+            ) : null}
+          </div>
         </Container>
       </section>
     </article>

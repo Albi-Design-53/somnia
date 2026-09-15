@@ -1,5 +1,10 @@
 export const sleepTextiles = [
-  { slug: "decken", name: "Decken" },
+  {
+    slug: "decken",
+    name: "Decken",
+    image: "/images/schlaftextilien-decken.png",
+    imageAlt: "Gesteppte Naturdecke",
+  },
   { slug: "kissen", name: "Kissen" },
   { slug: "auflagen", name: "Auflagen" },
   { slug: "bettwaesche", name: "Bettwäsche" },
