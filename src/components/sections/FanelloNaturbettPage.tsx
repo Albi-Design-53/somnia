@@ -3,7 +3,6 @@ import { fanelloPage, site } from "@/content/site";
 import { Button } from "@/components/ui/Button";
 import { Container, Eyebrow } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
-import { DuePriceTables } from "@/components/ui/DuePriceTables";
 import { ZoomableImage } from "@/components/ui/ZoomableImage";
 
 export function FanelloNaturbettPage() {
@@ -27,9 +26,6 @@ export function FanelloNaturbettPage() {
               <p className="lede mt-6 max-w-xl text-muted">{page.lede}</p>
               <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Button href={site.cta.href}>{site.cta.primary}</Button>
-                <Button href="#preise" variant="ghost">
-                  Preisliste
-                </Button>
                 <Button href="#schichten" variant="ghost">
                   Die vier Lagen
                 </Button>
@@ -134,8 +130,6 @@ export function FanelloNaturbettPage() {
               </Reveal>
             ))}
           </div>
-
-          <DuePriceTables />
 
           <Reveal delay={0.08} className="mt-16 lg:mt-20">
             <div
