@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { site } from "@/content/site";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
 
@@ -20,9 +21,10 @@ export default function DatenschutzPage() {
         <Container className="max-w-3xl">
           <div className="space-y-6 text-[17px] leading-relaxed text-muted">
             <p>
-              Das Kontaktformular bestätigt den Versand in dieser Präsentation
-              im Browser. Eine Live-Schaltung würde Ihre Nachricht an Naturland
-              übermitteln.
+              Das Kontaktformular sendet Ihre Angaben (Name, E-Mail, Telefon,
+              Thema, Nachricht) an {site.contact.email}, damit wir Ihnen
+              antworten können. Die Daten verwenden wir nur zur Bearbeitung
+              Ihrer Anfrage. Zur Zustellung nutzen wir einen E-Mail-Dienst.
             </p>
             <p>
               Für Hosting, Cookies und Analyse gelten die Angaben des jeweiligen
