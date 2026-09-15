@@ -12,49 +12,6 @@ import { ProductWorldsGrid } from "@/components/sections/ProductWorldsGrid";
 import { cn } from "@/lib/cn";
 import { easeOut } from "@/lib/motion";
 
-const beds = [
-  {
-    n: "01",
-    eyebrow: "Kernbuche",
-    title: "Jana",
-    lede: "Klares Gestell, metallfreie Zinken. Fertigung in Trimmis, Beratung in St. Gallen.",
-    fact: "Preis in der Beratung – unverbindlich.",
-    href: "/betten/jana",
-    image: "/images/bed-bever.jpg",
-    imageAlt: "Bettrahmen Jana in Kernbuche",
-  },
-  {
-    n: "02",
-    eyebrow: "Hohes Kopfteil",
-    title: "Bondo",
-    lede: "Gerundete Simse, hohes Kopfteil. Der Rahmen der den Raum trägt.",
-    fact: "Preis in der Beratung – unverbindlich.",
-    href: "/betten/bondo",
-    image: "/images/bed-surava.jpg",
-    imageAlt: "Bettrahmen Bondo am Bergsee",
-  },
-  {
-    n: "03",
-    eyebrow: "Nussbaum",
-    title: "Viktoria",
-    lede: "Gerundete Ecken, massiver Nussbaum. Harmonisch und edel – Fertigung in Trimmis, Beratung in St. Gallen.",
-    fact: "Preis in der Beratung – unverbindlich.",
-    href: "/betten/viktoria",
-    image: "/images/bed-lain.jpg",
-    imageAlt: "Bettrahmen Viktoria unter der Arve, Alpen",
-  },
-  {
-    n: "04",
-    eyebrow: "Ast-Eiche",
-    title: "Marco",
-    lede: "Schwebend, klar, zeitlos. Steckbare Rückwand und Nachttische – Fertigung in Trimmis, Beratung in St. Gallen.",
-    fact: "Preis in der Beratung – unverbindlich.",
-    href: "/betten/marco",
-    image: "/images/bed-lavin.jpg",
-    imageAlt: "Bettrahmen Marco in der Alpenwiese",
-  },
-];
-
 const layers = [
   {
     n: "01",
@@ -240,12 +197,11 @@ export function ProductsOverview() {
           <Reveal>
             <Eyebrow>Betten</Eyebrow>
             <h2 className="display-md mt-4 max-w-3xl">
-              Bettrahmen aus Graubünden.
+              Das Natur-Boxspringbett.
             </h2>
             <p className="lede mt-5 max-w-2xl text-muted">
-              Vier Massivholzrahmen aus Trimmis – und das Natur-Boxspringbett,
-              metallfrei. Bei Naturland in St. Gallen sehen Sie Jana, Marco,
-              Bondo und Viktoria.
+              Höhe und weiches Liegen – ohne Federkern aus Metall. Beratung
+              in St. Gallen.
             </p>
           </Reveal>
 
@@ -282,26 +238,6 @@ export function ProductsOverview() {
               </article>
             </Link>
           </Reveal>
-
-          <div className="mt-5 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:mt-8 lg:grid-cols-4">
-            {beds.map((bed, i) => (
-              <Reveal key={bed.href} delay={i * 0.06}>
-                <ProductCard
-                  n={bed.n}
-                  eyebrow={bed.eyebrow}
-                  title={bed.title}
-                  text={bed.lede}
-                  href={bed.href}
-                  image={bed.image}
-                  imageAlt={bed.imageAlt}
-                >
-                  <span className="mt-3 block text-[14px] text-ink/70">
-                    {bed.fact}
-                  </span>
-                </ProductCard>
-              </Reveal>
-            ))}
-          </div>
         </Container>
       </section>
 
