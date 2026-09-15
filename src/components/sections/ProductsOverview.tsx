@@ -1,78 +1,11 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AnimatePresence, motion } from "motion/react";
-import { benefits, serviceItems } from "@/content/site";
+import { benefits } from "@/content/site";
 import { Container, Eyebrow } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
-import { ParallaxMedia } from "@/components/ui/ParallaxMedia";
 import { ProductWorldsGrid } from "@/components/sections/ProductWorldsGrid";
-import { cn } from "@/lib/cn";
-import { easeOut } from "@/lib/motion";
-
-function ServiceItem({
-  n,
-  title,
-  text,
-  isOpen,
-  onToggle,
-}: {
-  n: string;
-  title: string;
-  text: string;
-  isOpen: boolean;
-  onToggle: () => void;
-}) {
-  return (
-    <div className="border-t border-ink/15">
-      <button
-        type="button"
-        className="flex w-full items-start justify-between gap-6 py-7 text-left"
-        onClick={onToggle}
-        aria-expanded={isOpen}
-      >
-        <span className="flex items-baseline gap-5">
-          <span className="font-serif text-[2rem] leading-none tracking-[-0.03em] text-bronze sm:text-[2.25rem]">
-            {n}
-          </span>
-          <span className="font-serif text-[1.4rem] leading-[1.2] tracking-[-0.03em] sm:text-[1.65rem]">
-            {title}
-          </span>
-        </span>
-        <span className="relative mt-2 h-4 w-4 shrink-0" aria-hidden>
-          <span className="absolute top-1/2 left-0 h-px w-full bg-bronze" />
-          <span
-            className={cn(
-              "absolute top-0 left-1/2 h-full w-px origin-center bg-bronze transition-transform duration-300",
-              isOpen && "scale-y-0",
-            )}
-          />
-        </span>
-      </button>
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.4, ease: easeOut }}
-            className="overflow-hidden"
-          >
-            <p className="max-w-lg pb-7 pl-[3.25rem] text-[15px] leading-relaxed text-muted sm:pl-[3.6rem]">
-              {text}
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
 
 export function ProductsOverview() {
-  const [openService, setOpenService] = useState<number | null>(0);
-
   return (
     <>
       <section className="bg-cream pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-32 lg:pb-24">
@@ -232,51 +165,6 @@ export function ProductsOverview() {
                 </Reveal>
               </article>
             ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-ivory py-20 sm:py-24 lg:py-32">
-        <Container>
-          <Reveal>
-            <Eyebrow>Service</Eyebrow>
-            <h2 className="display-md mt-4 max-w-3xl">Rundum gedacht.</h2>
-            <p className="lede mt-5 max-w-2xl text-muted">
-              Vom ersten Beratungsgespräch bis zur Montage bei Ihnen zuhause –
-              das gehört bei uns immer dazu.
-            </p>
-          </Reveal>
-
-          <div className="mt-14 grid gap-10 lg:mt-20 lg:grid-cols-12 lg:gap-14">
-            <div className="lg:col-span-5">
-              <ParallaxMedia
-                src="/images/mobiles-bettenstudio.png"
-                alt="Mobiles fanello Bettenstudio bei der Heimberatung"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                unoptimized
-                strength={22}
-                className="aspect-[4/3] w-full"
-              />
-            </div>
-
-            <div className="lg:col-span-7 lg:pt-2">
-              <div>
-                {serviceItems.map((item, i) => (
-                  <Reveal key={item.title} delay={i * 0.06} variant="fade">
-                    <ServiceItem
-                      n={String(i + 1).padStart(2, "0")}
-                      title={item.title}
-                      text={item.text}
-                      isOpen={openService === i}
-                      onToggle={() =>
-                        setOpenService(openService === i ? null : i)
-                      }
-                    />
-                  </Reveal>
-                ))}
-                <div className="border-t border-ink/15" />
-              </div>
-            </div>
           </div>
         </Container>
       </section>
