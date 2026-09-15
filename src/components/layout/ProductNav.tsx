@@ -114,12 +114,6 @@ export function ProductNavDesktop({
         )}
       >
         <div className="border border-sand/80 bg-ivory px-5 py-5 shadow-[0_18px_50px_-28px_rgba(60,47,36,0.45)]">
-          <Link
-            href="/produkte"
-            className="label mb-4 inline-flex text-bronze transition-transform duration-300 hover:translate-x-1"
-          >
-            Zur Produktseite →
-          </Link>
           <div className="space-y-5">
             {productNavGroups.map((group) => (
               <div key={group.heading}>
