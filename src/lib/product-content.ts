@@ -227,7 +227,9 @@ export function productToContent(product: Product): ProductPageContent {
     parent:
       product.kind === "matratze"
         ? { href: "/matratzen", label: "Matratzen" }
-        : { href: "/produkte", label: "Produkte" },
+        : isMassivholz
+          ? { href: "/betten", label: "Bettrahmen" }
+          : { href: "/produkte", label: "Produkte" },
     relatedLayout: isMassivholz ? "circle" : "rect",
     related,
     jsonLd: productJsonLd(

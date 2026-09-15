@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { site } from "@/content/site";
 import { ProductPageContent } from "@/lib/product-content";
 import { DuePriceGuide } from "@/components/ui/DuePriceGuide";
@@ -6,6 +7,37 @@ import { Container, Eyebrow } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal, RevealImage } from "@/components/ui/Reveal";
 import { ZoomableImage } from "@/components/ui/ZoomableImage";
+
+function ProductPath({
+  parent,
+  title,
+}: {
+  parent: ProductPageContent["parent"];
+  title: string;
+}) {
+  return (
+    <nav
+      className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] text-muted"
+      aria-label="Pfad"
+    >
+      <span>
+        <Link href={parent.href} className="transition-colors hover:text-ink">
+          {parent.label}
+        </Link>
+        <span className="mx-2 text-sand">/</span>
+        <span className="text-ink">{title}</span>
+      </span>
+      <Link
+        href={parent.href}
+        aria-label={`Zurück zu ${parent.label}`}
+        className="inline-flex items-center gap-1.5 text-ink transition-colors hover:text-bronze"
+      >
+        <ArrowLeft className="size-3.5" strokeWidth={1.75} aria-hidden />
+        Zurück
+      </Link>
+    </nav>
+  );
+}
 
 function ProductCtas() {
   return (
@@ -40,13 +72,7 @@ export function ProductPage({ content }: { content: ProductPageContent }) {
             {content.imageLayout === "sheet" ? (
               <div>
                 <Reveal>
-                  <nav className="text-[13px] text-muted" aria-label="Pfad">
-                    <Link href={content.parent.href} className="transition-colors hover:text-ink">
-                      {content.parent.label}
-                    </Link>
-                    <span className="mx-2 text-sand">/</span>
-                    <span className="text-ink">{content.title}</span>
-                  </nav>
+                  <ProductPath parent={content.parent} title={content.title} />
                   <Eyebrow className="mt-8">{content.eyebrow}</Eyebrow>
                   <h1 className="mt-4 font-serif text-[2.35rem] leading-[1.06] tracking-[-0.03em] sm:text-[3.1rem] lg:text-[3.4rem]">
                     {content.title}
@@ -148,13 +174,7 @@ export function ProductPage({ content }: { content: ProductPageContent }) {
 
               <div className="order-1 lg:sticky lg:top-28 lg:order-2">
                 <Reveal>
-                  <nav className="text-[13px] text-muted" aria-label="Pfad">
-                    <Link href={content.parent.href} className="transition-colors hover:text-ink">
-                      {content.parent.label}
-                    </Link>
-                    <span className="mx-2 text-sand">/</span>
-                    <span className="text-ink">{content.title}</span>
-                  </nav>
+                  <ProductPath parent={content.parent} title={content.title} />
                   <Eyebrow className="mt-8">{content.eyebrow}</Eyebrow>
                   <h1 className="mt-4 font-serif text-[2.35rem] leading-[1.06] tracking-[-0.03em] sm:text-[3.1rem] lg:text-[3.4rem]">
                     {content.title}
