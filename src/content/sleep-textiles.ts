@@ -17,6 +17,7 @@ export const sleepTextiles = [
     imageWidth: 1024,
     imageHeight: 813,
     line: "Schafschurwolle, Lyocorn",
+    locked: true,
   },
   {
     slug: "auflagen",
@@ -26,6 +27,7 @@ export const sleepTextiles = [
     imageWidth: 1024,
     imageHeight: 682,
     line: "Schafschurwolle, Lyocorn",
+    locked: true,
   },
   {
     slug: "bettwaesche",
