@@ -178,7 +178,7 @@ export function productToContent(product: Product): ProductPageContent {
   return {
     eyebrow: product.category,
     title: product.name,
-    claim: product.excerpt,
+    claim: isMassivholz ? "" : product.excerpt,
     description: product.description,
     bullets: product.bullets,
     image: product.image,

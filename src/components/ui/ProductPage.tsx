@@ -51,9 +51,11 @@ export function ProductPage({ content }: { content: ProductPageContent }) {
                   <h1 className="mt-4 font-serif text-[2.35rem] leading-[1.06] tracking-[-0.03em] sm:text-[3.1rem] lg:text-[3.4rem]">
                     {content.title}
                   </h1>
-                  <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
-                    {content.claim}
-                  </p>
+                  {content.claim ? (
+                    <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
+                      {content.claim}
+                    </p>
+                  ) : null}
                 </Reveal>
                 {compactSheet ? (
                   <div className="mt-8 grid max-w-7xl grid-cols-1 gap-4 sm:grid-cols-2">
@@ -157,9 +159,11 @@ export function ProductPage({ content }: { content: ProductPageContent }) {
                   <h1 className="mt-4 font-serif text-[2.35rem] leading-[1.06] tracking-[-0.03em] sm:text-[3.1rem] lg:text-[3.4rem]">
                     {content.title}
                   </h1>
-                  <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
-                    {content.claim}
-                  </p>
+                  {content.claim ? (
+                    <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
+                      {content.claim}
+                    </p>
+                  ) : null}
 
                   {content.priceFrom ? (
                   <div className="mt-8">
