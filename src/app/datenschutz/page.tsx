@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { images } from "@/content/site";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
 
@@ -16,8 +15,6 @@ export default function DatenschutzPage() {
         eyebrow="Rechtliches"
         title="Datenschutz"
         text="Wie wir mit Ihren Angaben umgehen."
-        image={images.showroomInterior}
-        imageAlt="Heller, ruhiger Wohnraum"
       />
       <section className="bg-ivory py-20 lg:py-28">
         <Container className="max-w-3xl">
