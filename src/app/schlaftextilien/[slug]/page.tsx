@@ -44,19 +44,22 @@ export default async function SleepTextilePage({ params }: Props) {
               {item.name}
             </h1>
           </Reveal>
-          <div className="relative mt-8 aspect-[16/10] bg-cream sm:mt-10">
-            {"image" in item && item.image ? (
+          {"image" in item && item.image ? (
+            <div className="mt-8 bg-cream sm:mt-10">
               <Image
                 src={item.image}
                 alt={"imageAlt" in item ? item.imageAlt : item.name}
-                fill
+                width={"imageWidth" in item ? item.imageWidth : 1600}
+                height={"imageHeight" in item ? item.imageHeight : 1000}
                 unoptimized
                 quality={100}
-                className="object-contain object-center"
+                className="h-auto w-full"
                 sizes="(max-width: 1280px) 100vw, 72vw"
               />
-            ) : null}
-          </div>
+            </div>
+          ) : (
+            <div className="mt-8 aspect-[16/10] bg-cream sm:mt-10" />
+          )}
         </Container>
       </section>
     </article>
