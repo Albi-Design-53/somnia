@@ -24,6 +24,7 @@ export const sleepTextiles = [
     imageAlt: "Gesteppte Naturauflage",
     imageWidth: 1024,
     imageHeight: 682,
+    line: "Schafschurwolle, Lyocorn",
   },
   {
     slug: "bettwaesche",
