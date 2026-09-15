@@ -29,7 +29,7 @@ export default function BettenPage() {
       <Container>
         <Reveal>
           <Eyebrow>Bettrahmen</Eyebrow>
-          <h1 className="display-md mt-5 max-w-3xl">Vier Bettrahmen aus Massivholz.</h1>
+          <h1 className="display-md mt-5 max-w-3xl">Bettrahmen aus Massivholz.</h1>
           <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-muted">
             Fertigung in Trimmis. Beratung und Verkauf in St. Gallen.
           </p>
