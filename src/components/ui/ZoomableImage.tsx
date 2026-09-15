@@ -25,6 +25,9 @@ type ZoomableImageProps = {
   width?: number;
   height?: number;
   decoding?: "async" | "auto" | "sync";
+  unoptimized?: boolean;
+  /** Hide the overlay zoom icon; click-to-enlarge still works. */
+  quiet?: boolean;
 };
 
 export function ZoomableImage({
@@ -38,6 +41,8 @@ export function ZoomableImage({
   width,
   height,
   decoding,
+  unoptimized,
+  quiet = false,
 }: ZoomableImageProps) {
   const labelId = useId();
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -198,6 +203,7 @@ export function ZoomableImage({
             fill
             priority={priority}
             quality={quality}
+            unoptimized={unoptimized}
             sizes={sizes}
             className={className}
           />
@@ -212,9 +218,11 @@ export function ZoomableImage({
             className={className}
           />
         )}
-        <span className="pointer-events-none absolute right-3 bottom-3 z-10 flex h-9 w-9 items-center justify-center border border-ink/10 bg-ivory/85 text-ink opacity-90 shadow-sm backdrop-blur-sm transition-opacity group-hover/zoom:opacity-100 sm:opacity-0 sm:group-hover/zoom:opacity-100">
-          <ZoomIn size={16} />
-        </span>
+        {quiet ? null : (
+          <span className="pointer-events-none absolute right-3 bottom-3 z-10 flex h-9 w-9 items-center justify-center border border-ink/10 bg-ivory/85 text-ink opacity-90 shadow-sm backdrop-blur-sm transition-opacity group-hover/zoom:opacity-100 sm:opacity-0 sm:group-hover/zoom:opacity-100">
+            <ZoomIn size={16} />
+          </span>
+        )}
       </button>
       {lightbox}
     </>

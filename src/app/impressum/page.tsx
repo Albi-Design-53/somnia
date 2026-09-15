@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { images, site } from "@/content/site";
+import { site } from "@/content/site";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
 
@@ -16,8 +16,6 @@ export default function ImpressumPage() {
         eyebrow="Rechtliches"
         title="Impressum"
         text="Angaben zum Unternehmen."
-        image={images.about}
-        imageAlt="St. Gallen am Gallusplatz"
       />
       <section className="bg-ivory py-20 lg:py-28">
         <Container className="max-w-3xl">

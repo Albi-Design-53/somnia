@@ -19,6 +19,8 @@ export type ProductPageContent = {
   priceGuide: DueGuideMode | null;
   trust: { title: string; text: string }[];
   sections: { title: string; text: string }[];
+  sectionsEyebrow?: string;
+  sectionsTitle?: string;
   steps: string[];
   parent: { href: string; label: string };
   relatedLayout?: "circle" | "rect";
@@ -52,12 +54,33 @@ const DEFAULT_TRUST = [
   },
 ] as const;
 
-const SPONDA_SLUGS = new Set(["bever", "surava", "lain", "lavin"]);
-const LAYER_SLUGS = new Set(["cloud", "origin", "lignum"]);
+const MASSIVHOLZ_SLUGS = new Set(["jana", "bondo", "viktoria", "marco"]);
+
+const MASSIVHOLZ_SECTIONS = [
+  {
+    title: "100 % metallfreie Bauweise",
+    text: "Das Gestell wird über präzise Holzsteckverbindungen montiert. Dies garantiert absolute Freiheit von elektromagnetischen Störfeldern, höchste Stabilität und ein vollkommen lautloses, quietschfreies Bettelement.",
+  },
+  {
+    title: "Schweizer Qualitätsfertigung",
+    text: "Hergestellt in regionaler Schreinerarbeit aus heimischen Holzarten (wie Arve/Zirbe, Eiche, Kernbuche, Nussbaum, Kirschbaum oder Ahorn). Das sichert kurze Transportwege, nachhaltige Forstwirtschaft und höchste Verarbeitungsstandards.",
+  },
+  {
+    title: "Biologisch geölte Oberfläche",
+    text: "Die Veredelung mit natürlichen Ölen lässt die Poren des Holzes offen. Das Bett bleibt atmungsaktiv, unterstützt die Feuchtigkeitsregulierung im Schlafzimmer und fühlt sich haptisch seidenweich und warm an.",
+  },
+  {
+    title: "Modulares Design (4 Rückenlehnen)",
+    text: "Das Kopfteil lässt sich variabel aus vier verschiedenen Designvarianten wählen – von schlichten, durchgehenden Holzpaneelen bis hin zu Modellen mit feinen Ausfräsungen oder sanft geschwungenen Ergonomie-Konturen.",
+  },
+  {
+    title: "Flexibilität und Massanfertigung",
+    text: "Sondergrössen (z. B. Überlängen von 210/220 cm oder Sonderbreiten), individuelle Einlege-Tiefen für Einlegeroste sowie massgeschneiderte Beistelltische sind auf Kundenwunsch problemlos umsetzbar.",
+  },
+] as const;
 
 function dueGuide(slug: string): DueGuideMode | null {
   if (slug === "fanello-naturbett") return "system";
-  if (slug === "natur-boxspringbett") return "box";
   if (slug === "mobiles-bettenstudio") return "visit";
   if (slug === "lignum") return "frame";
   return null;
@@ -159,8 +182,8 @@ function toRelated(item: {
 export function productToContent(product: Product): ProductPageContent {
   const href = productHref(product);
 
-  const spondaSiblings = products
-    .filter((item) => SPONDA_SLUGS.has(item.slug) && item.slug !== product.slug)
+  const frameSiblings = products
+    .filter((item) => MASSIVHOLZ_SLUGS.has(item.slug) && item.slug !== product.slug)
     .map((item) => {
       const thumb = productThumb(item);
       return toRelated({
@@ -172,15 +195,15 @@ export function productToContent(product: Product): ProductPageContent {
       });
     });
 
-  const related = SPONDA_SLUGS.has(product.slug) ? spondaSiblings : [];
+  const related = MASSIVHOLZ_SLUGS.has(product.slug) ? frameSiblings : [];
 
   const imageAlt = product.imageAlt ?? `${product.name} – ${product.category}`;
-  const sponda = SPONDA_SLUGS.has(product.slug);
+  const isMassivholz = MASSIVHOLZ_SLUGS.has(product.slug);
 
   return {
     eyebrow: product.category,
     title: product.name,
-    claim: product.excerpt,
+    claim: isMassivholz ? "" : product.excerpt,
     description: product.description,
     bullets: product.bullets,
     image: product.image,
@@ -192,20 +215,24 @@ export function productToContent(product: Product): ProductPageContent {
       src,
       alt: i === 0 ? imageAlt : `${product.name}, Detail ${i + 1}`,
     })),
-    specs: withGarantie(publishedSpecs(product.specs), product.kind, product.slug),
+    specs: isMassivholz
+      ? []
+      : withGarantie(publishedSpecs(product.specs), product.kind, product.slug),
     priceFrom: isMissingValue(product.priceFrom)
-      ? "Preis in der Beratung"
+      ? "Preise auf Anfrage"
       : product.priceFrom,
     priceNote: product.priceNote ?? DEFAULT_PRICE_NOTE,
     priceGuide: dueGuide(product.slug),
     trust: product.trust ?? [...DEFAULT_TRUST],
-    sections: product.sections ?? [],
+    sections: isMassivholz ? [...MASSIVHOLZ_SECTIONS] : (product.sections ?? []),
     steps: [],
     parent:
       product.kind === "matratze"
         ? { href: "/matratzen", label: "Matratzen" }
-        : { href: "/produkte", label: "Produkte" },
-    relatedLayout: sponda ? "circle" : "rect",
+        : isMassivholz
+          ? { href: "/betten", label: "Bettrahmen" }
+          : { href: "/produkte", label: "Produkte" },
+    relatedLayout: isMassivholz ? "circle" : "rect",
     related,
     jsonLd: productJsonLd(
       product.name,
@@ -214,9 +241,7 @@ export function productToContent(product: Product): ProductPageContent {
       href,
       product.kind === "matratze"
         ? { brand: { "@type": "Brand", name: "fanello swiss" } }
-        : sponda
-          ? { brand: { "@type": "Brand", name: "Sponda" } }
-          : {},
+        : {},
       numericPrice(product.priceFrom),
     ),
   };
@@ -224,23 +249,10 @@ export function productToContent(product: Product): ProductPageContent {
 
 export function topicToContent(topic: Topic): ProductPageContent {
   const href = `/betten/${topic.slug}`;
-  const layerRelated = products
-    .filter((item) => LAYER_SLUGS.has(item.slug))
-    .map((item) => {
-      const thumb = productThumb(item);
-      return {
-        href: productHref(item),
-        title: item.name,
-        image: thumb.image,
-        imageAlt: thumb.imageAlt,
-        category: item.category,
-      };
-    });
-
   const related =
     topic.slug === "massivholz"
       ? products
-          .filter((item) => SPONDA_SLUGS.has(item.slug))
+          .filter((item) => MASSIVHOLZ_SLUGS.has(item.slug))
           .map((item) => {
             const thumb = productThumb(item);
             return {
@@ -251,30 +263,39 @@ export function topicToContent(topic: Topic): ProductPageContent {
               category: item.category,
             };
           })
-      : topic.slug === "fanello-naturbett" || topic.slug === "natur-boxspringbett"
-        ? layerRelated
-        : [];
+      : [];
+
+  const isBoxspring = topic.slug === "natur-boxspringbett";
 
   return {
     eyebrow: topic.eyebrow,
     title: topic.title,
-    claim: topic.lede,
+    claim: isBoxspring ? "" : topic.lede,
     description: topic.description,
     bullets: [...topic.points],
     image: topic.image,
     imageAlt: topic.imageAlt,
+    imageLayout: isBoxspring ? "sheet" : undefined,
     gallery: topic.gallery.map((src, i) => ({
       src,
       alt: i === 0 ? topic.imageAlt : `${topic.title}, Ansicht ${i + 1}`,
     })),
-    specs: withGarantie(publishedSpecs([...topic.specs]), "topic", topic.slug),
+    specs:
+      isBoxspring || topic.slug === "mobiles-bettenstudio"
+        ? []
+        : withGarantie(publishedSpecs([...topic.specs]), "topic", topic.slug),
     priceFrom: isMissingValue(topic.priceFrom)
-      ? "Preis in der Beratung"
+      ? "Preise auf Anfrage"
       : topic.priceFrom,
     priceNote: topic.priceNote,
-    priceGuide: topic.slug === "mobiles-bettenstudio" ? null : dueGuide(topic.slug),
+    priceGuide:
+      topic.slug === "mobiles-bettenstudio" || isBoxspring
+        ? null
+        : dueGuide(topic.slug),
     trust: [...topic.trust],
     sections: [...topic.sections],
+    sectionsEyebrow: isBoxspring ? "Fertigung" : undefined,
+    sectionsTitle: isBoxspring ? "Das Schlafsystem." : undefined,
     steps: [...topic.steps],
     parent: { href: "/produkte", label: "Produkte" },
     relatedLayout: topic.slug === "massivholz" ? "circle" : "rect",
@@ -300,7 +321,7 @@ export function topicToContent(topic: Topic): ProductPageContent {
             topic.image,
             href,
             topic.slug === "massivholz"
-              ? { brand: { "@type": "Brand", name: "Sponda" } }
+              ? {}
               : { brand: { "@type": "Brand", name: "fanello swiss" } },
             topic.slug === "massivholz" ? undefined : numericPrice(topic.priceFrom),
           ),

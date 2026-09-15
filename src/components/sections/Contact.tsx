@@ -23,10 +23,6 @@ export function Contact() {
             <h2 className="display-md mt-5">
               Sprechen wir über Ihren Schlaf.
             </h2>
-            <p className="lede mt-5 max-w-md text-muted">
-              Nachrichten, Anregungen, Lob und Kritik – wir freuen uns. Mutter
-              und Sohn Graziella und Roger Zwiker melden sich persönlich.
-            </p>
 
             <ul className="mt-10 space-y-5 text-[15px]">
               <li className="flex items-center gap-3">
@@ -50,11 +46,13 @@ export function Contact() {
             </ul>
 
             <div className="mt-8 space-y-1 text-[15px] text-muted">
-              {site.contact.hours.map((h) => (
-                <p key={h.days}>
-                  {h.days}: {h.time}
-                </p>
-              ))}
+              {site.contact.hours
+                .filter((h) => h.days !== "Termine")
+                .map((h) => (
+                  <p key={h.days}>
+                    {h.days}: {h.time}
+                  </p>
+                ))}
             </div>
             <p className="mt-6 max-w-md text-[15px] leading-relaxed text-muted">
               {site.contact.travel.transit}

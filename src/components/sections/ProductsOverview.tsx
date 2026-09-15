@@ -1,296 +1,27 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AnimatePresence, motion } from "motion/react";
-import { benefits, serviceItems } from "@/content/site";
+import { benefits } from "@/content/site";
 import { Container, Eyebrow } from "@/components/ui/Container";
-import { Reveal, RevealImage } from "@/components/ui/Reveal";
-import { ParallaxMedia } from "@/components/ui/ParallaxMedia";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { FinalCTA } from "@/components/sections/FinalCTA";
-import { cn } from "@/lib/cn";
-import { easeOut } from "@/lib/motion";
-
-const chapters = [
-  { n: "01", id: "betten", title: "Bettrahmen", text: "Bever, Surava, Lain, Lavin – Sponda." },
-  { n: "02", id: "schichten", title: "Fanello Schlafsystem", text: "Matratze, Auflage, Lattenrost." },
-];
-
-const beds = [
-  {
-    n: "01",
-    eyebrow: "Sponda · Kernbuche",
-    title: "Bever",
-    lede: "Klares Gestell, metallfreie Zinken. Fertigung in Trimmis, Beratung in St. Gallen.",
-    fact: "Preis in der Beratung – unverbindlich.",
-    href: "/betten/bever",
-    image: "/images/bed-bever.jpg",
-    imageAlt: "Bettrahmen Bever von Sponda in Kernbuche",
-  },
-  {
-    n: "02",
-    eyebrow: "Sponda · hohes Kopfteil",
-    title: "Surava",
-    lede: "Gerundete Simse, hohes Kopfteil. Der Rahmen der den Raum trägt.",
-    fact: "Preis in der Beratung – unverbindlich.",
-    href: "/betten/surava",
-    image: "/images/bed-surava.jpg",
-    imageAlt: "Bettrahmen Surava von Sponda mit rundem Kopfteil vor Bergkulisse",
-  },
-  {
-    n: "03",
-    eyebrow: "Sponda · Nussbaum",
-    title: "Lain",
-    lede: "Gerundete Ecken, massiver Nussbaum. Harmonisch und edel – Fertigung in Trimmis, Beratung in St. Gallen.",
-    fact: "Preis in der Beratung – unverbindlich.",
-    href: "/betten/lain",
-    image: "/images/bed-lain.jpg",
-    imageAlt: "Bettrahmen Lain von Sponda in Nussbaum",
-  },
-  {
-    n: "04",
-    eyebrow: "Sponda · Ast-Eiche",
-    title: "Lavin",
-    lede: "Schwebend, klar, zeitlos. Steckbare Rückwand und Nachttische – Fertigung in Trimmis, Beratung in St. Gallen.",
-    fact: "Preis in der Beratung – unverbindlich.",
-    href: "/betten/lavin",
-    image: "/images/bed-lavin.jpg",
-    imageAlt: "Bettrahmen Lavin von Sponda in Ast-Eiche",
-  },
-];
-
-const layers = [
-  {
-    n: "01",
-    title: "Matratze",
-    text: "100 % Naturlatex, 7,5 bis 15 cm. Bezug mit Reissverschluss, waschbar.",
-    href: "/matratzen/cloud",
-    image: "/images/schicht-matratze.webp",
-    imageAlt: "Naturlatex-Kern der fanello-Matratze",
-  },
-  {
-    n: "02",
-    title: "Auflage",
-    text: "Schurwolle fürs Klima – oder Lycorn aus Holz- und Maisfaser, für Allergiker.",
-    href: "/matratzen/origin",
-    image: "/images/schicht-auflage.webp",
-    imageAlt: "fanello Auflage mit hexagonaler Steppung",
-  },
-  {
-    n: "03",
-    title: "Lattenrost",
-    text: "Punktelastisch, oft mit Sitzhochstellung. Passt in viele Gestelle.",
-    href: "/matratzen/lignum",
-    image: "/images/lattenrost-fanello.webp",
-    imageAlt: "fanello Holzlattenrost",
-  },
-];
-
-function ProductCard({
-  n,
-  eyebrow,
-  title,
-  text,
-  href,
-  image,
-  imageAlt,
-  fit = "cover",
-  cta = "Ansehen →",
-  aspect = "aspect-[4/5]",
-  sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw",
-  children,
-}: {
-  n?: string;
-  eyebrow?: string;
-  title: string;
-  text?: string;
-  href: string;
-  image: string;
-  imageAlt: string;
-  fit?: "cover" | "contain";
-  cta?: string;
-  aspect?: string;
-  sizes?: string;
-  children?: React.ReactNode;
-}) {
-  return (
-    <Link href={href} className="group relative block overflow-hidden bg-cream">
-      <RevealImage className={cn("relative block", aspect)}>
-        <Image
-          src={image}
-          alt={imageAlt}
-          fill
-          unoptimized
-          quality={100}
-          sizes={sizes}
-          className={cn(
-            "transition-transform duration-700 ease-out group-hover:scale-[1.03]",
-            fit === "contain"
-              ? "object-contain p-8 sm:p-10"
-              : "object-cover object-[center_42%]",
-          )}
-        />
-      </RevealImage>
-      <span className="block border-t border-sand/80 px-5 py-6 sm:px-6 sm:py-7">
-        {(n || eyebrow) && (
-          <span className="label text-bronze">
-            {n && eyebrow ? `${n} · ${eyebrow}` : n || eyebrow}
-          </span>
-        )}
-        <span className="mt-2 block font-serif text-[1.85rem] tracking-[-0.03em] text-ink sm:text-[2.1rem]">
-          {title}
-        </span>
-        {text && (
-          <span className="mt-3 block text-[15px] leading-relaxed text-muted">
-            {text}
-          </span>
-        )}
-        {children}
-        <span className="label mt-5 inline-flex text-bronze transition-transform duration-300 group-hover:translate-x-1">
-          {cta}
-        </span>
-      </span>
-    </Link>
-  );
-}
-
-function ServiceItem({
-  n,
-  title,
-  text,
-  isOpen,
-  onToggle,
-}: {
-  n: string;
-  title: string;
-  text: string;
-  isOpen: boolean;
-  onToggle: () => void;
-}) {
-  return (
-    <div className="border-t border-ink/15">
-      <button
-        type="button"
-        className="flex w-full items-start justify-between gap-6 py-7 text-left"
-        onClick={onToggle}
-        aria-expanded={isOpen}
-      >
-        <span className="flex items-baseline gap-5">
-          <span className="font-serif text-[2rem] leading-none tracking-[-0.03em] text-bronze sm:text-[2.25rem]">
-            {n}
-          </span>
-          <span className="font-serif text-[1.4rem] leading-[1.2] tracking-[-0.03em] sm:text-[1.65rem]">
-            {title}
-          </span>
-        </span>
-        <span className="relative mt-2 h-4 w-4 shrink-0" aria-hidden>
-          <span className="absolute top-1/2 left-0 h-px w-full bg-bronze" />
-          <span
-            className={cn(
-              "absolute top-0 left-1/2 h-full w-px origin-center bg-bronze transition-transform duration-300",
-              isOpen && "scale-y-0",
-            )}
-          />
-        </span>
-      </button>
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.4, ease: easeOut }}
-            className="overflow-hidden"
-          >
-            <p className="max-w-lg pb-7 pl-[3.25rem] text-[15px] leading-relaxed text-muted sm:pl-[3.6rem]">
-              {text}
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
+import { Reveal } from "@/components/ui/Reveal";
+import { ProductWorldsGrid } from "@/components/sections/ProductWorldsGrid";
 
 export function ProductsOverview() {
-  const [openService, setOpenService] = useState<number | null>(0);
-
   return (
     <>
-      <section className="bg-cream pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-24">
+      <section
+        id="produktwelt"
+        className="scroll-mt-24 bg-cream pt-24 pb-16 sm:pt-28 sm:pb-20 lg:scroll-mt-28 lg:pt-32 lg:pb-24"
+      >
         <Container>
-          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            <Reveal>
-              <Eyebrow>Produkte</Eyebrow>
-              <h1 className="display-md mt-4 text-ink">Ihr Weg zum guten Schlaf.</h1>
-              <p className="lede mt-5 max-w-xl text-muted">
-                Bettrahmen aus Massivholz, ein individuell abgestimmtes
-                Schlafsystem oder nur einzelne Schichten – wählen Sie unten
-                Ihren Weg.
-              </p>
-            </Reveal>
-            <RevealImage
-              direction="right"
-              className="aspect-[5/4] w-full sm:aspect-[16/10] lg:aspect-[5/4]"
-            >
-              <Image
-                src="/images/produkte-hero-bett.jpg"
-                alt="Massivholzbett mit Meerblick, warmes Schlafzimmer mit Kommode und Textilien in Bordeaux und Salbei"
-                fill
-                unoptimized
-                quality={100}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="hero-kenburns object-cover"
-              />
-            </RevealImage>
-          </div>
+          <h1 className="sr-only">Produkte</h1>
+          <Reveal>
+            <h2 className="display-md max-w-3xl">Unsere Produkte.</h2>
+          </Reveal>
+          <ProductWorldsGrid className="mt-12 lg:mt-16" />
         </Container>
       </section>
-
-      <nav aria-label="Produktkapitel" className="bg-ivory">
-        <Container>
-          <ul className="grid border-t border-sand/60 sm:grid-cols-2">
-            {chapters.map((chapter, i) => (
-              <li
-                key={chapter.id}
-                className={cn(
-                  "border-b border-sand/60 sm:border-b-0",
-                  i > 0 && "sm:border-l sm:border-sand/60",
-                )}
-              >
-                <Reveal delay={i * 0.08} variant="fade">
-                  <a
-                    href={`#${chapter.id}`}
-                    className="group relative block py-9 sm:px-8 sm:py-11 lg:px-10 lg:py-14"
-                  >
-                    <span className="label text-bronze">{chapter.n}</span>
-                    <span className="mt-3 flex items-center gap-2.5">
-                      <span className="font-serif text-[1.65rem] tracking-[-0.02em] text-ink transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-1 sm:text-[1.85rem]">
-                        {chapter.title}
-                      </span>
-                      <span
-                        aria-hidden
-                        className="-translate-x-2 text-bronze opacity-0 transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:opacity-100"
-                      >
-                        →
-                      </span>
-                    </span>
-                    <span className="mt-2 block text-[14px] leading-relaxed text-muted">
-                      {chapter.text}
-                    </span>
-                    <span
-                      aria-hidden
-                      className="absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-bronze transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-x-100"
-                    />
-                  </a>
-                </Reveal>
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </nav>
 
       <section
         id="betten"
@@ -298,36 +29,45 @@ export function ProductsOverview() {
       >
         <Container>
           <Reveal>
-            <Eyebrow>Bettrahmen</Eyebrow>
+            <Eyebrow>Betten</Eyebrow>
             <h2 className="display-md mt-4 max-w-3xl">
-              Bettrahmen aus Graubünden.
+              Das Natur-Boxspringbett.
             </h2>
-            <p className="lede mt-5 max-w-2xl text-muted">
-              Sponda fertigt in Trimmis. Bei Naturland in St. Gallen sehen Sie
-              Bever, Lavin, Surava und Lain – Holz, Mass und Schlafsystem im
-              Liegen.
-            </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:mt-16 lg:grid-cols-4">
-            {beds.map((bed, i) => (
-              <Reveal key={bed.href} delay={i * 0.06}>
-                <ProductCard
-                  n={bed.n}
-                  eyebrow={bed.eyebrow}
-                  title={bed.title}
-                  text={bed.lede}
-                  href={bed.href}
-                  image={bed.image}
-                  imageAlt={bed.imageAlt}
-                >
-                  <span className="mt-3 block text-[14px] text-ink/70">
-                    {bed.fact}
+          <Reveal>
+            <Link
+              href="/betten/natur-boxspringbett"
+              className="group mt-12 block lg:mt-16"
+            >
+              <article className="overflow-hidden bg-cream md:grid md:grid-cols-12 md:items-stretch">
+                <div className="relative aspect-[16/10] overflow-hidden bg-ivory md:col-span-6">
+                  <Image
+                    src="/images/welt-boxspring.png"
+                    alt="Natur-Boxspringbett aus Holz mit natürlichem Schlafsystem"
+                    fill
+                    unoptimized
+                    quality={100}
+                    className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+                <div className="flex flex-col justify-center border-t border-sand/80 px-6 py-6 sm:px-8 sm:py-7 md:col-span-6 md:border-t-0 md:border-l">
+                  <p className="label text-bronze">Natur-Boxspring · metallfrei</p>
+                  <h3 className="mt-2 font-serif text-[1.75rem] tracking-[-0.03em] sm:text-[1.9rem]">
+                    Natur-Boxspringbett
+                  </h3>
+                  <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-muted">
+                    Das Boxspringbett, auch amerikanisches oder Continentalbett
+                    genannt.
+                  </p>
+                  <span className="label mt-4 inline-flex text-ink transition-transform duration-300 group-hover:translate-x-1">
+                    Ansehen →
                   </span>
-                </ProductCard>
-              </Reveal>
-            ))}
-          </div>
+                </div>
+              </article>
+            </Link>
+          </Reveal>
         </Container>
       </section>
 
@@ -337,39 +77,53 @@ export function ProductsOverview() {
       >
         <Container>
           <Reveal>
-            <Eyebrow>Fanello Schlafsystem</Eyebrow>
+            <Eyebrow>Heimberatung</Eyebrow>
             <h2 className="display-md mt-4 max-w-3xl">
-              Nur Matratze, Auflage oder Rost.
+              Das mobile Bettenstudio.
             </h2>
-            <p className="lede mt-5 max-w-2xl text-muted">
-              Sie haben schon ein Gestell. Dann tauschen wir die Schichten,
-              die den Schlaf machen.
-            </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-3 sm:gap-6 lg:mt-16 lg:gap-8">
-            {layers.map((layer, i) => (
-              <Reveal key={layer.href} delay={i * 0.06}>
-                <ProductCard
-                  n={layer.n}
-                  title={layer.title}
-                  text={layer.text}
-                  href={layer.href}
-                  image={layer.image}
-                  imageAlt={layer.imageAlt}
-                  fit="contain"
-                />
-              </Reveal>
-            ))}
-          </div>
+          <Reveal>
+            <Link
+              href="/betten/mobiles-bettenstudio"
+              className="group mt-12 block lg:mt-16"
+            >
+              <article className="overflow-hidden bg-ivory md:grid md:grid-cols-12 md:items-stretch">
+                <div className="relative aspect-[16/10] overflow-hidden bg-cream md:col-span-6">
+                  <Image
+                    src="/images/mobiles-bettenstudio.png"
+                    alt="Mobiles fanello Bettenstudio bei der Heimberatung"
+                    fill
+                    unoptimized
+                    quality={100}
+                    className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+                <div className="flex flex-col justify-center border-t border-sand/80 px-6 py-6 sm:px-8 sm:py-7 md:col-span-6 md:border-t-0 md:border-l">
+                  <p className="label text-bronze">fanello · vor Ort</p>
+                  <h3 className="mt-2 font-serif text-[1.75rem] tracking-[-0.03em] sm:text-[1.9rem]">
+                    Mobiles Bettenstudio
+                  </h3>
+                  <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-muted">
+                    Wünschen Sie eine Beratung bei Ihnen zu Hause? Mit unserem
+                    mobilen fanello Bettenstudio können wir Sie optimal beraten.
+                  </p>
+                  <span className="label mt-4 inline-flex text-ink transition-transform duration-300 group-hover:translate-x-1">
+                    Ansehen →
+                  </span>
+                </div>
+              </article>
+            </Link>
+          </Reveal>
         </Container>
       </section>
 
       <section className="relative overflow-hidden bg-ink py-24 sm:py-28 lg:py-36">
         <div className="absolute inset-0">
           <Image
-            src="/images/beratung-holzbett.png"
-            alt="Persönliche Schlafberatung bei Naturland, Massivholzbett im Hintergrund"
+            src="/images/vier-gruende-berge.jpg"
+            alt="Berglandschaft im Abendlicht"
             fill
             unoptimized
             quality={100}
@@ -389,7 +143,7 @@ export function ProductsOverview() {
               Wieso Naturland
             </p>
             <h2 className="display-md mt-5 max-w-3xl text-ivory">
-              Vier Gründe, die zählen.
+              Vier Gründe.
             </h2>
           </Reveal>
 
@@ -414,55 +168,6 @@ export function ProductsOverview() {
           </div>
         </Container>
       </section>
-
-      <section className="bg-ivory py-20 sm:py-24 lg:py-32">
-        <Container>
-          <Reveal>
-            <Eyebrow>Service</Eyebrow>
-            <h2 className="display-md mt-4 max-w-3xl">Rundum gedacht.</h2>
-            <p className="lede mt-5 max-w-2xl text-muted">
-              Vom ersten Beratungsgespräch bis zur Montage bei Ihnen zuhause –
-              das gehört bei uns immer dazu.
-            </p>
-          </Reveal>
-
-          <div className="mt-14 grid gap-10 lg:mt-20 lg:grid-cols-12 lg:gap-14">
-            <div className="lg:col-span-5">
-              <ParallaxMedia
-                src="/images/mobiles-bettenstudio.png"
-                alt="Mobiles fanello Bettenstudio bei der Heimberatung"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                unoptimized
-                strength={22}
-                className="aspect-[4/3] w-full"
-              />
-            </div>
-
-            <div className="lg:col-span-7 lg:pt-2">
-              <div>
-                {serviceItems.map((item, i) => (
-                  <Reveal key={item.title} delay={i * 0.06} variant="fade">
-                    <ServiceItem
-                      n={String(i + 1).padStart(2, "0")}
-                      title={item.title}
-                      text={item.text}
-                      isOpen={openService === i}
-                      onToggle={() =>
-                        setOpenService(openService === i ? null : i)
-                      }
-                    />
-                  </Reveal>
-                ))}
-                <div className="border-t border-ink/15" />
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      <Testimonials />
-
-      <FinalCTA />
     </>
   );
 }

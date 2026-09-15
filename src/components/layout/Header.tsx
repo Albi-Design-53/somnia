@@ -8,6 +8,7 @@ import { Menu, X } from "lucide-react";
 import { site } from "@/content/site";
 import { Button } from "@/components/ui/Button";
 import { BrandLogo } from "@/components/ui/BrandLogo";
+import { ProductNavDesktop, ProductNavMobile } from "@/components/layout/ProductNav";
 import { cn } from "@/lib/cn";
 import { shellPad } from "@/components/ui/Container";
 
@@ -20,6 +21,7 @@ function navIsActive(pathname: string, href: string) {
       pathname === "/produkte" ||
       pathname.startsWith("/betten") ||
       pathname.startsWith("/matratzen") ||
+      pathname.startsWith("/schlaftextilien") ||
       pathname === "/decken-kissen" ||
       pathname === "/bettwaesche"
     );
@@ -85,24 +87,41 @@ export function Header() {
             </span>
           </Link>
 
-          <nav className="ml-auto hidden items-center gap-5 lg:flex 2xl:gap-8">
-            {desktopNav.map((item) => {
-              const active = navReady && navIsActive(pathname, item.href);
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={cn(
-                    "relative shrink-0 whitespace-nowrap py-1 text-[14px] font-medium tracking-[-0.01em] transition-opacity duration-300 2xl:text-[15px]",
-                    "after:absolute after:right-0 after:bottom-0 after:left-0 after:h-px after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100",
-                    active ? "opacity-100 after:scale-x-100" : "opacity-70 hover:opacity-100",
-                  )}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
+          <div className="ml-auto hidden items-center gap-6 lg:flex 2xl:gap-8">
+            <nav className="flex items-center gap-5 2xl:gap-8">
+              {desktopNav.map((item) => {
+                const active = navReady && navIsActive(pathname, item.href);
+                if (item.href === "/produkte") {
+                  return (
+                    <ProductNavDesktop
+                      key={item.href}
+                      active={active}
+                      pathname={pathname}
+                    />
+                  );
+                }
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={cn(
+                      "relative shrink-0 whitespace-nowrap py-1 text-[14px] font-medium tracking-[-0.01em] transition-opacity duration-300 2xl:text-[15px]",
+                      "after:absolute after:right-0 after:bottom-0 after:left-0 after:h-px after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100",
+                      active ? "opacity-100 after:scale-x-100" : "opacity-70 hover:opacity-100",
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+            </nav>
+            <Link
+              href={site.cta.href}
+              className="shrink-0 border border-bronze bg-bronze px-5 py-2.5 text-[11px] font-medium tracking-[0.14em] uppercase text-ivory transition-colors hover:border-charcoal hover:bg-charcoal xl:px-6"
+            >
+              {site.cta.primary}
+            </Link>
+          </div>
 
           <button
             type="button"
@@ -143,6 +162,7 @@ export function Header() {
                     >
                       {item.label}
                     </Link>
+                    {item.href === "/produkte" ? <ProductNavMobile /> : null}
                   </motion.div>
                 ))}
               </nav>

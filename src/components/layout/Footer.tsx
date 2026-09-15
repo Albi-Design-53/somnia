@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site } from "@/content/site";
+import { productNavGroups } from "@/content/product-worlds";
 import { Container } from "@/components/ui/Container";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 
@@ -15,17 +16,12 @@ const columns = [
     title: "Sortiment",
     links: [
       { label: "Produkte", href: "/produkte" },
-      { label: "Bever", href: "/betten/bever" },
-      { label: "Surava", href: "/betten/surava" },
-      { label: "Lain", href: "/betten/lain" },
-      { label: "Lavin", href: "/betten/lavin" },
-      { label: "Matratzen", href: "/matratzen" },
+      ...productNavGroups.flatMap((group) => [...group.items]),
     ],
   },
   {
     title: "Service",
     links: [
-      { label: "FAQ", href: "/#faq" },
       { label: "Termin vereinbaren", href: "/kontakt" },
     ],
   },

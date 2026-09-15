@@ -4,6 +4,7 @@ import { ProductPageContent } from "@/lib/product-content";
 import { DuePriceGuide } from "@/components/ui/DuePriceGuide";
 import { Container, Eyebrow } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { ProductPath } from "@/components/ui/ProductPath";
 import { Reveal, RevealImage } from "@/components/ui/Reveal";
 import { ZoomableImage } from "@/components/ui/ZoomableImage";
 
@@ -21,6 +22,11 @@ function ProductCtas() {
 export function ProductPage({ content }: { content: ProductPageContent }) {
   const extras = content.gallery.filter((item) => item.src !== content.image);
   const shots = extras.slice(0, 3);
+  const sheetPhotos = [
+    { src: content.image, alt: content.imageAlt },
+    ...extras,
+  ].slice(0, 4);
+  const compactSheet = content.imageLayout === "sheet" && sheetPhotos.length > 1;
 
   return (
     <>
@@ -35,31 +41,48 @@ export function ProductPage({ content }: { content: ProductPageContent }) {
             {content.imageLayout === "sheet" ? (
               <div>
                 <Reveal>
-                  <nav className="text-[13px] text-muted" aria-label="Pfad">
-                    <Link href={content.parent.href} className="transition-colors hover:text-ink">
-                      {content.parent.label}
-                    </Link>
-                    <span className="mx-2 text-sand">/</span>
-                    <span className="text-ink">{content.title}</span>
-                  </nav>
+                  <ProductPath parent={content.parent} title={content.title} />
                   <Eyebrow className="mt-8">{content.eyebrow}</Eyebrow>
                   <h1 className="mt-4 font-serif text-[2.35rem] leading-[1.06] tracking-[-0.03em] sm:text-[3.1rem] lg:text-[3.4rem]">
                     {content.title}
                   </h1>
-                  <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
-                    {content.claim}
-                  </p>
+                  {content.claim ? (
+                    <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
+                      {content.claim}
+                    </p>
+                  ) : null}
                 </Reveal>
-                <div className="relative mt-10 overflow-hidden bg-cream">
-                  <ZoomableImage
-                    src={content.image}
-                    alt={content.imageAlt}
-                    width={content.imageWidth ?? 3368}
-                    height={content.imageHeight ?? 1191}
-                    decoding="async"
-                    className="h-auto w-full"
-                  />
-                </div>
+                {compactSheet ? (
+                  <div className="mt-8 grid max-w-7xl grid-cols-1 gap-4 sm:grid-cols-2">
+                    {sheetPhotos.map((item) => (
+                      <div
+                        key={item.src}
+                        className="relative aspect-[3/2] overflow-hidden bg-cream"
+                      >
+                        <ZoomableImage
+                          src={item.src}
+                          alt={item.alt}
+                          fill
+                          unoptimized
+                          quality={100}
+                          className="object-cover object-center"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 38rem"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="relative mt-10 overflow-hidden bg-cream">
+                    <ZoomableImage
+                      src={content.image}
+                      alt={content.imageAlt}
+                      width={content.imageWidth ?? 3368}
+                      height={content.imageHeight ?? 1191}
+                      decoding="async"
+                      className="h-auto w-full"
+                    />
+                  </div>
+                )}
                 <div className="mt-10">
                   {content.priceFrom ? (
                   <div>
@@ -120,20 +143,16 @@ export function ProductPage({ content }: { content: ProductPageContent }) {
 
               <div className="order-1 lg:sticky lg:top-28 lg:order-2">
                 <Reveal>
-                  <nav className="text-[13px] text-muted" aria-label="Pfad">
-                    <Link href={content.parent.href} className="transition-colors hover:text-ink">
-                      {content.parent.label}
-                    </Link>
-                    <span className="mx-2 text-sand">/</span>
-                    <span className="text-ink">{content.title}</span>
-                  </nav>
+                  <ProductPath parent={content.parent} title={content.title} />
                   <Eyebrow className="mt-8">{content.eyebrow}</Eyebrow>
                   <h1 className="mt-4 font-serif text-[2.35rem] leading-[1.06] tracking-[-0.03em] sm:text-[3.1rem] lg:text-[3.4rem]">
                     {content.title}
                   </h1>
-                  <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
-                    {content.claim}
-                  </p>
+                  {content.claim ? (
+                    <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
+                      {content.claim}
+                    </p>
+                  ) : null}
 
                   {content.priceFrom ? (
                   <div className="mt-8">
@@ -194,7 +213,32 @@ export function ProductPage({ content }: { content: ProductPageContent }) {
           </section>
         ) : null}
 
-        {content.specs.length > 0 ? (
+        {content.sections.length > 0 ? (
+          <section id="daten" className="scroll-mt-28 bg-cream py-14 sm:py-16 lg:py-24">
+            <Container>
+              <Reveal>
+                <Eyebrow>{content.sectionsEyebrow ?? "Fertigung"}</Eyebrow>
+                <h2 className="mt-4 font-serif text-[2rem] tracking-[-0.03em] sm:text-[2.5rem]">
+                  {content.sectionsTitle ?? "Der Bettrahmen."}
+                </h2>
+              </Reveal>
+              <div className="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:gap-x-16 lg:gap-y-14">
+                {content.sections.map((item, i) => (
+                  <Reveal key={item.title} delay={i * 0.05}>
+                    <article className="border-t border-sand/80 pt-6">
+                      <h3 className="font-serif text-[1.45rem] tracking-[-0.03em] sm:text-[1.65rem]">
+                        {item.title}
+                      </h3>
+                      <p className="mt-3 text-[16px] leading-relaxed text-muted">
+                        {item.text}
+                      </p>
+                    </article>
+                  </Reveal>
+                ))}
+              </div>
+            </Container>
+          </section>
+        ) : content.specs.length > 0 ? (
           <section id="daten" className="scroll-mt-28 bg-cream py-14 sm:py-16 lg:py-24">
             <Container>
               <Reveal>

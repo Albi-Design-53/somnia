@@ -4,7 +4,7 @@ import { ProductsOverview } from "@/components/sections/ProductsOverview";
 export const metadata: Metadata = {
   title: "Produkte",
   description:
-    "Bettrahmen, Matratzen, Decken, Kissen und Heimberatung bei Naturland in St. Gallen. Bever, Lavin, Surava und Lain von Sponda, Fanello Naturbett, Natur-Boxspring und natürliche Bettwaren.",
+    "Bettrahmen, Matratzen, Decken, Kissen und Heimberatung bei Naturland in St. Gallen. Jana, Marco, Bondo und Viktoria, Fanello Naturbett, Natur-Boxspring und natürliche Bettwaren.",
 };
 
 export default function ProduktePage() {

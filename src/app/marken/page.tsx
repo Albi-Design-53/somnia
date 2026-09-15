@@ -8,7 +8,7 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 export const metadata: Metadata = {
   title: "Marken",
   description:
-    "fanello swiss und Sponda: natürliche Schlafsysteme und Massivholzrahmen, metallfrei wo es zählt, hergestellt in der Schweiz.",
+    "fanello swiss: natürliche Schlafsysteme und Massivholzrahmen, metallfrei wo es zählt, hergestellt in der Schweiz.",
 };
 
 export default function MarkenPage() {
@@ -17,7 +17,7 @@ export default function MarkenPage() {
       <PageHero
         eyebrow="Marken"
         title="Weniger Marken. Mehr Herkunft."
-        text="fanello swiss für das Schlafsystem. Sponda für den Massivholzrahmen. Zusammen: schadstofffrei, einstellbar, in der Schweiz gemacht."
+        text="fanello swiss für das Schlafsystem. Massivholzrahmen nach Mass. Zusammen: schadstofffrei, einstellbar, in der Schweiz gemacht."
         image={images.consultation}
         imageAlt="Natur-Boxspringbett fanello swiss im Showroom"
       />

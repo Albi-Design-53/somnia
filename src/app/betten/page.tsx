@@ -1,141 +1,130 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { bedTopics, getFeaturedProducts, site } from "@/content/site";
-import { PageHero } from "@/components/ui/PageHero";
-import { Container } from "@/components/ui/Container";
+import { getFeaturedProducts, site } from "@/content/site";
+import { Container, Eyebrow } from "@/components/ui/Container";
+import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "Bettrahmen",
   description:
-    "Bever, Lavin, Surava und Lain von Sponda, Fanello Naturbett, Natur-Boxspringbett und mobiles Bettenstudio bei Naturland in St. Gallen.",
+    "Jana, Bondo, Viktoria und Marco – Massivholzrahmen, gefertigt in Trimmis, bei Naturland in St. Gallen.",
+  keywords: [
+    "Naturland",
+    "Bettrahmen",
+    "Massivholz",
+    "Jana",
+    "Bondo",
+    "Viktoria",
+    "Marco",
+    "St. Gallen",
+  ],
 };
 
 export default function BettenPage() {
   const featured = getFeaturedProducts();
 
   return (
-    <>
-      <PageHero
-        compact
-        eyebrow="Bettrahmen"
-        title="Natürliche Bettrahmen, erklärt und angepasst."
-        text="Sponda-Massivholz, fanello Naturbett, Natur-Boxspring und Heimberatung. Kein Katalogverkauf – Mutter und Sohn Graziella und Roger Zwiker nehmen sich Zeit, seit über 40 Jahren."
-        image="/images/bed-bever.jpg"
-        imageAlt="Bettrahmen Bever von Sponda in Kernbuche"
-      />
-
-      <section className="bg-ivory py-16 sm:py-20 lg:py-24">
-        <Container className="max-w-3xl">
-          <p className="lede text-muted">
-            Bei Naturland in St. Gallen kaufen Sie kein Bett von der Stange.
-            Sie wählen ein System: Rahmen, Lattenrost, Matratze und Auflage –
-            schadstofffrei, oft metallfrei, hergestellt in der Schweiz.
-          </p>
-          <p className="mt-6 text-[17px] leading-relaxed text-muted">
-            Die Massivholzrahmen Bever, Lavin, Surava und Lain fertigt Sponda in
-            Trimmis. Im Laden am Gallusplatz liegen die Schichten offen da. Wer
-            nicht kommen kann, zu dem kommen wir nach Hause mit dem mobilen
-            Bettenstudio. Preise inklusive Lieferung und Montage erfahren Sie
-            vor Ort oder am Telefon: {site.contact.phone} und{" "}
-            {site.contact.phone2}.
-          </p>
-        </Container>
-
-        <Container className="mt-16 lg:mt-24">
-          <h2 className="display-md max-w-3xl">Vier Bettrahmen von Sponda.</h2>
-          <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-muted">
-            Fertigung in Trimmis. Beratung und Verkauf in St. Gallen.
-          </p>
-          <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {featured.map((product) => (
-              <Link key={product.slug} href={`/betten/${product.slug}`} className="group block">
-                <div className="relative aspect-[16/7] overflow-hidden bg-cream">
-                  <Image
-                    src={product.image}
-                    alt={product.imageAlt ?? product.name}
-                    fill
-                    unoptimized
-                    quality={100}
-                    className="object-contain"
-                    sizes="(max-width: 640px) 100vw, 33vw"
-                  />
-                </div>
-                <p className="label mt-5 text-bronze">{product.category}</p>
-                <h3 className="mt-2 font-serif text-[1.85rem] tracking-[-0.03em]">
-                  {product.name}
-                </h3>
-                <p className="mt-3 text-[15px] leading-relaxed text-muted">
-                  {product.excerpt}
-                </p>
-                <span className="label mt-4 inline-flex text-ink transition-transform duration-300 group-hover:translate-x-1">
-                  Ansehen →
-                </span>
-              </Link>
-            ))}
+    <section className="bg-cream pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-28">
+      <Container>
+        <Reveal>
+          <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between sm:gap-10 lg:gap-16">
+            <div className="min-w-0 flex-1">
+              <Eyebrow>Bettrahmen</Eyebrow>
+              <h1 className="display-md mt-5 max-w-3xl">
+                Bettrahmen aus Massivholz.
+              </h1>
+              <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-muted">
+                Hergestellt in der Schweiz, erhältlich in allen einheimischen
+                Hölzern.
+              </p>
+              <p className="mt-4 max-w-3xl text-[17px] leading-relaxed text-muted">
+                Diese Massivholzbetten verbinden traditionelle Schweizer
+                Handwerkskunst mit einem durchdachten, metallfreien Aufbau für
+                ein natürliches und gesundes Schlafklima. Die abgebildete
+                Ausführung zeigt das Modell in ausdrucksstarker Kernbuche,
+                deren warme Bänderung und charakteristische Maserung dem Raum
+                eine lebendige, naturnahe Atmosphäre verleihen.
+              </p>
+            </div>
+            <Image
+              src="/images/fsc.png"
+              alt="FSC – Forest Stewardship Council"
+              width={1200}
+              height={1248}
+              unoptimized
+              quality={100}
+              className="h-36 w-auto shrink-0 self-end sm:h-48 sm:self-start lg:h-64 xl:h-72"
+            />
           </div>
-        </Container>
+        </Reveal>
 
-        <Container className="mt-16 space-y-24 lg:mt-24 lg:space-y-32">
-          {bedTopics.map((topic) => (
-            <article key={topic.slug} id={topic.slug} className="grid items-start gap-10 lg:grid-cols-12 lg:gap-16">
-              <div className="relative aspect-[16/10] overflow-hidden lg:col-span-7">
-                <Image
-                  src={topic.image}
-                  alt={topic.imageAlt}
-                  fill
-                  quality={85}
-                  className="object-cover object-center"
-                  sizes="(max-width: 1024px) 100vw, 58vw"
-                />
-              </div>
-              <div className="lg:col-span-5">
-                <p className="label text-bronze">{topic.eyebrow}</p>
-                <h2 className="display-md mt-3">{topic.title}</h2>
-                {topic.paragraphs.map((paragraph) => (
-                  <p key={paragraph.slice(0, 40)} className="mt-5 text-[17px] leading-relaxed text-muted">
-                    {paragraph}
-                  </p>
-                ))}
-                <ul className="mt-8 space-y-3">
-                  {topic.points.map((point) => (
-                    <li key={point} className="border-t border-sand pt-3 text-[15px] leading-relaxed">
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <Button href={`/betten/${topic.slug}`}>Mehr erfahren</Button>
-                  <Button href="/kontakt" variant="ghost">
-                    Beratung
-                  </Button>
-                </div>
-              </div>
-            </article>
-          ))}
-        </Container>
+        <div className="mt-12 flex flex-col gap-6 lg:mt-16 lg:gap-8">
+          {featured.map((product, i) => {
+            const image = product.cardImage ?? product.image;
+            const imageAlt = product.cardImageAlt ?? product.imageAlt ?? product.name;
+            const cover = product.cardImageFit === "cover";
 
-        <Container className="mt-24 max-w-3xl lg:mt-32">
-          <h2 className="display-md">Wie wir vorgehen.</h2>
-          <p className="mt-6 text-[17px] leading-relaxed text-muted">
-            Zuerst das Gespräch: Wie schlafen Sie, was stört, welches Mass hat
-            der Raum. Dann das Liegen – im Laden oder zu Hause. Härte, Höhe und
-            Materialien werden am Körper entschieden, nicht am Bildschirm.
-          </p>
-          <p className="mt-5 text-[17px] leading-relaxed text-muted">
-            Lieferung und Montage gehören dazu. Alte, noch brauchbare Möbel
-            geben wir an die Osthilfe. Garantie: 10 Jahre auf Matratze und
-            Stützelement, 5 Jahre auf den Einlegerahmen.
-          </p>
-          <Link
-            href="/kontakt"
-            className="label mt-8 inline-flex text-ink transition-transform hover:translate-x-1"
-          >
-            Termin vereinbaren →
-          </Link>
-        </Container>
-      </section>
-    </>
+            return (
+              <Reveal key={product.slug} delay={i * 0.04}>
+                <Link href={`/betten/${product.slug}`} className="group block">
+                  <article className="overflow-hidden bg-ivory md:grid md:grid-cols-12 md:items-stretch">
+                    <div
+                      className={
+                        cover
+                          ? "relative aspect-[16/10] overflow-hidden bg-cream md:col-span-6"
+                          : "relative aspect-[16/10] bg-cream p-4 md:col-span-6 md:p-6"
+                      }
+                    >
+                      <Image
+                        src={image}
+                        alt={imageAlt}
+                        fill
+                        priority={i === 0}
+                        unoptimized
+                        quality={100}
+                        className={
+                          cover
+                            ? `object-cover ${product.cardImagePosition ?? "object-center"}`
+                            : "object-contain object-center"
+                        }
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                    </div>
+                    <div className="flex flex-col items-center justify-center border-t border-sand/70 px-6 py-10 text-center sm:px-8 sm:py-12 md:col-span-6 md:border-t-0 md:border-l">
+                      <p className="text-[13px] font-medium tracking-[0.16em] uppercase text-bronze sm:text-[15px]">
+                        {String(i + 1).padStart(2, "0")} · Massivholz
+                      </p>
+                      <h2 className="mt-3 font-serif text-[2.35rem] leading-[1.08] tracking-[-0.03em] sm:text-[2.85rem] lg:text-[3.35rem]">
+                        {product.name}
+                      </h2>
+                      <span className="mt-6 text-[14px] font-medium tracking-[0.14em] uppercase text-ink transition-transform duration-300 group-hover:translate-x-1 sm:text-[16px]">
+                        Ansehen →
+                      </span>
+                    </div>
+                  </article>
+                </Link>
+              </Reveal>
+            );
+          })}
+        </div>
+
+        <Reveal>
+          <div className="mt-16 max-w-3xl border-t border-sand/80 pt-14 lg:mt-24 lg:pt-16">
+            <Eyebrow>Im Laden</Eyebrow>
+            <h2 className="display-md mt-4">
+              Viele weitere Bettrahmen erhältlich.
+            </h2>
+            <p className="mt-5 font-serif text-[1.45rem] leading-snug tracking-[-0.02em] text-ink sm:text-[1.7rem]">
+              Wir freuen uns auf Ihren Besuch.
+            </p>
+            <div className="mt-8">
+              <Button href={site.cta.href}>{site.cta.primary}</Button>
+            </div>
+          </div>
+        </Reveal>
+      </Container>
+    </section>
   );
 }
