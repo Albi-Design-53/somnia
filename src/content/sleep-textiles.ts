@@ -15,7 +15,14 @@ export const sleepTextiles = [
     imageWidth: 1024,
     imageHeight: 813,
   },
-  { slug: "auflagen", name: "Auflagen" },
+  {
+    slug: "auflagen",
+    name: "Auflagen",
+    image: "/images/schlaftextilien-auflagen.png",
+    imageAlt: "Gesteppte Naturauflage",
+    imageWidth: 1024,
+    imageHeight: 682,
+  },
   { slug: "bettwaesche", name: "Bettwäsche" },
 ] as const;
 
