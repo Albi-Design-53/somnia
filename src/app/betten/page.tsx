@@ -114,12 +114,6 @@ export default function BettenPage() {
           <div className="mt-16 max-w-3xl border-t border-sand/80 pt-14 lg:mt-24 lg:pt-16">
             <Eyebrow>Im Laden</Eyebrow>
             <h2 className="display-md mt-4">Viele weitere Betten.</h2>
-            <p className="mt-5 text-[17px] leading-relaxed text-muted">
-              Jana, Bondo, Viktoria und Marco sind vier Gestelle aus der
-              Werkstatt – nicht das ganze Haus. Bei uns in St. Gallen stehen
-              viele weitere Betten: andere Formen, andere Hölzer, andere Masse.
-              Zum Anfassen, zum Liegen, ohne Katalogdruck.
-            </p>
             <p className="mt-5 font-serif text-[1.45rem] leading-snug tracking-[-0.02em] text-ink sm:text-[1.7rem]">
               Kommen Sie uns doch besuchen.
             </p>
