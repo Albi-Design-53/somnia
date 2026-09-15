@@ -33,6 +33,11 @@ export default function SchlaftextilienPage() {
                 verkohlt nur. Wolle nimmt im Gegensatz zu Kunstfasern wenig
                 Schweissgeruch an.
               </p>
+              <p className="mt-4 max-w-3xl text-[17px] leading-relaxed text-muted">
+                Speziell für Allergiker und Veganer führen wir sämtliche
+                Produkte mit pflanzlichen Fasern wie Khabock, Lyocorn und
+                Bambus, die waschbar sind.
+              </p>
             </div>
             <Image
               src="/images/swiss-flag.png"
