@@ -78,9 +78,6 @@ export function ProductsOverview() {
             <h2 className="display-md mt-4 max-w-3xl">
               Das mobile Bettenstudio.
             </h2>
-            <p className="lede mt-5 max-w-2xl text-muted">
-              Wir kommen zu Ihnen – nach Hause, in den Camper oder aufs Boot.
-            </p>
           </Reveal>
 
           <Reveal>
