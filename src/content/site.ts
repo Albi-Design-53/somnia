@@ -1237,7 +1237,7 @@ export const bedTopics = [
     eyebrow: "Metallfrei",
     title: "Natur-Boxspringbett",
     lede: "Die Optik eines Boxsprings – aus natürlichen, nachwachsenden Rohstoffen und metallfrei.",
-    image: "/images/welt-boxspring.png",
+    image: "/images/boxspring-messe.jpg",
     imageAlt: "Natur-Boxspringbett aus Holz mit natürlichem Schlafsystem",
     body: "Ein herkömmliches Boxspringbett steckt voller Metallfedern. Deshalb führen wir ein natürliches, komfortables Schlafsystem im Boxrahmen – metallfrei, mit fanello swiss.",
     paragraphs: [
@@ -1291,9 +1291,9 @@ export const bedTopics = [
     ],
     steps: [],
     gallery: [
-      "/images/welt-boxspring.png",
-      "/images/kachel-natur-boxspring.png",
-      "/images/erfahrung-schichten.png",
+      "/images/boxspring-messe.jpg",
+      "/images/boxspring-laden.jpg",
+      "/images/boxspring-schichten.jpg",
     ],
   },
   {
