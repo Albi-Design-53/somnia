@@ -217,9 +217,9 @@ export function ProductPage({ content }: { content: ProductPageContent }) {
           <section id="daten" className="scroll-mt-28 bg-cream py-14 sm:py-16 lg:py-24">
             <Container>
               <Reveal>
-                <Eyebrow>Fertigung</Eyebrow>
+                <Eyebrow>{content.sectionsEyebrow ?? "Fertigung"}</Eyebrow>
                 <h2 className="mt-4 font-serif text-[2rem] tracking-[-0.03em] sm:text-[2.5rem]">
-                  Der Bettrahmen.
+                  {content.sectionsTitle ?? "Der Bettrahmen."}
                 </h2>
               </Reveal>
               <div className="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:gap-x-16 lg:gap-y-14">

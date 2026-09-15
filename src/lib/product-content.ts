@@ -19,6 +19,8 @@ export type ProductPageContent = {
   priceGuide: DueGuideMode | null;
   trust: { title: string; text: string }[];
   sections: { title: string; text: string }[];
+  sectionsEyebrow?: string;
+  sectionsTitle?: string;
   steps: string[];
   parent: { href: string; label: string };
   relatedLayout?: "circle" | "rect";
@@ -263,21 +265,23 @@ export function topicToContent(topic: Topic): ProductPageContent {
           })
       : [];
 
+  const isBoxspring = topic.slug === "natur-boxspringbett";
+
   return {
     eyebrow: topic.eyebrow,
     title: topic.title,
-    claim: topic.lede,
+    claim: isBoxspring ? "" : topic.lede,
     description: topic.description,
     bullets: [...topic.points],
     image: topic.image,
     imageAlt: topic.imageAlt,
+    imageLayout: isBoxspring ? "sheet" : undefined,
     gallery: topic.gallery.map((src, i) => ({
       src,
       alt: i === 0 ? topic.imageAlt : `${topic.title}, Ansicht ${i + 1}`,
     })),
     specs:
-      topic.slug === "natur-boxspringbett" ||
-      topic.slug === "mobiles-bettenstudio"
+      isBoxspring || topic.slug === "mobiles-bettenstudio"
         ? []
         : withGarantie(publishedSpecs([...topic.specs]), "topic", topic.slug),
     priceFrom: isMissingValue(topic.priceFrom)
@@ -285,12 +289,13 @@ export function topicToContent(topic: Topic): ProductPageContent {
       : topic.priceFrom,
     priceNote: topic.priceNote,
     priceGuide:
-      topic.slug === "mobiles-bettenstudio" ||
-      topic.slug === "natur-boxspringbett"
+      topic.slug === "mobiles-bettenstudio" || isBoxspring
         ? null
         : dueGuide(topic.slug),
     trust: [...topic.trust],
     sections: [...topic.sections],
+    sectionsEyebrow: isBoxspring ? "Fertigung" : undefined,
+    sectionsTitle: isBoxspring ? "Das Schlafsystem." : undefined,
     steps: [...topic.steps],
     parent: { href: "/produkte", label: "Produkte" },
     relatedLayout: topic.slug === "massivholz" ? "circle" : "rect",
