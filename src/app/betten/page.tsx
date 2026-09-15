@@ -33,6 +33,14 @@ export default function BettenPage() {
           <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-muted">
             Hergestellt in der Schweiz, erhältlich in allen einheimischen Hölzern.
           </p>
+          <p className="mt-4 max-w-3xl text-[17px] leading-relaxed text-muted">
+            Diese Massivholzbetten verbinden traditionelle Schweizer
+            Handwerkskunst mit einem durchdachten, metallfreien Aufbau für ein
+            natürliches und gesundes Schlafklima. Die abgebildete Ausführung
+            zeigt das Modell in ausdrucksstarker Kernbuche, deren warme
+            Bänderung und charakteristische Maserung dem Raum eine lebendige,
+            naturnahe Atmosphäre verleihen.
+          </p>
         </Reveal>
 
         <div className="mt-12 flex flex-col gap-6 lg:mt-16 lg:gap-8">
@@ -74,9 +82,6 @@ export default function BettenPage() {
                       <h2 className="mt-2 font-serif text-[1.75rem] tracking-[-0.03em] sm:text-[1.9rem]">
                         {product.name}
                       </h2>
-                      <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-muted">
-                        {product.excerpt}
-                      </p>
                       <span className="label mt-4 inline-flex text-ink transition-transform duration-300 group-hover:translate-x-1">
                         Ansehen →
                       </span>
