@@ -7,6 +7,7 @@ export const productWorlds = [
     image: "/images/welt-schlafsystem.jpg",
     frame: "aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]",
     position: "object-center",
+    fit: "contain",
   },
   {
     n: "02",

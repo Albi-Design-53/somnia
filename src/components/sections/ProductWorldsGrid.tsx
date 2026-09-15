@@ -12,18 +12,28 @@ export function ProductWorldsGrid({ className }: { className?: string }) {
           <Link href={world.href} className="group block">
             <article className="overflow-hidden bg-ivory md:grid md:grid-cols-12 md:items-stretch">
               <div className="relative aspect-[16/10] overflow-hidden bg-cream md:col-span-6">
-                <Image
-                  src={world.image}
-                  alt={world.title}
-                  fill
-                  unoptimized
-                  quality={100}
+                <div
                   className={cn(
-                    "object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]",
-                    world.position ?? "object-center",
+                    "relative h-full w-full",
+                    "fit" in world && world.fit === "contain" && "p-5 sm:p-7 lg:p-8",
                   )}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+                >
+                  <Image
+                    src={world.image}
+                    alt={world.title}
+                    fill
+                    unoptimized
+                    quality={100}
+                    className={cn(
+                      "object-center",
+                      "fit" in world && world.fit === "contain"
+                        ? "object-contain"
+                        : "object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]",
+                      world.position,
+                    )}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
               </div>
               <div className="flex flex-col justify-center border-t border-sand/80 px-6 py-6 sm:px-8 sm:py-7 md:col-span-6 md:border-t-0 md:border-l">
                 <p className="label text-bronze">{world.n}</p>
