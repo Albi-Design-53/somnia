@@ -233,7 +233,7 @@ export function ProductPage({ content }: { content: ProductPageContent }) {
                   Das Gestell.
                 </h2>
               </Reveal>
-              <div className="mt-12 max-w-3xl space-y-10">
+              <div className="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:gap-x-16 lg:gap-y-14">
                 {content.sections.map((item, i) => (
                   <Reveal key={item.title} delay={i * 0.05}>
                     <article className="border-t border-sand/80 pt-6">
