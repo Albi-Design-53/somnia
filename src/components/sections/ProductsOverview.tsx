@@ -103,9 +103,8 @@ export function ProductsOverview() {
                     Mobiles Bettenstudio
                   </h3>
                   <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-muted">
-                    Mutter und Sohn Graziella und Roger Zwiker bringen das
-                    Schlafsystem mit. Sie liegen, wir stellen ein – ohne
-                    Verkaufsdruck.
+                    Wünschen Sie eine Beratung bei Ihnen zu Hause? Mit unserem
+                    mobilen fanello Bettenstudio können wir Sie optimal beraten.
                   </p>
                   <span className="label mt-4 inline-flex text-ink transition-transform duration-300 group-hover:translate-x-1">
                     Ansehen →
