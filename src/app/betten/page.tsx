@@ -31,7 +31,7 @@ export default function BettenPage() {
           <Eyebrow>Bettrahmen</Eyebrow>
           <h1 className="display-md mt-5 max-w-3xl">Bettrahmen aus Massivholz.</h1>
           <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-muted">
-            Fertigung in Trimmis. Beratung und Verkauf in St. Gallen.
+            Hergestellt in der Schweiz, erhältlich in allen einheimischen Hölzern.
           </p>
         </Reveal>
 
