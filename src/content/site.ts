@@ -1224,9 +1224,6 @@ export const bedTopics = [
     ],
     gallery: [
       "/images/mobiles-bettenstudio.png",
-      "/images/detail-schichten.png",
-      "/images/detail-holzlatten.png",
-      "/images/detail-bezug-zip.png",
       "/images/camper-bett-1.png",
       "/images/camper-bett-vorne.png",
     ],
