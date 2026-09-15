@@ -6,118 +6,11 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { benefits, serviceItems } from "@/content/site";
 import { Container, Eyebrow } from "@/components/ui/Container";
-import { Reveal, RevealImage } from "@/components/ui/Reveal";
+import { Reveal } from "@/components/ui/Reveal";
 import { ParallaxMedia } from "@/components/ui/ParallaxMedia";
 import { ProductWorldsGrid } from "@/components/sections/ProductWorldsGrid";
 import { cn } from "@/lib/cn";
 import { easeOut } from "@/lib/motion";
-
-const layers = [
-  {
-    n: "01",
-    title: "Matratze",
-    text: "100 % Naturlatex, 7,5 bis 15 cm. Bezug mit Reissverschluss, waschbar.",
-    href: "/matratzen/cloud",
-    image: "/images/schicht-matratze.webp",
-    imageAlt: "Naturlatex-Kern der fanello-Matratze",
-    fit: "contain" as const,
-  },
-  {
-    n: "02",
-    title: "Auflage",
-    text: "Schurwolle fürs Klima – oder Lycorn aus Holz- und Maisfaser, für Allergiker.",
-    href: "/matratzen/origin",
-    image: "/images/schicht-auflage.webp",
-    imageAlt: "fanello Auflage mit hexagonaler Steppung",
-    fit: "contain" as const,
-  },
-  {
-    n: "03",
-    title: "Lattenrost",
-    text: "Punktelastisch, oft mit Sitzhochstellung. Passt in viele Gestelle.",
-    href: "/matratzen/lignum",
-    image: "/images/lattenrost-fanello.webp",
-    imageAlt: "fanello Holzlattenrost",
-    fit: "contain" as const,
-  },
-  {
-    n: "04",
-    title: "Mobiles Bettenstudio",
-    text: "Wir kommen zu Ihnen – nach Hause, in den Camper oder aufs Boot.",
-    href: "/betten/mobiles-bettenstudio",
-    image: "/images/mobiles-bettenstudio.png",
-    imageAlt: "Mobiles fanello Bettenstudio bei der Heimberatung",
-    fit: "cover" as const,
-  },
-];
-
-function ProductCard({
-  n,
-  eyebrow,
-  title,
-  text,
-  href,
-  image,
-  imageAlt,
-  fit = "cover",
-  cta = "Ansehen →",
-  aspect = "aspect-[4/5]",
-  sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw",
-  children,
-}: {
-  n?: string;
-  eyebrow?: string;
-  title: string;
-  text?: string;
-  href: string;
-  image: string;
-  imageAlt: string;
-  fit?: "cover" | "contain";
-  cta?: string;
-  aspect?: string;
-  sizes?: string;
-  children?: React.ReactNode;
-}) {
-  return (
-    <Link href={href} className="group relative block overflow-hidden bg-cream">
-      <RevealImage className={cn("relative block", aspect)}>
-        <Image
-          src={image}
-          alt={imageAlt}
-          fill
-          unoptimized
-          quality={100}
-          sizes={sizes}
-          className={cn(
-            "transition-transform duration-700 ease-out group-hover:scale-[1.03]",
-            fit === "contain"
-              ? "object-contain p-8 sm:p-10"
-              : "object-cover object-[center_42%]",
-          )}
-        />
-      </RevealImage>
-      <span className="block border-t border-sand/80 px-5 py-6 sm:px-6 sm:py-7">
-        {(n || eyebrow) && (
-          <span className="label text-bronze">
-            {n && eyebrow ? `${n} · ${eyebrow}` : n || eyebrow}
-          </span>
-        )}
-        <span className="mt-2 block font-serif text-[1.85rem] tracking-[-0.03em] text-ink sm:text-[2.1rem]">
-          {title}
-        </span>
-        {text && (
-          <span className="mt-3 block text-[15px] leading-relaxed text-muted">
-            {text}
-          </span>
-        )}
-        {children}
-        <span className="label mt-5 inline-flex text-bronze transition-transform duration-300 group-hover:translate-x-1">
-          {cta}
-        </span>
-      </span>
-    </Link>
-  );
-}
 
 function ServiceItem({
   n,
@@ -247,31 +140,49 @@ export function ProductsOverview() {
       >
         <Container>
           <Reveal>
-            <Eyebrow>fanello Schlafsystem</Eyebrow>
+            <Eyebrow>Heimberatung</Eyebrow>
             <h2 className="display-md mt-4 max-w-3xl">
-              Nur Matratze, Auflage oder Rost.
+              Das mobile Bettenstudio.
             </h2>
             <p className="lede mt-5 max-w-2xl text-muted">
-              Sie haben schon ein Gestell. Dann tauschen wir die Schichten.
-              Mit dem mobilen Bettenstudio kommen wir auch zu Ihnen.
+              Wir kommen zu Ihnen – nach Hause, in den Camper oder aufs Boot.
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:mt-16 lg:grid-cols-4 lg:gap-8">
-            {layers.map((layer, i) => (
-              <Reveal key={layer.href} delay={i * 0.06}>
-                <ProductCard
-                  n={layer.n}
-                  title={layer.title}
-                  text={layer.text}
-                  href={layer.href}
-                  image={layer.image}
-                  imageAlt={layer.imageAlt}
-                  fit={layer.fit}
-                />
-              </Reveal>
-            ))}
-          </div>
+          <Reveal>
+            <Link
+              href="/betten/mobiles-bettenstudio"
+              className="group mt-12 block lg:mt-16"
+            >
+              <article className="overflow-hidden bg-ivory md:grid md:grid-cols-12 md:items-stretch">
+                <div className="relative aspect-[16/10] overflow-hidden bg-cream md:col-span-6">
+                  <Image
+                    src="/images/mobiles-bettenstudio.png"
+                    alt="Mobiles fanello Bettenstudio bei der Heimberatung"
+                    fill
+                    unoptimized
+                    quality={100}
+                    className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+                <div className="flex flex-col justify-center border-t border-sand/80 px-6 py-6 sm:px-8 sm:py-7 md:col-span-6 md:border-t-0 md:border-l">
+                  <p className="label text-bronze">fanello · vor Ort</p>
+                  <h3 className="mt-2 font-serif text-[1.75rem] tracking-[-0.03em] sm:text-[1.9rem]">
+                    Mobiles Bettenstudio
+                  </h3>
+                  <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-muted">
+                    Mutter und Sohn Graziella und Roger Zwiker bringen das
+                    Schlafsystem mit. Sie liegen, wir stellen ein – ohne
+                    Verkaufsdruck.
+                  </p>
+                  <span className="label mt-4 inline-flex text-ink transition-transform duration-300 group-hover:translate-x-1">
+                    Ansehen →
+                  </span>
+                </div>
+              </article>
+            </Link>
+          </Reveal>
         </Container>
       </section>
 
