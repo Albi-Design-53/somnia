@@ -56,7 +56,6 @@ const MASSIVHOLZ_SLUGS = new Set(["jana", "bondo", "viktoria", "marco"]);
 
 function dueGuide(slug: string): DueGuideMode | null {
   if (slug === "fanello-naturbett") return "system";
-  if (slug === "natur-boxspringbett") return "box";
   if (slug === "mobiles-bettenstudio") return "visit";
   if (slug === "lignum") return "frame";
   return null;
@@ -254,7 +253,11 @@ export function topicToContent(topic: Topic): ProductPageContent {
       ? "Preise auf Anfrage"
       : topic.priceFrom,
     priceNote: topic.priceNote,
-    priceGuide: topic.slug === "mobiles-bettenstudio" ? null : dueGuide(topic.slug),
+    priceGuide:
+      topic.slug === "mobiles-bettenstudio" ||
+      topic.slug === "natur-boxspringbett"
+        ? null
+        : dueGuide(topic.slug),
     trust: [...topic.trust],
     sections: [...topic.sections],
     steps: [...topic.steps],
