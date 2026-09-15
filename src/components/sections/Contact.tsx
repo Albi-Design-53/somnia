@@ -6,6 +6,7 @@ import { contactTopics, site } from "@/content/site";
 import { Container, Eyebrow } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { mailtoForContact, parseContactInput } from "@/lib/contact-form";
+import { sendContactViaFormSubmit } from "@/lib/formsubmit-contact";
 
 export function Contact() {
   const [sent, setSent] = useState(false);
@@ -41,20 +42,26 @@ export function Contact() {
     setMailto(mailtoForContact(site.contact.email, payload));
     setSending(true);
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(payload),
-      });
-      const data = (await res.json().catch(() => null)) as
-        | { ok?: boolean; error?: string }
-        | null;
-      if (!res.ok || !data?.ok) {
-        setError(
-          data?.error ||
-            "Die Nachricht konnte nicht gesendet werden. Bitte schreiben Sie direkt an die angezeigte E-Mail-Adresse.",
-        );
-        return;
+      let delivered = false;
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+        const data = (await res.json().catch(() => null)) as
+          | { ok?: boolean }
+          | null;
+        if (data?.ok) delivered = true;
+      } catch {
+        // Browser delivery below still reaches the displayed address.
+      }
+
+      if (!delivered) {
+        await sendContactViaFormSubmit(site.contact.email, payload);
       }
       setSent(true);
     } catch {

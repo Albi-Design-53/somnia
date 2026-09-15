@@ -1,6 +1,9 @@
 import type { NextRequest } from "next/server";
 import { parseContactInput } from "@/lib/contact-form";
-import { sendContactEmail } from "@/lib/send-contact-email";
+import {
+  NoServerMailerError,
+  sendContactEmail,
+} from "@/lib/send-contact-email";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -59,7 +62,10 @@ export async function POST(request: NextRequest) {
   try {
     await sendContactEmail(parsed.value);
     return Response.json({ ok: true });
-  } catch {
+  } catch (error) {
+    if (error instanceof NoServerMailerError) {
+      return Response.json({ ok: false, code: "NO_SERVER_MAILER" });
+    }
     return Response.json(
       {
         ok: false,

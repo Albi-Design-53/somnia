@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { afterEach, describe, it } from "node:test";
-import { sendContactEmail } from "./send-contact-email";
+import { NoServerMailerError, sendContactEmail } from "./send-contact-email";
+import { formSubmitUrl, sendContactViaFormSubmit } from "./formsubmit-contact";
 
 const payload = {
   firstName: "Anna",
@@ -20,7 +21,34 @@ afterEach(() => {
 });
 
 describe("sendContactEmail", () => {
-  it("delivers to the address shown on the site", async () => {
+  it("does not silently succeed without a mailer", async () => {
+    await assert.rejects(sendContactEmail(payload), NoServerMailerError);
+  });
+
+  it("sends through Resend to the address shown on the site", async () => {
+    process.env.RESEND_API_KEY = "re_test";
+    const posts: Array<{ url: string; body: { to?: string[] } }> = [];
+    globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
+      posts.push({
+        url: String(input),
+        body: JSON.parse(String(init?.body)) as { to?: string[] },
+      });
+      return new Response(JSON.stringify({ id: "ok" }), { status: 200 });
+    }) as typeof fetch;
+
+    await sendContactEmail(payload);
+    assert.equal(posts[0]?.url, "https://api.resend.com/emails");
+    assert.deepEqual(posts[0]?.body.to, ["zwiker@natur-land.ch"]);
+  });
+});
+
+describe("sendContactViaFormSubmit", () => {
+  it("posts to FormSubmit for the displayed inbox", async () => {
+    assert.equal(
+      formSubmitUrl("zwiker@natur-land.ch"),
+      "https://formsubmit.co/ajax/zwiker%40natur-land.ch",
+    );
+
     const urls: string[] = [];
     globalThis.fetch = (async (input: RequestInfo | URL) => {
       urls.push(String(input));
@@ -30,8 +58,9 @@ describe("sendContactEmail", () => {
       });
     }) as typeof fetch;
 
-    await sendContactEmail(payload);
-    assert.equal(urls.length, 1);
-    assert.match(urls[0], /formsubmit\.co\/ajax\/zwiker%40natur-land\.ch$/);
+    await sendContactViaFormSubmit("zwiker@natur-land.ch", payload);
+    assert.deepEqual(urls, [
+      "https://formsubmit.co/ajax/zwiker%40natur-land.ch",
+    ]);
   });
 });
