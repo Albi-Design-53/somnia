@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "npx --yes tsx --test src/lib/contact-form.test.ts src/lib/send-contact-email.test.ts"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.8",
