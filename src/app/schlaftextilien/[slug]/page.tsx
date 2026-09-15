@@ -44,6 +44,11 @@ export default async function SleepTextilePage({ params }: Props) {
             <h1 className="mt-4 font-serif text-[2.35rem] leading-[1.06] tracking-[-0.03em] sm:text-[3.1rem] lg:text-[3.4rem]">
               {item.name}
             </h1>
+            {"line" in item ? (
+              <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
+                {item.line}
+              </p>
+            ) : null}
             {"cta" in item ? (
               <div className="mt-8">
                 <Button href={item.cta.href} external={item.cta.external}>
