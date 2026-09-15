@@ -54,6 +54,29 @@ const DEFAULT_TRUST = [
 
 const MASSIVHOLZ_SLUGS = new Set(["jana", "bondo", "viktoria", "marco"]);
 
+const MASSIVHOLZ_SECTIONS = [
+  {
+    title: "100 % metallfreie Bauweise",
+    text: "Das Gestell wird über präzise Holzsteckverbindungen montiert. Dies garantiert absolute Freiheit von elektromagnetischen Störfeldern, höchste Stabilität und ein vollkommen lautloses, quietschfreies Bettelement.",
+  },
+  {
+    title: "Schweizer Qualitätsfertigung",
+    text: "Hergestellt in regionaler Schreinerarbeit aus heimischen Holzarten (wie Arve/Zirbe, Eiche, Kernbuche, Nussbaum, Kirschbaum oder Ahorn). Das sichert kurze Transportwege, nachhaltige Forstwirtschaft und höchste Verarbeitungsstandards.",
+  },
+  {
+    title: "Biologisch geölte Oberfläche",
+    text: "Die Veredelung mit natürlichen Ölen lässt die Poren des Holzes offen. Das Bett bleibt atmungsaktiv, unterstützt die Feuchtigkeitsregulierung im Schlafzimmer und fühlt sich haptisch seidenweich und warm an.",
+  },
+  {
+    title: "Modulares Design (4 Rückenlehnen)",
+    text: "Das Kopfteil lässt sich variabel aus vier verschiedenen Designvarianten wählen – von schlichten, durchgehenden Holzpaneelen bis hin zu Modellen mit feinen Ausfräsungen oder sanft geschwungenen Ergonomie-Konturen.",
+  },
+  {
+    title: "Flexibilität und Massanfertigung",
+    text: "Sondergrössen (z. B. Überlängen von 210/220 cm oder Sonderbreiten), individuelle Einlege-Tiefen für Einlegeroste sowie massgeschneiderte Beistelltische sind auf Kundenwunsch problemlos umsetzbar.",
+  },
+] as const;
+
 function dueGuide(slug: string): DueGuideMode | null {
   if (slug === "fanello-naturbett") return "system";
   if (slug === "mobiles-bettenstudio") return "visit";
@@ -190,14 +213,16 @@ export function productToContent(product: Product): ProductPageContent {
       src,
       alt: i === 0 ? imageAlt : `${product.name}, Detail ${i + 1}`,
     })),
-    specs: withGarantie(publishedSpecs(product.specs), product.kind, product.slug),
+    specs: isMassivholz
+      ? []
+      : withGarantie(publishedSpecs(product.specs), product.kind, product.slug),
     priceFrom: isMissingValue(product.priceFrom)
       ? "Preise auf Anfrage"
       : product.priceFrom,
     priceNote: product.priceNote ?? DEFAULT_PRICE_NOTE,
     priceGuide: dueGuide(product.slug),
     trust: product.trust ?? [...DEFAULT_TRUST],
-    sections: product.sections ?? [],
+    sections: isMassivholz ? [...MASSIVHOLZ_SECTIONS] : (product.sections ?? []),
     steps: [],
     parent:
       product.kind === "matratze"
