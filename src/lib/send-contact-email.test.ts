@@ -63,4 +63,18 @@ describe("sendContactViaFormSubmit", () => {
       "https://formsubmit.co/ajax/zwiker%40natur-land.ch",
     ]);
   });
+
+  it("treats a first-time activation mail as delivered", async () => {
+    globalThis.fetch = (async () =>
+      new Response(
+        JSON.stringify({
+          success: "false",
+          message:
+            "This form needs Activation. We've sent you an email containing an 'Activate Form' link. Just click it and your form will be actived!",
+        }),
+        { status: 200, headers: { "Content-Type": "application/json" } },
+      )) as typeof fetch;
+
+    await sendContactViaFormSubmit("zwiker@natur-land.ch", payload);
+  });
 });

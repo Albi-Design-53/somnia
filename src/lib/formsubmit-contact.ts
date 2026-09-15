@@ -22,6 +22,16 @@ export function formSubmitUrl(to: string) {
   return `https://formsubmit.co/ajax/${encodeURIComponent(to)}`;
 }
 
+export function isFormSubmitAccepted(
+  ok: boolean,
+  data: { success?: boolean | string; message?: string } | null,
+) {
+  if (data?.success === true || data?.success === "true") return true;
+  const message = String(data?.message || "");
+  // First submit emails the displayed inbox an activation link.
+  return ok && /activat/i.test(message);
+}
+
 export async function sendContactViaFormSubmit(
   to: string,
   payload: ContactPayload,
@@ -41,10 +51,8 @@ export async function sendContactViaFormSubmit(
     const data = (await res.json().catch(() => null)) as
       | { success?: boolean | string; message?: string }
       | null;
-    const success = data?.success === true || data?.success === "true";
-    if (!res.ok || !success) {
-      throw new Error(data?.message || `FormSubmit responded ${res.status}`);
-    }
+    if (isFormSubmitAccepted(res.ok, data)) return;
+    throw new Error(data?.message || `FormSubmit responded ${res.status}`);
   } finally {
     clearTimeout(timer);
   }
