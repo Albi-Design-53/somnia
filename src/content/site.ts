@@ -1255,7 +1255,7 @@ export const bedTopics = [
     ],
     description:
       "Ein klassisches Boxspring steckt voller Metallfedern. Höhe und weiches Liegen bleiben – statt Federkasten kommt das fanello-System: Holzstützelement, Naturlatex, natürliche Auflage. Metallfrei, aus nachwachsenden Rohstoffen.",
-    priceFrom: fanelloDue.systemFrom,
+    priceFrom: PRICE_TODO,
     priceNote: "",
     specs: [
       { label: "Aufbau", value: "fanello-System im Boxrahmen, metallfrei" },
