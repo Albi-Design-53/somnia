@@ -1289,12 +1289,7 @@ export const bedTopics = [
         text: "Seit über dreissig Jahren stellt fanello in der Schweiz Schlafsysteme aus natürlichen Materialien her. Seit Jahren arbeiten wir damit. Das System bleibt erklärbar: Stützelement, Matratze, Auflage – Schicht für Schicht, mit 10 Jahren Garantie auf Stützelement und Matratze.",
       },
     ],
-    steps: [
-      "Wir klären, ob Boxrahmen oder bestehendes Gestell.",
-      "Sie liegen das System – Härte und Höhe werden eingestellt.",
-      "Einbau, Lieferung und Montage inklusive.",
-      "Nachts: Höhe eines Boxsprings, ohne Federkern-Metall.",
-    ],
+    steps: [],
     gallery: [
       "/images/welt-boxspring.png",
       "/images/kachel-natur-boxspring.png",
