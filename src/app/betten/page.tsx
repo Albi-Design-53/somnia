@@ -117,14 +117,11 @@ export default function BettenPage() {
               Viele weitere Bettrahmen erhältlich.
             </h2>
             <p className="mt-5 font-serif text-[1.45rem] leading-snug tracking-[-0.02em] text-ink sm:text-[1.7rem]">
-              Kommen Sie uns doch besuchen.
+              Wir freuen uns auf Ihren Besuch.
             </p>
             <div className="mt-8">
               <Button href={site.cta.href}>{site.cta.primary}</Button>
             </div>
-            <p className="mt-4 text-[15px] text-muted">
-              {site.contact.addressLine1}, {site.contact.addressLine2}
-            </p>
           </div>
         </Reveal>
       </Container>
