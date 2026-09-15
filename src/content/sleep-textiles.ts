@@ -23,7 +23,14 @@ export const sleepTextiles = [
     imageWidth: 1024,
     imageHeight: 682,
   },
-  { slug: "bettwaesche", name: "Bettwäsche" },
+  {
+    slug: "bettwaesche",
+    name: "Bettwäsche",
+    image: "/images/schlaftextilien-bettwaesche.png",
+    imageAlt: "Bettwäsche",
+    imageWidth: 155,
+    imageHeight: 194,
+  },
 ] as const;
 
 export type SleepTextile = (typeof sleepTextiles)[number];
