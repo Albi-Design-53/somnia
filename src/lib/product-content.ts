@@ -53,7 +53,6 @@ const DEFAULT_TRUST = [
 ] as const;
 
 const MASSIVHOLZ_SLUGS = new Set(["jana", "bondo", "viktoria", "marco"]);
-const LAYER_SLUGS = new Set(["cloud", "origin", "lignum"]);
 
 function dueGuide(slug: string): DueGuideMode | null {
   if (slug === "fanello-naturbett") return "system";
@@ -222,19 +221,6 @@ export function productToContent(product: Product): ProductPageContent {
 
 export function topicToContent(topic: Topic): ProductPageContent {
   const href = `/betten/${topic.slug}`;
-  const layerRelated = products
-    .filter((item) => LAYER_SLUGS.has(item.slug))
-    .map((item) => {
-      const thumb = productThumb(item);
-      return {
-        href: productHref(item),
-        title: item.name,
-        image: thumb.image,
-        imageAlt: thumb.imageAlt,
-        category: item.category,
-      };
-    });
-
   const related =
     topic.slug === "massivholz"
       ? products
@@ -249,9 +235,7 @@ export function topicToContent(topic: Topic): ProductPageContent {
               category: item.category,
             };
           })
-      : topic.slug === "fanello-naturbett" || topic.slug === "natur-boxspringbett"
-        ? layerRelated
-        : [];
+      : [];
 
   return {
     eyebrow: topic.eyebrow,
