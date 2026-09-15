@@ -217,7 +217,7 @@ export const categories = [
     slug: "boxspringbetten",
     title: "Natur-Boxspring",
     text: "Boxspring ohne Kompromiss: natürliche Kerne, metallfreie Systeme, Komfort der sich einstellen lässt.",
-    href: "/betten",
+    href: "/betten/natur-boxspringbett",
     image: "/images/kachel-natur-boxspring.png",
     worldImage: "/images/welt-boxspring.png",
     size: "medium" as const,

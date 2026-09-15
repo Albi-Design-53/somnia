@@ -65,6 +65,7 @@ const layers = [
     href: "/matratzen/cloud",
     image: "/images/schicht-matratze.webp",
     imageAlt: "Naturlatex-Kern der fanello-Matratze",
+    fit: "contain" as const,
   },
   {
     n: "02",
@@ -73,6 +74,7 @@ const layers = [
     href: "/matratzen/origin",
     image: "/images/schicht-auflage.webp",
     imageAlt: "fanello Auflage mit hexagonaler Steppung",
+    fit: "contain" as const,
   },
   {
     n: "03",
@@ -81,6 +83,16 @@ const layers = [
     href: "/matratzen/lignum",
     image: "/images/lattenrost-fanello.webp",
     imageAlt: "fanello Holzlattenrost",
+    fit: "contain" as const,
+  },
+  {
+    n: "04",
+    title: "Mobiles Bettenstudio",
+    text: "Wir kommen zu Ihnen – nach Hause, in den Camper oder aufs Boot.",
+    href: "/betten/mobiles-bettenstudio",
+    image: "/images/mobiles-bettenstudio.png",
+    imageAlt: "Mobiles fanello Bettenstudio bei der Heimberatung",
+    fit: "cover" as const,
   },
 ];
 
@@ -228,18 +240,52 @@ export function ProductsOverview() {
       >
         <Container>
           <Reveal>
-            <Eyebrow>Bettrahmen</Eyebrow>
+            <Eyebrow>Betten</Eyebrow>
             <h2 className="display-md mt-4 max-w-3xl">
               Bettrahmen aus Graubünden.
             </h2>
             <p className="lede mt-5 max-w-2xl text-muted">
-              Fertigung in Trimmis. Bei Naturland in St. Gallen sehen Sie
-              Jana, Marco, Bondo und Viktoria – Holz, Mass und Schlafsystem im
-              Liegen.
+              Vier Massivholzrahmen aus Trimmis – und das Natur-Boxspringbett,
+              metallfrei. Bei Naturland in St. Gallen sehen Sie Jana, Marco,
+              Bondo und Viktoria.
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:mt-16 lg:grid-cols-4">
+          <Reveal>
+            <Link
+              href="/betten/natur-boxspringbett"
+              className="group mt-12 block lg:mt-16"
+            >
+              <article className="overflow-hidden bg-cream md:grid md:grid-cols-12 md:items-stretch">
+                <div className="relative aspect-[16/10] overflow-hidden bg-ivory md:col-span-6">
+                  <Image
+                    src="/images/welt-boxspring.png"
+                    alt="Natur-Boxspringbett aus Holz mit natürlichem Schlafsystem"
+                    fill
+                    unoptimized
+                    quality={100}
+                    className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+                <div className="flex flex-col justify-center border-t border-sand/80 px-6 py-6 sm:px-8 sm:py-7 md:col-span-6 md:border-t-0 md:border-l">
+                  <p className="label text-bronze">Natur-Boxspring · metallfrei</p>
+                  <h3 className="mt-2 font-serif text-[1.75rem] tracking-[-0.03em] sm:text-[1.9rem]">
+                    Natur-Boxspringbett
+                  </h3>
+                  <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-muted">
+                    Höhe und weiches Liegen – ohne Federkern aus Metall.
+                    fanello-System im Boxrahmen, hergestellt in der Schweiz.
+                  </p>
+                  <span className="label mt-4 inline-flex text-ink transition-transform duration-300 group-hover:translate-x-1">
+                    Ansehen →
+                  </span>
+                </div>
+              </article>
+            </Link>
+          </Reveal>
+
+          <div className="mt-5 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:mt-8 lg:grid-cols-4">
             {beds.map((bed, i) => (
               <Reveal key={bed.href} delay={i * 0.06}>
                 <ProductCard
@@ -272,12 +318,12 @@ export function ProductsOverview() {
               Nur Matratze, Auflage oder Rost.
             </h2>
             <p className="lede mt-5 max-w-2xl text-muted">
-              Sie haben schon ein Gestell. Dann tauschen wir die Schichten,
-              die den Schlaf machen.
+              Sie haben schon ein Gestell. Dann tauschen wir die Schichten.
+              Mit dem mobilen Bettenstudio kommen wir auch zu Ihnen.
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-3 sm:gap-6 lg:mt-16 lg:gap-8">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:mt-16 lg:grid-cols-4 lg:gap-8">
             {layers.map((layer, i) => (
               <Reveal key={layer.href} delay={i * 0.06}>
                 <ProductCard
@@ -287,7 +333,7 @@ export function ProductsOverview() {
                   href={layer.href}
                   image={layer.image}
                   imageAlt={layer.imageAlt}
-                  fit="contain"
+                  fit={layer.fit}
                 />
               </Reveal>
             ))}
