@@ -7,6 +7,7 @@ export const sleepTextiles = [
     imageWidth: 1024,
     imageHeight: 908,
     line: "Decken aus Schafschurwolle, Kamelhaar, Kaschmir, Khabock, Bambus und Seide.",
+    locked: true,
   },
   {
     slug: "kissen",

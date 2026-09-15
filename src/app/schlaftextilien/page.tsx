@@ -53,6 +53,7 @@ export default function SchlaftextilienPage() {
               "imageAlt" in item ? item.imageAlt : item.name;
             const cta = "cta" in item ? item.cta : undefined;
             const line = "line" in item ? item.line : undefined;
+            const locked = "locked" in item && item.locked;
             const heading = (
               <>
                 <p className="text-[13px] font-medium tracking-[0.16em] uppercase text-bronze sm:text-[15px]">
@@ -109,7 +110,7 @@ export default function SchlaftextilienPage() {
 
             return (
               <Reveal key={item.slug} delay={i * 0.04}>
-                {cta ? (
+                {cta || locked ? (
                   body
                 ) : (
                   <Link href={`/schlaftextilien/${item.slug}`} className="group block">

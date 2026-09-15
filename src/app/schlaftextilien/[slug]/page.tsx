@@ -10,13 +10,15 @@ import { Reveal } from "@/components/ui/Reveal";
 type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  return sleepTextiles.map((item) => ({ slug: item.slug }));
+  return sleepTextiles
+    .filter((item) => !("locked" in item && item.locked))
+    .map((item) => ({ slug: item.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const item = getSleepTextile(slug);
-  if (!item) return {};
+  if (!item || ("locked" in item && item.locked)) return {};
   return {
     title: item.name,
     description: `${item.name} bei Naturland in St. Gallen.`,
@@ -26,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function SleepTextilePage({ params }: Props) {
   const { slug } = await params;
   const item = getSleepTextile(slug);
-  if (!item) notFound();
+  if (!item || ("locked" in item && item.locked)) notFound();
 
   return (
     <article>
