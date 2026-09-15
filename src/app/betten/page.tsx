@@ -113,7 +113,9 @@ export default function BettenPage() {
         <Reveal>
           <div className="mt-16 max-w-3xl border-t border-sand/80 pt-14 lg:mt-24 lg:pt-16">
             <Eyebrow>Im Laden</Eyebrow>
-            <h2 className="display-md mt-4">Viele weitere Betten.</h2>
+            <h2 className="display-md mt-4">
+              Viele weitere Bettrahmen erhältlich.
+            </h2>
             <p className="mt-5 font-serif text-[1.45rem] leading-snug tracking-[-0.02em] text-ink sm:text-[1.7rem]">
               Kommen Sie uns doch besuchen.
             </p>
