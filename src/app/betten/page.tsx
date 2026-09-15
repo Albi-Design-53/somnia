@@ -28,19 +28,35 @@ export default function BettenPage() {
     <section className="bg-cream pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-28">
       <Container>
         <Reveal>
-          <Eyebrow>Bettrahmen</Eyebrow>
-          <h1 className="display-md mt-5 max-w-3xl">Bettrahmen aus Massivholz.</h1>
-          <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-muted">
-            Hergestellt in der Schweiz, erhältlich in allen einheimischen Hölzern.
-          </p>
-          <p className="mt-4 max-w-3xl text-[17px] leading-relaxed text-muted">
-            Diese Massivholzbetten verbinden traditionelle Schweizer
-            Handwerkskunst mit einem durchdachten, metallfreien Aufbau für ein
-            natürliches und gesundes Schlafklima. Die abgebildete Ausführung
-            zeigt das Modell in ausdrucksstarker Kernbuche, deren warme
-            Bänderung und charakteristische Maserung dem Raum eine lebendige,
-            naturnahe Atmosphäre verleihen.
-          </p>
+          <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between sm:gap-10 lg:gap-16">
+            <div className="min-w-0 flex-1">
+              <Eyebrow>Bettrahmen</Eyebrow>
+              <h1 className="display-md mt-5 max-w-3xl">
+                Bettrahmen aus Massivholz.
+              </h1>
+              <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-muted">
+                Hergestellt in der Schweiz, erhältlich in allen einheimischen
+                Hölzern.
+              </p>
+              <p className="mt-4 max-w-3xl text-[17px] leading-relaxed text-muted">
+                Diese Massivholzbetten verbinden traditionelle Schweizer
+                Handwerkskunst mit einem durchdachten, metallfreien Aufbau für
+                ein natürliches und gesundes Schlafklima. Die abgebildete
+                Ausführung zeigt das Modell in ausdrucksstarker Kernbuche,
+                deren warme Bänderung und charakteristische Maserung dem Raum
+                eine lebendige, naturnahe Atmosphäre verleihen.
+              </p>
+            </div>
+            <Image
+              src="/images/fsc.png"
+              alt="FSC – Forest Stewardship Council"
+              width={1200}
+              height={1248}
+              unoptimized
+              quality={100}
+              className="h-36 w-auto shrink-0 self-end sm:h-48 sm:self-start lg:h-64 xl:h-72"
+            />
+          </div>
         </Reveal>
 
         <div className="mt-12 flex flex-col gap-6 lg:mt-16 lg:gap-8">
