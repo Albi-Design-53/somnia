@@ -8,8 +8,6 @@ import { benefits, serviceItems } from "@/content/site";
 import { Container, Eyebrow } from "@/components/ui/Container";
 import { Reveal, RevealImage } from "@/components/ui/Reveal";
 import { ParallaxMedia } from "@/components/ui/ParallaxMedia";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { FinalCTA } from "@/components/sections/FinalCTA";
 import { ProductWorldsGrid } from "@/components/sections/ProductWorldsGrid";
 import { cn } from "@/lib/cn";
 import { easeOut } from "@/lib/motion";
@@ -341,46 +339,6 @@ export function ProductsOverview() {
         </Container>
       </section>
 
-      <section
-        id="wohnen"
-        className="scroll-mt-24 bg-ivory py-20 sm:py-24 lg:scroll-mt-28 lg:py-32"
-      >
-        <Container>
-          <Reveal>
-            <Eyebrow>Schlaftextilien</Eyebrow>
-            <h2 className="display-md mt-4 max-w-3xl">
-              Decken, Kissen, Auflagen, Bettwäsche.
-            </h2>
-            <p className="lede mt-5 max-w-2xl text-muted">
-              Natürliche Bettwaren zum Anfassen – im Laden am Gallusplatz.
-            </p>
-          </Reveal>
-
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:mt-16">
-            <Reveal>
-              <ProductCard
-                n="01"
-                title="Decken, Kissen, Auflagen"
-                text="Schurwolle, Lyocorn, Kamelhaar und Kaschmir – Sommer bis Winter."
-                href="/decken-kissen"
-                image="/images/system-zip.png"
-                imageAlt="Natürliche Decken, Kissen und Auflagen"
-              />
-            </Reveal>
-            <Reveal delay={0.06}>
-              <ProductCard
-                n="02"
-                title="Bettwäsche"
-                text="Auswahl vor Ort. Satin-Linie von Tamara R. als Partner."
-                href="/bettwaesche"
-                image="/images/welt-wohnen.jpg"
-                imageAlt="Schlaftextilien und Bettwäsche"
-              />
-            </Reveal>
-          </div>
-        </Container>
-      </section>
-
       <section className="relative overflow-hidden bg-ink py-24 sm:py-28 lg:py-36">
         <div className="absolute inset-0">
           <Image
@@ -475,10 +433,6 @@ export function ProductsOverview() {
           </div>
         </Container>
       </section>
-
-      <Testimonials />
-
-      <FinalCTA />
     </>
   );
 }
