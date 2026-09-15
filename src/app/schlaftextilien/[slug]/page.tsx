@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getSleepTextile, sleepTextiles } from "@/content/sleep-textiles";
 import { Container, Eyebrow } from "@/components/ui/Container";
+import { Button } from "@/components/ui/Button";
 import { ProductPath } from "@/components/ui/ProductPath";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -43,6 +44,13 @@ export default async function SleepTextilePage({ params }: Props) {
             <h1 className="mt-4 font-serif text-[2.35rem] leading-[1.06] tracking-[-0.03em] sm:text-[3.1rem] lg:text-[3.4rem]">
               {item.name}
             </h1>
+            {"cta" in item ? (
+              <div className="mt-8">
+                <Button href={item.cta.href} external={item.cta.external}>
+                  {item.cta.label}
+                </Button>
+              </div>
+            ) : null}
           </Reveal>
           {"image" in item && item.image ? (
             <div className="mt-8 bg-cream sm:mt-10">
@@ -57,7 +65,7 @@ export default async function SleepTextilePage({ params }: Props) {
                 sizes="(max-width: 1280px) 100vw, 72vw"
               />
             </div>
-          ) : (
+          ) : "cta" in item ? null : (
             <div className="mt-8 aspect-[16/10] bg-cream sm:mt-10" />
           )}
         </Container>

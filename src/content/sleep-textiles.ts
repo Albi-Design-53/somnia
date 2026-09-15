@@ -26,10 +26,11 @@ export const sleepTextiles = [
   {
     slug: "bettwaesche",
     name: "Bettwäsche",
-    image: "/images/schlaftextilien-bettwaesche.png",
-    imageAlt: "Bettwäsche",
-    imageWidth: 155,
-    imageHeight: 194,
+    cta: {
+      href: "https://www.tamara-r.com/bettwäsche/selection-satin/",
+      label: "Weiter zur Bettwäsche",
+      external: true,
+    },
   },
 ] as const;
 
