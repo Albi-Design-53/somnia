@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { products } from "@/content/site";
+import { sleepTextiles } from "@/content/sleep-textiles";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://natur-land.ch";
@@ -14,8 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...products.filter((p) => p.kind === "bett").map((p) => `/betten/${p.slug}`),
     "/matratzen",
     ...products.filter((p) => p.kind === "matratze").map((p) => `/matratzen/${p.slug}`),
-    "/decken-kissen",
-    "/bettwaesche",
+    "/schlaftextilien",
+    ...sleepTextiles.map((item) => `/schlaftextilien/${item.slug}`),
     "/service",
     "/messen",
     "/schlafberatung",

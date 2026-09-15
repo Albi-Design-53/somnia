@@ -17,8 +17,11 @@ const FRAME_PATHS = new Set([
 
 function itemIsActive(pathname: string, href: string) {
   if (href === "/betten") return FRAME_PATHS.has(pathname);
-  if (href === "/decken-kissen") {
-    return pathname === "/decken-kissen" || pathname === "/bettwaesche";
+  if (href === "/schlaftextilien") {
+    return (
+      pathname === "/schlaftextilien" ||
+      pathname.startsWith("/schlaftextilien/")
+    );
   }
   return pathname === href;
 }

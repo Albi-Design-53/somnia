@@ -21,6 +21,7 @@ function navIsActive(pathname: string, href: string) {
       pathname === "/produkte" ||
       pathname.startsWith("/betten") ||
       pathname.startsWith("/matratzen") ||
+      pathname.startsWith("/schlaftextilien") ||
       pathname === "/decken-kissen" ||
       pathname === "/bettwaesche"
     );

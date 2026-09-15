@@ -35,6 +35,16 @@ const nextConfig: NextConfig = {
         destination: "/betten/marco",
         permanent: true,
       },
+      {
+        source: "/decken-kissen",
+        destination: "/schlaftextilien",
+        permanent: true,
+      },
+      {
+        source: "/bettwaesche",
+        destination: "/schlaftextilien/bettwaesche",
+        permanent: true,
+      },
     ];
   },
   turbopack: {

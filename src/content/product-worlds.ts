@@ -21,7 +21,7 @@ export const productWorlds = [
     n: "03",
     title: "Schlaftextilien",
     text: "Decken, Kissen, Auflagen, Bettwäsche",
-    href: "/decken-kissen",
+    href: "/schlaftextilien",
     image: "/images/welt-wohnen.jpg",
     frame: "aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]",
     position: "object-center",
