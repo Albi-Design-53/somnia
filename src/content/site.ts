@@ -1222,11 +1222,7 @@ export const bedTopics = [
       "Sie liegen, wir stellen Stützelement und Härte ein.",
       "Sie entscheiden in Ruhe.",
     ],
-    gallery: [
-      "/images/mobiles-bettenstudio.png",
-      "/images/camper-bett-1.png",
-      "/images/camper-bett-vorne.png",
-    ],
+    gallery: ["/images/mobiles-bettenstudio.png"],
   },
   {
     slug: "natur-boxspringbett",
