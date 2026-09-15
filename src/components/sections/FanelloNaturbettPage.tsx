@@ -133,8 +133,25 @@ export function FanelloNaturbettPage() {
 
           <Reveal delay={0.08} className="mt-16 lg:mt-20">
             <div
+              id="preisliste"
+              className="border-t border-sand/70 pt-12 sm:pt-14 lg:pt-16"
+            >
+              <h2 className="font-serif text-[1.75rem] leading-[1.15] tracking-[-0.03em] sm:text-[2.05rem]">
+                Fanello Preisliste
+              </h2>
+              <a
+                href="/fanello-preisliste.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="label mt-6 inline-flex items-center gap-2 text-bronze transition-colors hover:text-ink"
+              >
+                PDF öffnen
+                <span aria-hidden>→</span>
+              </a>
+            </div>
+            <div
               id="herstellung"
-              className="grid items-center gap-8 border-t border-sand/70 pt-12 sm:pt-14 lg:grid-cols-12 lg:gap-12 lg:pt-16"
+              className="mt-16 grid items-center gap-8 border-t border-sand/70 pt-12 sm:pt-14 lg:mt-20 lg:grid-cols-12 lg:gap-12 lg:pt-16"
             >
               <div className="lg:col-span-5">
                 <Eyebrow>{page.manufacture.eyebrow}</Eyebrow>
