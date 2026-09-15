@@ -15,8 +15,21 @@ export default function SchlaftextilienPage() {
     <section className="bg-cream pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-28">
       <Container>
         <Reveal>
-          <Eyebrow>Schlaftextilien</Eyebrow>
-          <h1 className="display-md mt-5 max-w-3xl">Schlaftextilien.</h1>
+          <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between sm:gap-10 lg:gap-16">
+            <div className="min-w-0 flex-1">
+              <Eyebrow>Schlaftextilien</Eyebrow>
+              <h1 className="display-md mt-5 max-w-3xl">Schlaftextilien.</h1>
+            </div>
+            <Image
+              src="/images/swiss-flag.png"
+              alt="Schweiz"
+              width={250}
+              height={250}
+              unoptimized
+              quality={100}
+              className="h-36 w-auto shrink-0 self-end sm:h-48 sm:self-start lg:h-64 xl:h-72"
+            />
+          </div>
         </Reveal>
 
         <div className="mt-12 flex flex-col gap-6 lg:mt-16 lg:gap-8">
