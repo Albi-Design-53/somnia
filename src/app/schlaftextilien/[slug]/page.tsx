@@ -29,6 +29,7 @@ export default async function SleepTextilePage({ params }: Props) {
   const { slug } = await params;
   const item = getSleepTextile(slug);
   if (!item || ("locked" in item && item.locked)) notFound();
+  const title = item.name;
 
   return (
     <article>
@@ -40,11 +41,11 @@ export default async function SleepTextilePage({ params }: Props) {
           <Reveal>
             <ProductPath
               parent={{ href: "/schlaftextilien", label: "Schlaftextilien" }}
-              title={item.name}
+              title={title}
             />
             <Eyebrow className="mt-8">Schlaftextilien</Eyebrow>
             <h1 className="mt-4 font-serif text-[2.35rem] leading-[1.06] tracking-[-0.03em] sm:text-[3.1rem] lg:text-[3.4rem]">
-              {item.name}
+              {title}
             </h1>
             {"line" in item ? (
               <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
@@ -63,7 +64,7 @@ export default async function SleepTextilePage({ params }: Props) {
             <div className="mt-8 bg-cream sm:mt-10">
               <Image
                 src={item.image}
-                alt={"imageAlt" in item ? item.imageAlt : item.name}
+                alt={"imageAlt" in item ? item.imageAlt : title}
                 width={"imageWidth" in item ? item.imageWidth : 1600}
                 height={"imageHeight" in item ? item.imageHeight : 1000}
                 unoptimized
