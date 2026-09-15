@@ -139,15 +139,11 @@ export function FanelloNaturbettPage() {
               <h2 className="font-serif text-[1.75rem] leading-[1.15] tracking-[-0.03em] sm:text-[2.05rem]">
                 Fanello Preisliste
               </h2>
-              <a
-                href="/fanello-preisliste.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="label mt-6 inline-flex items-center gap-2 text-bronze transition-colors hover:text-ink"
-              >
-                PDF öffnen
-                <span aria-hidden>→</span>
-              </a>
+              <div className="mt-8">
+                <Button href="/fanello-preisliste.pdf" external>
+                  PDF öffnen
+                </Button>
+              </div>
             </div>
             <div
               id="herstellung"
