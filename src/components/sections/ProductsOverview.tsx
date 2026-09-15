@@ -141,7 +141,7 @@ export function ProductsOverview() {
               Wieso Naturland
             </p>
             <h2 className="display-md mt-5 max-w-3xl text-ivory">
-              Vier Gründe, die zählen.
+              Vier Gründe.
             </h2>
           </Reveal>
 

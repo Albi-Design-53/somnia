@@ -197,7 +197,7 @@ export const benefits = [
   },
   {
     id: "beratung",
-    title: "Beratung, die zuhört",
+    title: "Optimale Beratung",
     text: "Kein Katalogverkauf. Probeliegen, Härtegrad, Aufbau – bis das System zu Ihrem Körper passt.",
     icon: "MessageCircle",
   },
