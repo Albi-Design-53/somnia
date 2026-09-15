@@ -122,8 +122,8 @@ export function ProductsOverview() {
       <section className="relative overflow-hidden bg-ink py-24 sm:py-28 lg:py-36">
         <div className="absolute inset-0">
           <Image
-            src="/images/beratung-holzbett.png"
-            alt="Persönliche Schlafberatung bei Naturland, Massivholzbett im Hintergrund"
+            src="/images/vier-gruende-berge.jpg"
+            alt="Berglandschaft im Abendlicht"
             fill
             unoptimized
             quality={100}
