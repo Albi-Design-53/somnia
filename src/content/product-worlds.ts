@@ -27,3 +27,31 @@ export const productWorlds = [
     position: "object-center",
   },
 ] as const;
+
+export const productNavGroups = [
+  {
+    heading: "Produktwelt",
+    items: productWorlds.map((world) => ({
+      label: world.title,
+      href: world.href,
+    })),
+  },
+  {
+    heading: "Betten",
+    items: [
+      {
+        label: "Natur-Boxspringbett",
+        href: "/betten/natur-boxspringbett",
+      },
+    ],
+  },
+  {
+    heading: "Heimberatung",
+    items: [
+      {
+        label: "Mobiles Bettenstudio",
+        href: "/betten/mobiles-bettenstudio",
+      },
+    ],
+  },
+] as const;

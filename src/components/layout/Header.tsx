@@ -8,6 +8,7 @@ import { Menu, X } from "lucide-react";
 import { site } from "@/content/site";
 import { Button } from "@/components/ui/Button";
 import { BrandLogo } from "@/components/ui/BrandLogo";
+import { ProductNavDesktop, ProductNavMobile } from "@/components/layout/ProductNav";
 import { cn } from "@/lib/cn";
 import { shellPad } from "@/components/ui/Container";
 
@@ -89,6 +90,15 @@ export function Header() {
             <nav className="flex items-center gap-5 2xl:gap-8">
               {desktopNav.map((item) => {
                 const active = navReady && navIsActive(pathname, item.href);
+                if (item.href === "/produkte") {
+                  return (
+                    <ProductNavDesktop
+                      key={item.href}
+                      active={active}
+                      pathname={pathname}
+                    />
+                  );
+                }
                 return (
                   <Link
                     key={item.href}
@@ -151,6 +161,7 @@ export function Header() {
                     >
                       {item.label}
                     </Link>
+                    {item.href === "/produkte" ? <ProductNavMobile /> : null}
                   </motion.div>
                 ))}
               </nav>

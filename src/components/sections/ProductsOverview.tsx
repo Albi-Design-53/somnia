@@ -10,7 +10,10 @@ import { ProductWorldsGrid } from "@/components/sections/ProductWorldsGrid";
 export function ProductsOverview() {
   return (
     <>
-      <section className="bg-cream pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-32 lg:pb-24">
+      <section
+        id="produktwelt"
+        className="scroll-mt-24 bg-cream pt-24 pb-16 sm:pt-28 sm:pb-20 lg:scroll-mt-28 lg:pt-32 lg:pb-24"
+      >
         <Container>
           <h1 className="sr-only">Produkte</h1>
           <ProductWorldsGrid />
