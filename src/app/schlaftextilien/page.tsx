@@ -20,6 +20,19 @@ export default function SchlaftextilienPage() {
             <div className="min-w-0 flex-1">
               <Eyebrow>Schlaftextilien</Eyebrow>
               <h1 className="display-md mt-5 max-w-3xl">Schlaftextilien.</h1>
+              <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-muted">
+                Die naturbelassene Wolle hat eine so genannte natürliche
+                Thermoregulations-Eigenschaft.
+              </p>
+              <p className="mt-4 max-w-3xl text-[17px] leading-relaxed text-muted">
+                Sie kann bis zu 33 % ihres Trockengewichtes an Wasser
+                aufnehmen, ohne sich feucht anzufühlen und sie leitet
+                Feuchtigkeit schnell ab. Wolle nimmt Schmutz schlecht an,
+                knittert kaum, da die Faser sehr elastisch ist. Wolle ist sehr
+                farbbeständig und schwer entflammbar. Sie brennt nicht, sondern
+                verkohlt nur. Wolle nimmt im Gegensatz zu Kunstfasern wenig
+                Schweissgeruch an.
+              </p>
             </div>
             <Image
               src="/images/swiss-flag.png"
