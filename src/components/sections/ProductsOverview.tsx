@@ -30,10 +30,6 @@ export function ProductsOverview() {
             <h2 className="display-md mt-4 max-w-3xl">
               Das Natur-Boxspringbett.
             </h2>
-            <p className="lede mt-5 max-w-2xl text-muted">
-              Höhe und weiches Liegen – ohne Federkern aus Metall. Beratung
-              in St. Gallen.
-            </p>
           </Reveal>
 
           <Reveal>
@@ -59,8 +55,8 @@ export function ProductsOverview() {
                     Natur-Boxspringbett
                   </h3>
                   <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-muted">
-                    Höhe und weiches Liegen – ohne Federkern aus Metall.
-                    fanello-System im Boxrahmen, hergestellt in der Schweiz.
+                    Das Boxspringbett, auch amerikanisches oder Continentalbett
+                    genannt.
                   </p>
                   <span className="label mt-4 inline-flex text-ink transition-transform duration-300 group-hover:translate-x-1">
                     Ansehen →
