@@ -52,6 +52,7 @@ export default function SchlaftextilienPage() {
             const imageAlt =
               "imageAlt" in item ? item.imageAlt : item.name;
             const cta = "cta" in item ? item.cta : undefined;
+            const line = "line" in item ? item.line : undefined;
             const heading = (
               <>
                 <p className="text-[13px] font-medium tracking-[0.16em] uppercase text-bronze sm:text-[15px]">
@@ -68,6 +69,10 @@ export default function SchlaftextilienPage() {
                   {cta.label}
                 </Button>
               </div>
+            ) : line ? (
+              <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-muted">
+                {line}
+              </p>
             ) : (
               <span className="mt-6 text-[14px] font-medium tracking-[0.14em] uppercase text-ink transition-transform duration-300 group-hover:translate-x-1 sm:text-[16px]">
                 Ansehen →

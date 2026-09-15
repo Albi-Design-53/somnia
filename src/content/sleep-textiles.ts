@@ -6,6 +6,7 @@ export const sleepTextiles = [
     imageAlt: "Gesteppte Naturdecke",
     imageWidth: 1024,
     imageHeight: 908,
+    line: "Decken aus Schafschurwolle, Kamelhaar, Kaschmir, Khabock, Bambus und Seide.",
   },
   {
     slug: "kissen",
@@ -14,6 +15,7 @@ export const sleepTextiles = [
     imageAlt: "Gestepptes Naturkissen",
     imageWidth: 1024,
     imageHeight: 813,
+    line: "Schafschurwolle, Lyocorn",
   },
   {
     slug: "auflagen",
