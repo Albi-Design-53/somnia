@@ -249,7 +249,8 @@ export function topicToContent(topic: Topic): ProductPageContent {
       alt: i === 0 ? topic.imageAlt : `${topic.title}, Ansicht ${i + 1}`,
     })),
     specs:
-      topic.slug === "natur-boxspringbett"
+      topic.slug === "natur-boxspringbett" ||
+      topic.slug === "mobiles-bettenstudio"
         ? []
         : withGarantie(publishedSpecs([...topic.specs]), "topic", topic.slug),
     priceFrom: isMissingValue(topic.priceFrom)
