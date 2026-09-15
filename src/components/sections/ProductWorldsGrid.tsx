@@ -7,44 +7,23 @@ import { cn } from "@/lib/cn";
 export function ProductWorldsGrid({ className }: { className?: string }) {
   return (
     <div className={cn("flex flex-col gap-5 lg:gap-6", className)}>
-      {productWorlds.map((world, i) => {
-        const showFull = "fit" in world && world.fit === "natural";
-
-        return (
+      {productWorlds.map((world, i) => (
         <Reveal key={world.href} delay={i * 0.06}>
           <Link href={world.href} className="group block">
             <article className="overflow-hidden bg-ivory md:grid md:grid-cols-12 md:items-stretch">
-              <div
-                className={cn(
-                  "overflow-hidden bg-cream md:col-span-6",
-                  showFull ? "relative" : "relative aspect-[16/10]",
-                )}
-              >
-                {showFull ? (
-                  <Image
-                    src={world.image}
-                    alt={world.title}
-                    width={1448}
-                    height={2048}
-                    unoptimized
-                    quality={100}
-                    className="h-auto w-full"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                ) : (
-                  <Image
-                    src={world.image}
-                    alt={world.title}
-                    fill
-                    unoptimized
-                    quality={100}
-                    className={cn(
-                      "object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]",
-                      world.position ?? "object-center",
-                    )}
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                )}
+              <div className="relative aspect-[16/10] overflow-hidden bg-cream md:col-span-6">
+                <Image
+                  src={world.image}
+                  alt={world.title}
+                  fill
+                  unoptimized
+                  quality={100}
+                  className={cn(
+                    "object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]",
+                    world.position ?? "object-center",
+                  )}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
               <div className="flex flex-col justify-center border-t border-sand/80 px-6 py-6 sm:px-8 sm:py-7 md:col-span-6 md:border-t-0 md:border-l">
                 <p className="label text-bronze">{world.n}</p>
@@ -61,8 +40,7 @@ export function ProductWorldsGrid({ className }: { className?: string }) {
             </article>
           </Link>
         </Reveal>
-        );
-      })}
+      ))}
     </div>
   );
 }

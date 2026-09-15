@@ -6,8 +6,7 @@ export const productWorlds = [
     href: "/betten/fanello-naturbett",
     image: "/images/welt-schlafsystem.jpg",
     frame: "aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]",
-    position: "object-center",
-    fit: "natural",
+    position: "object-[center_18%]",
   },
   {
     n: "02",

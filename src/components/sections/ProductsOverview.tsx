@@ -17,7 +17,7 @@ export function ProductsOverview() {
         <Container>
           <h1 className="sr-only">Produkte</h1>
           <Reveal>
-            <h2 className="display-md max-w-3xl">Unsere Dienstleistungen.</h2>
+            <h2 className="display-md max-w-3xl">Unsere Produkte.</h2>
           </Reveal>
           <ProductWorldsGrid className="mt-12 lg:mt-16" />
         </Container>
