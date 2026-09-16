@@ -564,7 +564,7 @@ export const products: Product[] = [
     image: "/images/bed-surava-arve.jpg",
     imageAlt: "Bettrahmen Bondo in hellem Holz, Schlafzimmer mit rundem Kopfteil",
     cardImage: "/images/bed-surava.jpg",
-    cardImageAlt: "Bettrahmen Bondo am Bergsee",
+    cardImageAlt: "Bettrahmen Bondo in hellem Holz, Schlafzimmer mit rundem Kopfteil",
     cardImageFit: "cover",
     imageLayout: "sheet",
     gallery: [
