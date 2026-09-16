@@ -110,7 +110,7 @@ export const fanelloPage = {
     "3 × 1001 Nacht Garantie auf Stützelement und Matratze",
   ],
   layersEyebrow: "Vier Schichten",
-  layersTitle: "Ein System, das man öffnen und verstehen kann.",
+  layersTitle: "Die Natur hat Ihr Bett gemacht.",
   layersLede:
     "Einlegerahmen, Stützelement, Matratze, Auflage. Jede Lage hat eine Aufgabe. Zusammen tragen sie Schulter und Becken – metallfrei, erklärbar, hergestellt in der Schweiz.",
   layers: [
