@@ -86,7 +86,7 @@ export const images = {
 export const fanelloPage = {
   eyebrow: "fanello swiss",
   title: "Das Schweizer Naturschlafsystem.",
-  lede: "Für jede Frau, jeden Mann und jedes Kind. Vier Schichten aus schadstofffreien, 100 % natürlichen Rohstoffen – hergestellt in der Schweiz. Härte und Höhe stellen wir im Liegen ein, nicht am Bildschirm.",
+  lede: "Für jede Frau, jeden Mann und jedes Kind. Vier Schichten aus schadstofffreien, 100 % natürlichen Rohstoffen – hergestellt in der Schweiz. Das fanello Schlafsystem können wir ganz genau an Ihre Bedürfnisse anpassen und Sie können es auch ganz einfach und beliebig verändern. Z.\u00a0B. bei Gewichtszunahme oder Gewichtsverlust!",
   heroImage: "/images/fanello-system.jpg",
   heroAlt:
     "fanello Schlafsystem in vier Schichten: Einlegerahmen, Stützelement, Naturlatex-Matratze und Schurwollauflage",
