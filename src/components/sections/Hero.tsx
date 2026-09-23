@@ -34,7 +34,7 @@ export function Hero() {
         )}
       >
         <motion.p
-          className="label text-bronze"
+          className="label text-on-photo text-ink"
           initial={reduce ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: easeOut }}
@@ -62,7 +62,7 @@ export function Hero() {
         </h1>
 
         <motion.p
-          className="lede mt-7 max-w-xl text-charcoal"
+          className="lede text-on-photo mt-7 max-w-xl text-ink"
           initial={reduce ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.35, duration: 0.8, ease: easeOut }}

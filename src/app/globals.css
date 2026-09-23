@@ -96,6 +96,16 @@ p {
   letter-spacing: -0.014em;
 }
 
+/* Small copy over the hero photo: the backdrop ranges from near-black shadow to
+   bright bedding, so colour alone never clears 4.5:1. The layered ivory halo
+   gives each glyph its own light bed. */
+.text-on-photo {
+  text-shadow:
+    0 1px 2px rgb(239 224 200 / 0.95),
+    0 0 10px rgb(239 224 200 / 0.9),
+    0 0 22px rgb(239 224 200 / 0.65);
+}
+
 .product-name {
   font-family: var(--font-serif), Georgia, serif;
   font-optical-sizing: auto;
