@@ -157,7 +157,7 @@ export const fanelloPage = {
   spineEyebrow: "Wirbelsäule",
   spineTitle: "Ein gestützter Rücken.",
   spineText:
-    "Schulter und Becken werden abgesenkt, die Wirbelsäule geführt – nicht weichgesackt. Härte und Höhe entstehen im Liegen, im Laden am Gallusplatz oder mit dem mobilen Bettenstudio.",
+    "Schulter und Becken sind abgesenkt und die Wirbelsäule ist perfekt abgestützt.",
   spineImage: "/images/fanello-ruecken.jpg",
   spineAlt: "Seitenansicht: Wirbelsäule auf dem fanello Schlafsystem abgestützt",
   origin: [
