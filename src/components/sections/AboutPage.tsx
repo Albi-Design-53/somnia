@@ -5,9 +5,9 @@ import { Container, Eyebrow } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
 const portraits = [
-  { src: "/images/portrait-graziella.png", alt: "Graziella Zwiker", position: "object-[center_18%]" },
-  { src: "/images/portrait-roger.png", alt: "Roger Zwiker", position: "object-[center_16%]" },
-  { src: "/images/portrait-jana.png", alt: "Jana Zwiker", position: "object-[center_22%]" },
+  { src: "/images/portrait-graziella.png", name: "Graziella Zwiker", position: "object-[center_18%]" },
+  { src: "/images/portrait-roger.png", name: "Roger Zwiker", position: "object-[center_16%]" },
+  { src: "/images/portrait-jana.png", name: "Jana Zwiker", position: "object-[center_22%]" },
 ] as const;
 
 export function AboutPage() {
@@ -42,22 +42,24 @@ export function AboutPage() {
             </Button>
           </div>
         </Reveal>
-        <div className="mt-14 flex flex-wrap gap-6 sm:gap-8">
+        <div className="mt-14 grid grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {portraits.map((portrait) => (
-            <div
-              key={portrait.src}
-              className="relative h-36 w-36 overflow-hidden rounded-full bg-cream sm:h-44 sm:w-44"
-            >
-              <Image
-                src={portrait.src}
-                alt={portrait.alt}
-                fill
-                unoptimized
-                quality={100}
-                className={`object-cover ${portrait.position}`}
-                sizes="176px"
-              />
-            </div>
+            <figure key={portrait.src}>
+              <div className="relative aspect-square overflow-hidden bg-cream">
+                <Image
+                  src={portrait.src}
+                  alt={portrait.name}
+                  fill
+                  unoptimized
+                  quality={100}
+                  className={`object-cover ${portrait.position}`}
+                  sizes="(max-width: 1024px) 33vw, 30vw"
+                />
+              </div>
+              <figcaption className="mt-3 text-center font-serif text-[1.05rem] tracking-[-0.02em] text-ink sm:mt-4 sm:text-[1.35rem]">
+                {portrait.name}
+              </figcaption>
+            </figure>
           ))}
         </div>
       </Container>
