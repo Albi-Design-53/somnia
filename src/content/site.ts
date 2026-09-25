@@ -1266,8 +1266,8 @@ export const bedTopics = [
     ],
     sections: [
       {
-        title: "Was ein herkömmliches Boxspring macht",
-        text: "Das Boxspringbett – auch amerikanisches oder Continentalbett – steht auf einem Holzrahmen voller Metallfedern. Die Matratze kann weitere Taschenfedern enthalten, oft bis zu tausend. Das Bett wird schwer. Der Körper liegt in einem Metallkäfig, den man nicht sieht, aber spürt.",
+        title: "Was ein herkömmliches Boxspringbett ist",
+        text: "Steht auf einem Holzrahmen (Box), meist gepolstert, der mit grossen Federn bestückt ist und die Matratze trägt. Die Matratze ist meist mit spiralförmigen Metallfedern bestückt (Taschenfedern), bis zu 1000 Stck. auf 180/200 cm.",
       },
       {
         title: "Was unser Natur-Boxspring anders macht",
@@ -1275,7 +1275,7 @@ export const bedTopics = [
       },
       {
         title: "Einbau in Ihren Rahmen",
-        text: "Grundsätzlich lässt sich das Naturboxspring-System in jeden beliebigen Bettrahmen einbauen. Ob neuer Boxrahmen oder bestehendes Gestell: wir messen, erklären den Aufbau und stimmen Härte und Höhe im Liegen ab – im Laden am Gallusplatz oder mit dem mobilen Studio.",
+        text: "Unser Naturboxspringbett lässt sich grundsätzlich in jeden Bettrahmen einbauen.",
       },
       {
         title: "fanello swiss",
