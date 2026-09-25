@@ -1220,8 +1220,8 @@ export const bedTopics = [
     steps: [
       "Anruf oder E-Mail – wir hören zu und vereinbaren den Besuch.",
       "Wir kommen mit dem mobilen Studio zu Ihnen.",
-      "Sie liegen, wir stellen Stützelement und Härte ein.",
-      "Sie entscheiden in Ruhe.",
+      "Wir beraten Sie und gehen auf Ihre Bedürfnisse ein.",
+      "Wir bieten einen perfekten Service von der Beratung über die Lieferung, Montage und Entsorgung Ihres alten Betts.",
     ],
     gallery: ["/images/mobiles-bettenstudio.png"],
   },
