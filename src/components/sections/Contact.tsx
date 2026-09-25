@@ -80,11 +80,10 @@ export function Contact() {
           <Reveal className="lg:col-span-5">
             <Eyebrow>Kontakt</Eyebrow>
             <h2 className="display-md mt-5">
-              Sprechen wir über Ihren Schlaf.
+              Die Natur hat Ihr Bett gemacht.
             </h2>
             <p className="lede mt-5 max-w-md text-muted">
-              Nachrichten, Anregungen, Lob und Kritik – wir freuen uns. Mutter
-              und Sohn Graziella und Roger Zwiker melden sich persönlich.
+              Wir melden uns persönlich bei Ihnen.
             </p>
 
             <ul className="mt-10 space-y-5 text-[15px]">
