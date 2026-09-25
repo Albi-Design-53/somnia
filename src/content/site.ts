@@ -1271,7 +1271,7 @@ export const bedTopics = [
       },
       {
         title: "Was unser Natur-Boxspring anders macht",
-        text: "Höhe und weiches, kuscheliges Liegen bleiben. Statt Federkasten kommt das fanello Schlafsystem: Holzstützelement, Naturlatex, natürliche Auflage. Kein Metall wo es den Schlaf betrifft. Nachwachsende Rohstoffe, schadstofffrei, für Allergiker geeignet.",
+        text: "Unser Naturboxspringbett, bestückt mit dem fanello Naturschlafsystem, ist absolut metallfrei, hat ein leichtes Gewicht und ist sehr langlebig.",
       },
       {
         title: "Einbau in Ihren Rahmen",
