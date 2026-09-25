@@ -26,10 +26,6 @@ export default function SchlafzimmermoebelPage() {
         <Reveal>
           <Eyebrow>Schlafzimmermöbel</Eyebrow>
           <h1 className="display-md mt-5 max-w-3xl">Schlafzimmermöbel nach Mass.</h1>
-          <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-muted">
-            Nachttische, Kommoden und Schränke aus Massivholz. Gefertigt in
-            Trimmis, Beratung und Verkauf in St. Gallen.
-          </p>
         </Reveal>
 
         <div className="mt-16 space-y-20 lg:mt-24 lg:space-y-28">
