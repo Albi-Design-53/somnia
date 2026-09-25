@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { about, site } from "@/content/site";
-import { Button } from "@/components/ui/Button";
+import { about } from "@/content/site";
 import { Container, Eyebrow } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -35,12 +34,6 @@ export function AboutPage() {
           <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
             {about.shopInvite}
           </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Button href={site.cta.href}>{site.cta.primary}</Button>
-            <Button href="/kontakt" variant="ghost">
-              Kontakt
-            </Button>
-          </div>
         </Reveal>
         <div className="mt-14 grid grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {portraits.map((portrait) => (
