@@ -134,7 +134,7 @@ export const fanelloPage = {
     {
       n: "03",
       title: "Matratze",
-      text: "Aus 100 % Naturlatex: hohe Punktelastizität und Formstabilität. In 7,5 cm und 10 cm Höhe. Der Baumwollbezug ist mit Reissverschluss abnehmbar und waschbar.",
+      text: "Aus 100 % Naturlatex: hohe Punktelastizität und Formstabilität. In 7,5 cm, 10 cm und 12 cm Höhe. Der Baumwollbezug ist mit Reissverschluss abnehmbar und waschbar.",
       image: "/images/fanello-matratze.jpg",
       imageAlt: "fanello Classic Naturlatexmatratze",
     },
