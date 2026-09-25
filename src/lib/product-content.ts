@@ -18,7 +18,7 @@ export type ProductPageContent = {
   priceNote: string;
   priceGuide: DueGuideMode | null;
   trust: { title: string; text: string }[];
-  sections: { title: string; text: string }[];
+  sections: { title: string; text: string; note?: string }[];
   sectionsEyebrow?: string;
   sectionsTitle?: string;
   steps: string[];

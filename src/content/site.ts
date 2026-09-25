@@ -488,7 +488,7 @@ export type Product = {
   imageHeight?: number;
   gallery: string[];
   specs: { label: string; value: string }[];
-  sections?: { title: string; text: string }[];
+  sections?: { title: string; text: string; note?: string }[];
   trust?: { title: string; text: string }[];
 };
 
@@ -1279,7 +1279,8 @@ export const bedTopics = [
       },
       {
         title: "fanello swiss",
-        text: "Seit über dreissig Jahren stellt fanello in der Schweiz Schlafsysteme aus natürlichen Materialien her. Seit Jahren arbeiten wir damit. Das System bleibt erklärbar: Stützelement, Matratze, Auflage – Schicht für Schicht, mit 10 Jahren Garantie auf Stützelement und Matratze.",
+        text: "Seit zwanzig Jahren arbeiten wir mit fanello swiss zusammen. Ein Schlafsystem, das mehr ist als nur eine Matratze. Das System bleibt erklärbar: Stützelement, Matratze, Auflage – Schicht für Schicht, mit 10 Jahren Garantie auf Stützelement und Matratze.",
+        note: "Es ist die perfekte Ladestadion für alle Menschen!",
       },
     ],
     steps: [],

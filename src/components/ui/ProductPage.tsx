@@ -232,6 +232,11 @@ export function ProductPage({ content }: { content: ProductPageContent }) {
                       <p className="mt-3 text-[16px] leading-relaxed text-muted">
                         {item.text}
                       </p>
+                      {item.note ? (
+                        <p className="mt-3 text-[16px] leading-relaxed text-muted">
+                          {item.note}
+                        </p>
+                      ) : null}
                     </article>
                   </Reveal>
                 ))}
