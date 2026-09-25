@@ -6,39 +6,22 @@ import { Reveal } from "@/components/ui/Reveal";
 export const metadata: Metadata = {
   title: "Schlafzimmermöbel",
   description:
-    "Nachttische, Kommoden und Schränke nach Mass. Gefertigt in Trimmis, bei Naturland in St. Gallen.",
+    "Nachttische Cubo und Einhängetische, Kommoden und Schränke nach Mass. Bei Naturland in St. Gallen.",
   keywords: [
     "Naturland",
     "Schlafzimmermöbel",
     "Nachttisch",
+    "Cubo",
+    "Einhängetisch",
     "Kommode",
     "Schrank",
-    "Massivholz",
     "St. Gallen",
   ],
 };
 
-const pieces = [
-  {
-    name: "Nachttische",
-    image: "/images/bed-surava-room.jpg",
-    alt: "Massivholz-Nachttische neben dem Bett",
-  },
-  {
-    name: "Kommoden",
-    image: "/images/bed-lain-wohnen.jpg",
-    alt: "Massivholz-Kommode im Schlafzimmer",
-  },
-  {
-    name: "Schränke",
-    image: "/images/bed-lain-room.jpg",
-    alt: "Schlafzimmer mit Massivholz-Schrank und Kommode",
-  },
-] as const;
-
 export default function SchlafzimmermoebelPage() {
   return (
-    <section className="bg-cream pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-28">
+    <section className="bg-cream pt-28 pb-20 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-32">
       <Container>
         <Reveal>
           <Eyebrow>Schlafzimmermöbel</Eyebrow>
@@ -49,33 +32,94 @@ export default function SchlafzimmermoebelPage() {
           </p>
         </Reveal>
 
-        <div className="mt-12 flex flex-col gap-6 lg:mt-16 lg:gap-8">
-          {pieces.map((piece, i) => (
-            <Reveal key={piece.name} delay={i * 0.04}>
-              <article className="overflow-hidden bg-ivory md:grid md:grid-cols-12 md:items-stretch">
-                <div className="relative aspect-[16/10] overflow-hidden bg-cream md:col-span-6">
-                  <Image
-                    src={piece.image}
-                    alt={piece.alt}
-                    fill
-                    priority={i === 0}
-                    unoptimized
-                    quality={100}
-                    className="object-cover object-center"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
-                <div className="flex flex-col items-center justify-center border-t border-sand/70 px-6 py-10 text-center sm:px-8 sm:py-12 md:col-span-6 md:border-t-0 md:border-l">
-                  <p className="text-[13px] font-medium tracking-[0.16em] uppercase text-bronze sm:text-[15px]">
-                    {String(i + 1).padStart(2, "0")} · Schlafzimmermöbel
+        <div className="mt-16 space-y-20 lg:mt-24 lg:space-y-28">
+          <Reveal>
+            <section>
+              <h2 className="text-[13px] font-medium tracking-[0.16em] uppercase text-bronze sm:text-[15px]">
+                Nachttische
+              </h2>
+
+              <figure className="mt-6">
+                <Image
+                  src="/images/schlafzimmermoebel-cubo.jpg"
+                  alt="Kollektion Cubo: drei würfelförmige Nachttische. Höhe gleich dem Bettrahmen, 40 cm, Breite 41 cm, Tiefe 35 cm."
+                  width={1024}
+                  height={381}
+                  priority
+                  unoptimized
+                  quality={100}
+                  className="h-auto w-full"
+                  sizes="(max-width: 1280px) 100vw, 72rem"
+                />
+                <figcaption className="mt-5 max-w-xl">
+                  <h3 className="font-serif text-[1.7rem] leading-tight tracking-[-0.03em] text-ink sm:text-[2.1rem]">
+                    Kollektion Cubo
+                  </h3>
+                  <p className="mt-2 text-[15px] leading-relaxed text-muted sm:text-[16px]">
+                    Höhe gleich dem Bettrahmen (40 cm). Breite 41 cm, Tiefe 35 cm.
                   </p>
-                  <h2 className="mt-3 font-serif text-[2.35rem] leading-[1.08] tracking-[-0.03em] sm:text-[2.85rem] lg:text-[3.35rem]">
-                    {piece.name}
+                </figcaption>
+              </figure>
+
+              <figure className="mt-12 grid items-end gap-6 sm:mt-16 sm:grid-cols-[minmax(0,22rem)_minmax(0,1fr)] sm:gap-12 lg:mt-20">
+                <Image
+                  src="/images/schlafzimmermoebel-einhaengetisch.jpg"
+                  alt="Einhängetisch aus Eiche, am Bettrahmen eingehängt"
+                  width={542}
+                  height={611}
+                  unoptimized
+                  quality={100}
+                  className="h-auto w-full"
+                  sizes="(max-width: 640px) 100vw, 22rem"
+                />
+                <figcaption className="sm:pb-3">
+                  <h3 className="font-serif text-[1.7rem] leading-tight tracking-[-0.03em] text-ink sm:text-[2.1rem]">
+                    Einhängetische
+                  </h3>
+                </figcaption>
+              </figure>
+            </section>
+          </Reveal>
+
+          <Reveal>
+            <div className="grid gap-14 lg:grid-cols-2 lg:gap-10">
+              <figure>
+                <Image
+                  src="/images/schlafzimmermoebel-kommoden.jpg"
+                  alt="Kommoden aus Eiche und Nussbaum"
+                  width={1024}
+                  height={622}
+                  unoptimized
+                  quality={100}
+                  className="h-auto w-full"
+                  sizes="(max-width: 1024px) 100vw, 36rem"
+                />
+                <figcaption className="mt-5">
+                  <h2 className="text-[13px] font-medium tracking-[0.16em] uppercase text-bronze sm:text-[15px]">
+                    Kommoden
                   </h2>
-                </div>
-              </article>
-            </Reveal>
-          ))}
+                </figcaption>
+              </figure>
+
+              <figure>
+                <Image
+                  src="/images/schlafzimmermoebel-schraenke.jpg"
+                  alt="Schränke aus Eiche und Nussbaum"
+                  width={1024}
+                  height={622}
+                  unoptimized
+                  quality={100}
+                  className="h-auto w-full"
+                  sizes="(max-width: 1024px) 100vw, 36rem"
+                />
+                <figcaption className="mt-5">
+                  <h2 className="text-[13px] font-medium tracking-[0.16em] uppercase text-bronze sm:text-[15px]">
+                    Schränke
+                  </h2>
+                </figcaption>
+              </figure>
+            </div>
+          </Reveal>
         </div>
       </Container>
     </section>
