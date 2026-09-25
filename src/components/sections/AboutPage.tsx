@@ -5,9 +5,9 @@ import { Container, Eyebrow } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
 const portraits = [
-  { src: "/images/portrait-graziella.png", name: "Graziella Zwiker", position: "object-[center_18%]" },
-  { src: "/images/portrait-roger.png", name: "Roger Zwiker", position: "object-[center_16%]" },
-  { src: "/images/portrait-jana.png", name: "Jana Zwiker", position: "object-[center_22%]" },
+  { src: "/images/portrait-graziella.png", name: "Graziella Zwiker" },
+  { src: "/images/portrait-roger.png", name: "Roger Zwiker" },
+  { src: "/images/portrait-jana.png", name: "Jana Zwiker" },
 ] as const;
 
 export function AboutPage() {
@@ -45,14 +45,14 @@ export function AboutPage() {
         <div className="mt-14 grid grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {portraits.map((portrait) => (
             <figure key={portrait.src}>
-              <div className="relative aspect-square overflow-hidden bg-cream">
+              <div className="relative aspect-[3/4] overflow-hidden bg-cream">
                 <Image
                   src={portrait.src}
                   alt={portrait.name}
                   fill
                   unoptimized
                   quality={100}
-                  className={`object-cover ${portrait.position}`}
+                  className="object-cover object-top"
                   sizes="(max-width: 1024px) 33vw, 30vw"
                 />
               </div>
