@@ -109,10 +109,10 @@ export const fanelloPage = {
     "Bestes Preis-Leistungs-Verhältnis",
     "3 × 1001 Nacht Garantie auf Stützelement und Matratze",
   ],
-  layersEyebrow: "Vier Schichten",
-  layersTitle: "Die Natur hat Ihr Bett gemacht.",
+  layersEyebrow: "4 Komponenten",
+  layersTitle: "Jede Komponente hat eine Aufgabe.",
   layersLede:
-    "Einlegerahmen, Stützelement, Matratze, Auflage. Jede Lage hat eine Aufgabe. Zusammen tragen sie Schulter und Becken – metallfrei, erklärbar, hergestellt in der Schweiz.",
+    "Einlegerahmen, Stützelement, Matratze, Auflage. Jede Lage hat eine Aufgabe. Zusammen tragen sie Schulter und Becken und stützen ihre Wirbelsäule genau dort wo Sie es brauchen!",
   layers: [
     {
       n: "01",
@@ -127,7 +127,7 @@ export const fanelloPage = {
       n: "02",
       title: "Stützelement",
       kicker: "Das Herzstück des Systems",
-      text: "Je 40 Eschenholzlatten oben und unten passen sich den Körperkonturen an. Mit den verschiebbaren Naturlatex-Stützkörpern stellen wir das Stützelement punktgenau auf den Schläfer ein.",
+      text: "Je 40 Eschenholzlatten oben und unten passen sich den Körperkonturen an. Mit den verschiebbaren Naturlatex-Stützkörpern stellen wir das Stützelement punktgenau auf Ihre Bedürfnisse.",
       image: "/images/fanello-stuetzelement.jpg",
       imageAlt: "fanello Due Stützelement aus Eschenholzlatten",
     },
@@ -665,6 +665,7 @@ export const products: Product[] = [
     gallery: [
       "/images/bed-lain-himmel.jpg",
       "/images/bed-lain-arve.jpg",
+      "/images/bed-lain-wohnen.jpg",
     ],
     specs: [
       { label: "Fertigung", value: "Trimmis GR" },
