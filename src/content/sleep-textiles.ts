@@ -6,7 +6,7 @@ export const sleepTextiles = [
     imageAlt: "Gesteppte Naturdecke",
     imageWidth: 1024,
     imageHeight: 908,
-    line: "Decken aus Schafschurwolle, Kamelhaar, Kaschmir, Khabock, Bambus und Seide.",
+    line: "Decken aus Schafschurwolle, Kamelhaar, Kaschmir, Kapok, Bambus und Seide.",
     locked: true,
   },
   {
