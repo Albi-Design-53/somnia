@@ -22,7 +22,10 @@ const columns = [
   {
     title: "Service",
     links: [
-      { label: "Termin vereinbaren", href: "/kontakt" },
+      { label: "Optimale Schlafberatung" },
+      { label: "Lieferung" },
+      { label: "Montage" },
+      { label: "Entsorgung" },
     ],
   },
   {
@@ -76,12 +79,16 @@ export function Footer() {
                 <ul className="mt-5 space-y-3">
                   {col.links.map((link) => (
                     <li key={link.label}>
-                      <Link
-                        href={link.href}
-                        className="text-[15px] text-muted transition-colors hover:text-ink"
-                      >
-                        {link.label}
-                      </Link>
+                      {"href" in link ? (
+                        <Link
+                          href={link.href}
+                          className="text-[15px] text-muted transition-colors hover:text-ink"
+                        >
+                          {link.label}
+                        </Link>
+                      ) : (
+                        <span className="text-[15px] text-muted">{link.label}</span>
+                      )}
                     </li>
                   ))}
                 </ul>

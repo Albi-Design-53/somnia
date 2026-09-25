@@ -18,7 +18,7 @@ export type ProductPageContent = {
   priceNote: string;
   priceGuide: DueGuideMode | null;
   trust: { title: string; text: string }[];
-  sections: { title: string; text: string }[];
+  sections: { title: string; text: string; note?: string }[];
   sectionsEyebrow?: string;
   sectionsTitle?: string;
   steps: string[];
@@ -59,7 +59,7 @@ const MASSIVHOLZ_SLUGS = new Set(["jana", "bondo", "viktoria", "marco"]);
 const MASSIVHOLZ_SECTIONS = [
   {
     title: "100 % metallfreie Bauweise",
-    text: "Das Gestell wird über präzise Holzsteckverbindungen montiert. Dies garantiert absolute Freiheit von elektromagnetischen Störfeldern, höchste Stabilität und ein vollkommen lautloses, quietschfreies Bettelement.",
+    text: "Der Bettrahmen wird über präzise Holzsteckverbindungen montiert. Dies garantiert absolute Freiheit von elektromagnetischen Störfeldern, höchste Stabilität und ein vollkommen lautloses, quietschfreies Bettelement.",
   },
   {
     title: "Schweizer Qualitätsfertigung",

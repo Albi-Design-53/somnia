@@ -21,7 +21,7 @@ export default function SchlaftextilienPage() {
               <Eyebrow>Schlaftextilien</Eyebrow>
               <h1 className="display-md mt-5 max-w-3xl">Schlaftextilien.</h1>
               <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-muted">
-                Die naturbelassene Wolle hat eine so genannte natürliche
+                Die naturbelassene Schafschurwolle hat eine so genannte natürliche
                 Thermoregulations-Eigenschaft.
               </p>
               <p className="mt-4 max-w-3xl text-[17px] leading-relaxed text-muted">
@@ -35,7 +35,7 @@ export default function SchlaftextilienPage() {
               </p>
               <p className="mt-4 max-w-3xl text-[17px] leading-relaxed text-muted">
                 Speziell für Allergiker und Veganer führen wir sämtliche
-                Produkte mit pflanzlichen Fasern wie Khabock, Lyocorn und
+                Produkte mit pflanzlichen Fasern wie Kapok, Lyocorn und
                 Bambus, die waschbar sind.
               </p>
             </div>

@@ -109,10 +109,10 @@ export const fanelloPage = {
     "Bestes Preis-Leistungs-Verhältnis",
     "3 × 1001 Nacht Garantie auf Stützelement und Matratze",
   ],
-  layersEyebrow: "Vier Schichten",
-  layersTitle: "Die Natur hat Ihr Bett gemacht.",
+  layersEyebrow: "4 Komponenten",
+  layersTitle: "Jede Komponente hat eine Aufgabe.",
   layersLede:
-    "Einlegerahmen, Stützelement, Matratze, Auflage. Jede Lage hat eine Aufgabe. Zusammen tragen sie Schulter und Becken – metallfrei, erklärbar, hergestellt in der Schweiz.",
+    "Einlegerahmen, Stützelement, Matratze, Auflage. Jede Lage hat eine Aufgabe. Zusammen tragen sie Schulter und Becken und stützen ihre Wirbelsäule genau dort wo Sie es brauchen!",
   layers: [
     {
       n: "01",
@@ -127,14 +127,14 @@ export const fanelloPage = {
       n: "02",
       title: "Stützelement",
       kicker: "Das Herzstück des Systems",
-      text: "Je 40 Eschenholzlatten oben und unten passen sich den Körperkonturen an. Mit den verschiebbaren Naturlatex-Stützkörpern stellen wir das Stützelement punktgenau auf den Schläfer ein.",
+      text: "Je 40 Eschenholzlatten oben und unten passen sich den Körperkonturen an. Mit den verschiebbaren Naturlatex-Stützkörpern stellen wir das Stützelement punktgenau auf Ihre Bedürfnisse.",
       image: "/images/fanello-stuetzelement.jpg",
       imageAlt: "fanello Due Stützelement aus Eschenholzlatten",
     },
     {
       n: "03",
       title: "Matratze",
-      text: "Aus 100 % Naturlatex: hohe Punktelastizität und Formstabilität. In 7,5 cm und 10 cm Höhe. Der Baumwollbezug ist mit Reissverschluss abnehmbar und waschbar.",
+      text: "Aus 100 % Naturlatex: hohe Punktelastizität und Formstabilität. In 7,5 cm, 10 cm und 12 cm Höhe. Der Baumwollbezug ist mit Reissverschluss abnehmbar und waschbar.",
       image: "/images/fanello-matratze.jpg",
       imageAlt: "fanello Classic Naturlatexmatratze",
     },
@@ -157,7 +157,7 @@ export const fanelloPage = {
   spineEyebrow: "Wirbelsäule",
   spineTitle: "Ein gestützter Rücken.",
   spineText:
-    "Schulter und Becken werden abgesenkt, die Wirbelsäule geführt – nicht weichgesackt. Härte und Höhe entstehen im Liegen, im Laden am Gallusplatz oder mit dem mobilen Bettenstudio.",
+    "Schulter und Becken sind abgesenkt und die Wirbelsäule ist perfekt abgestützt.",
   spineImage: "/images/fanello-ruecken.jpg",
   spineAlt: "Seitenansicht: Wirbelsäule auf dem fanello Schlafsystem abgestützt",
   origin: [
@@ -488,7 +488,7 @@ export type Product = {
   imageHeight?: number;
   gallery: string[];
   specs: { label: string; value: string }[];
-  sections?: { title: string; text: string }[];
+  sections?: { title: string; text: string; note?: string }[];
   trust?: { title: string; text: string }[];
 };
 
@@ -665,6 +665,7 @@ export const products: Product[] = [
     gallery: [
       "/images/bed-lain-himmel.jpg",
       "/images/bed-lain-arve.jpg",
+      "/images/bed-lain-wohnen.jpg",
     ],
     specs: [
       { label: "Fertigung", value: "Trimmis GR" },
@@ -1219,8 +1220,8 @@ export const bedTopics = [
     steps: [
       "Anruf oder E-Mail – wir hören zu und vereinbaren den Besuch.",
       "Wir kommen mit dem mobilen Studio zu Ihnen.",
-      "Sie liegen, wir stellen Stützelement und Härte ein.",
-      "Sie entscheiden in Ruhe.",
+      "Wir beraten Sie und gehen auf Ihre Bedürfnisse ein.",
+      "Wir bieten einen perfekten Service von der Beratung über die Lieferung, Montage und Entsorgung Ihres alten Betts.",
     ],
     gallery: ["/images/mobiles-bettenstudio.png"],
   },
@@ -1265,20 +1266,21 @@ export const bedTopics = [
     ],
     sections: [
       {
-        title: "Was ein herkömmliches Boxspring macht",
-        text: "Das Boxspringbett – auch amerikanisches oder Continentalbett – steht auf einem Holzrahmen voller Metallfedern. Die Matratze kann weitere Taschenfedern enthalten, oft bis zu tausend. Das Bett wird schwer. Der Körper liegt in einem Metallkäfig, den man nicht sieht, aber spürt.",
+        title: "Was ein herkömmliches Boxspringbett ist",
+        text: "Steht auf einem Holzrahmen (Box), meist gepolstert, der mit grossen Federn bestückt ist und die Matratze trägt. Die Matratze ist meist mit spiralförmigen Metallfedern bestückt (Taschenfedern), bis zu 1000 Stck. auf 180/200 cm.",
       },
       {
         title: "Was unser Natur-Boxspring anders macht",
-        text: "Höhe und weiches, kuscheliges Liegen bleiben. Statt Federkasten kommt das fanello Schlafsystem: Holzstützelement, Naturlatex, natürliche Auflage. Kein Metall wo es den Schlaf betrifft. Nachwachsende Rohstoffe, schadstofffrei, für Allergiker geeignet.",
+        text: "Unser Naturboxspringbett, bestückt mit dem fanello Naturschlafsystem, ist absolut metallfrei, hat ein leichtes Gewicht und ist sehr langlebig.",
       },
       {
         title: "Einbau in Ihren Rahmen",
-        text: "Grundsätzlich lässt sich das Naturboxspring-System in jeden beliebigen Bettrahmen einbauen. Ob neuer Boxrahmen oder bestehendes Gestell: wir messen, erklären den Aufbau und stimmen Härte und Höhe im Liegen ab – im Laden am Gallusplatz oder mit dem mobilen Studio.",
+        text: "Unser Naturboxspringbett lässt sich grundsätzlich in jeden Bettrahmen einbauen.",
       },
       {
         title: "fanello swiss",
-        text: "Seit über dreissig Jahren stellt fanello in der Schweiz Schlafsysteme aus natürlichen Materialien her. Seit Jahren arbeiten wir damit. Das System bleibt erklärbar: Stützelement, Matratze, Auflage – Schicht für Schicht, mit 10 Jahren Garantie auf Stützelement und Matratze.",
+        text: "Seit zwanzig Jahren arbeiten wir mit fanello swiss zusammen. Ein Schlafsystem, das mehr ist als nur eine Matratze. Das System bleibt erklärbar: Stützelement, Matratze, Auflage – Schicht für Schicht, mit 10 Jahren Garantie auf Stützelement und Matratze.",
+        note: "Es ist die perfekte Ladestadion für alle Menschen!",
       },
     ],
     steps: [],

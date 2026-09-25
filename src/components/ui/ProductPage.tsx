@@ -213,32 +213,7 @@ export function ProductPage({ content }: { content: ProductPageContent }) {
           </section>
         ) : null}
 
-        {content.sections.length > 0 ? (
-          <section id="daten" className="scroll-mt-28 bg-cream py-14 sm:py-16 lg:py-24">
-            <Container>
-              <Reveal>
-                <Eyebrow>{content.sectionsEyebrow ?? "Fertigung"}</Eyebrow>
-                <h2 className="mt-4 font-serif text-[2rem] tracking-[-0.03em] sm:text-[2.5rem]">
-                  {content.sectionsTitle ?? "Der Bettrahmen."}
-                </h2>
-              </Reveal>
-              <div className="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:gap-x-16 lg:gap-y-14">
-                {content.sections.map((item, i) => (
-                  <Reveal key={item.title} delay={i * 0.05}>
-                    <article className="border-t border-sand/80 pt-6">
-                      <h3 className="font-serif text-[1.45rem] tracking-[-0.03em] sm:text-[1.65rem]">
-                        {item.title}
-                      </h3>
-                      <p className="mt-3 text-[16px] leading-relaxed text-muted">
-                        {item.text}
-                      </p>
-                    </article>
-                  </Reveal>
-                ))}
-              </div>
-            </Container>
-          </section>
-        ) : content.specs.length > 0 ? (
+        {content.specs.length > 0 ? (
           <section id="daten" className="scroll-mt-28 bg-cream py-14 sm:py-16 lg:py-24">
             <Container>
               <Reveal>
@@ -275,9 +250,6 @@ export function ProductPage({ content }: { content: ProductPageContent }) {
             <Container>
               <Reveal>
                 <Eyebrow>Weiter</Eyebrow>
-                <h2 className="mt-4 font-serif text-[2rem] tracking-[-0.03em] sm:text-[2.5rem]">
-                  Andere Wahl.
-                </h2>
               </Reveal>
               <div
                 className={
