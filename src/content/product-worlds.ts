@@ -31,10 +31,16 @@ export const productWorlds = [
 export const productNavGroups = [
   {
     heading: "Produktwelt",
-    items: productWorlds.map((world) => ({
-      label: world.title,
-      href: world.href,
-    })),
+    items: [
+      ...productWorlds.map((world) => ({
+        label: world.title,
+        href: world.href,
+      })),
+      {
+        label: "Schlafzimmermöbel",
+        href: "/schlafzimmermoebel",
+      },
+    ],
   },
   {
     heading: "Betten",

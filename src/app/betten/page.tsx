@@ -108,6 +108,22 @@ export default function BettenPage() {
               </Reveal>
             );
           })}
+
+          <Reveal delay={featured.length * 0.04}>
+            <Link href="/schlafzimmermoebel" className="group block">
+              <article className="flex flex-col items-center justify-center bg-ivory px-6 py-14 text-center sm:px-8 sm:py-16">
+                <p className="text-[13px] font-medium tracking-[0.16em] uppercase text-bronze sm:text-[15px]">
+                  {String(featured.length + 1).padStart(2, "0")} · Schlafzimmermöbel
+                </p>
+                <h2 className="mt-3 font-serif text-[2.35rem] leading-[1.08] tracking-[-0.03em] sm:text-[2.85rem] lg:text-[3.35rem]">
+                  Schlafzimmermöbel
+                </h2>
+                <span className="mt-6 text-[14px] font-medium tracking-[0.14em] uppercase text-ink transition-transform duration-300 group-hover:translate-x-1 sm:text-[16px]">
+                  Ansehen →
+                </span>
+              </article>
+            </Link>
+          </Reveal>
         </div>
 
         <Reveal>

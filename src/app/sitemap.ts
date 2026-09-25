@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/matratzen",
     ...products.filter((p) => p.kind === "matratze").map((p) => `/matratzen/${p.slug}`),
     "/schlaftextilien",
+    "/schlafzimmermoebel",
     ...sleepTextiles
       .filter((item) => !("locked" in item && item.locked))
       .map((item) => `/schlaftextilien/${item.slug}`),
