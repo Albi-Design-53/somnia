@@ -1,4 +1,4 @@
-import { about, images, site } from "@/content/site";
+import { about, site } from "@/content/site";
 import { Button } from "@/components/ui/Button";
 import { Container, Eyebrow } from "@/components/ui/Container";
 import { ParallaxMedia } from "@/components/ui/ParallaxMedia";
@@ -38,13 +38,22 @@ export function AboutPage() {
             </div>
           </Reveal>
           <Reveal delay={0.08}>
-            <ParallaxMedia
-              src={images.about}
-              alt="Marktplatz in St. Gallen mit Fachwerkhaus und Klosterhügel"
-              className="mx-auto aspect-square w-full max-w-[34rem] rounded-full lg:max-w-none"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              strength={14}
-            />
+            <div className="mx-auto grid w-full max-w-[34rem] grid-cols-2 gap-4 sm:gap-6 lg:max-w-none">
+              <ParallaxMedia
+                src="/images/portrait-graziella.png"
+                alt="Graziella Zwiker"
+                className="aspect-square w-full rounded-full"
+                sizes="(max-width: 1024px) 45vw, 22vw"
+                strength={10}
+              />
+              <ParallaxMedia
+                src="/images/portrait-roger.png"
+                alt="Roger Zwiker"
+                className="aspect-square w-full rounded-full"
+                sizes="(max-width: 1024px) 45vw, 22vw"
+                strength={10}
+              />
+            </div>
           </Reveal>
         </div>
       </Container>
