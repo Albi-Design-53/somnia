@@ -275,9 +275,6 @@ export function ProductPage({ content }: { content: ProductPageContent }) {
             <Container>
               <Reveal>
                 <Eyebrow>Weiter</Eyebrow>
-                <h2 className="mt-4 font-serif text-[2rem] tracking-[-0.03em] sm:text-[2.5rem]">
-                  Andere Wahl.
-                </h2>
               </Reveal>
               <div
                 className={
