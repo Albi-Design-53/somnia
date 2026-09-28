@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import { images, site } from "@/content/site";
 import { easeOut } from "@/lib/motion";
@@ -23,11 +24,23 @@ const slides = [
   },
 ] as const;
 
+const AUTO_MS = 5000;
+
 export function Hero() {
   const reduce = useReducedMotion();
   const [index, setIndex] = useState(0);
   const start = useRef<{ x: number; y: number } | null>(null);
   const onBedroom = index === 0;
+
+  function go(direction: -1 | 1) {
+    setIndex((current) => (current + direction + slides.length) % slides.length);
+  }
+
+  useEffect(() => {
+    if (reduce) return;
+    const id = window.setInterval(() => go(1), AUTO_MS);
+    return () => window.clearInterval(id);
+  }, [reduce, index]);
 
   function onPointerDown(event: React.PointerEvent<HTMLElement>) {
     if ((event.target as HTMLElement).closest("button")) return;
@@ -150,6 +163,23 @@ export function Hero() {
           Bedürfnisse.
         </motion.p>
       </div>
+
+      <button
+        type="button"
+        aria-label="Vorheriges Bild"
+        onClick={() => go(-1)}
+        className="absolute top-1/2 left-3 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-ivory/90 text-ink sm:left-6"
+      >
+        <ChevronLeft size={22} strokeWidth={1.75} />
+      </button>
+      <button
+        type="button"
+        aria-label="Nächstes Bild"
+        onClick={() => go(1)}
+        className="absolute top-1/2 right-3 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-ivory/90 text-ink sm:right-6"
+      >
+        <ChevronRight size={22} strokeWidth={1.75} />
+      </button>
 
       <div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 gap-2.5 sm:bottom-10">
         {slides.map((slide, i) => (
